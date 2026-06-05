@@ -1,0 +1,20 @@
+{
+  "node": "N8nDevGitlab",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": [
+    "Development"
+  ],
+  "resources": {
+    "primaryDocumentation": [
+      {
+        "url": "https://github.com/kelvinzer0/n8n-nodes-gitlab"
+      }
+    ],
+    "credentialDocumentation": [
+      {
+        "url": "https://github.com/kelvinzer0/n8n-nodes-gitlab?tab=readme-ov-file#credentials"
+      }
+    ]
+  }
+}
