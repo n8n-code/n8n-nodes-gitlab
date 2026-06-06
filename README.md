@@ -53,141 +53,27 @@ That's it. No configuration files. No code. It just works.
 
 | Resource | Operations |
 |----------|------------|
-| Award Emoji | — |
-| Badges | — |
-| Custom Attributes | — |
-| Groups | Post Api V 4 Runners Reset Registration Token |
-| Ldap | — |
-| Audit Events | — |
-| Keys | — |
-| Runners | Post Api V 4 Runners Reset Registration Token |
-| Packages | Get Api V 4 Packages Conan V 1 Users Authenticate, Get Api V 4 Packages Conan V 1 Users Check Credentials, Get Api V 4 Packages Conan V 1 Ping, Post Api V 4 Packages Npm Npm V 1 Security Advisories Bulk, Post Api V 4 Packages Npm Npm V 1 Security Audits Quick |
-| Deploy Resources | — |
-| Avatars | — |
-| Group Import And Export | Post Api V 4 Groups Import Authorize |
-| Invitations | — |
-| Members | — |
-| Access Tokens | Get Api V 4 Personal Access Tokens Self, Delete Api V 4 Personal Access Tokens Self |
-| Search | — |
-| Wikis | — |
-| Alert Management | — |
-| Branches | — |
-| Ci Catalog | — |
-| Job Artifacts | — |
-| Ci Jobs | Get Api V 4 Job |
-| Secure Files | — |
-| Pipelines | — |
-| Pipeline Schedules | — |
-| Ci Triggers | — |
-| Commits | — |
-| Commit Statuses | — |
-| Draft Notes | — |
-| Error Tracking | — |
-| Files | — |
-| Issues | — |
-| Metric Images | — |
-| Merge Request Approvals | — |
-| Gitlab Pages | — |
-| Events | — |
-| Hooks | — |
-| Projects Job Token Scope | — |
-| Project Snapshots | — |
-| Snippets | — |
-| Project Templates | — |
-| Protected Branches | — |
-| Protected Tags | — |
-| Remote Mirrors | — |
-| Repositories | — |
-| Resource Events | — |
-| Submodules | — |
-| Attestations | — |
-| Tags | — |
-| Terraform | — |
-| Batched Background Migrations | — |
-| Batched Background Operations | — |
-| Database Dictionary | — |
-| Migrations | — |
-| Broadcast Messages | — |
-| Applications | Get Api V 4 Applications |
-| Imports | — |
-| Agents | Get Api V 4 Job Allowed Agents |
-| Ci Runners | Get Api V 4 Runners Router Discovery |
-| Jobs | — |
-| Glql | — |
-| Internal Operations | Post Api V 4 Integrations Slack Interactions, Post Api V 4 Integrations Slack Options |
-| Markdown | — |
-| Namespaces | — |
-| Offline Transfers | — |
-| Organizations | — |
-| Unleash | — |
-| Usage Data | Get Api V 4 Usage Data Service Ping, Get Api V 4 Usage Data Non Sql Metrics, Get Api V 4 Usage Data Queries |
-| Metrics | — |
-| Users | Get Api V 4 User Counts |
-| Instance | Get Api V 4 Application Appearance, Get Api V 4 Application Statistics |
-| Project Topics | — |
-| Web Commits | Get Api V 4 Web Commits Public Key |
-| Access Requests | — |
-| Ci Lint | — |
-| Ci Resource Groups | — |
-| Ci Variables | — |
-| Cluster Agents | — |
-| Clusters | Get Api V 4 Admin Clusters |
-| Composer Packages | — |
-| Conan Packages | — |
-| Container Registry | Post Api V 4 Container Registry Event Events |
-| Container Registry Event | — |
-| Debian Distribution | — |
-| Debian Packages | — |
-| Dependency Proxy | — |
-| Deploy Keys | — |
-| Deploy Tokens | — |
-| Deployments | — |
-| Dora Metrics | — |
-| Environments | — |
-| Error Tracking Client Keys | — |
-| Error Tracking Project Settings | — |
-| Feature Flags User Lists | — |
-| Feature Flags | — |
-| Features | Get Api V 4 Features, Get Api V 4 Features Definitions |
-| Freeze Periods | — |
-| Generic Packages | — |
-| Geo | Get Api V 4 Geo Proxy |
-| Geo Nodes | — |
-| Go Proxy | — |
-| Group Export | — |
-| Group Import | — |
-| Group Packages | — |
-| Helm Packages | — |
-| Integrations | Post Api V 4 Integrations Slack Interactions, Post Api V 4 Integrations Slack Options |
-| Issue Links | — |
-| Jira Connect Subscriptions | — |
-| Maven Packages | — |
-| Merge Requests | — |
-| Metadata | Get Api V 4 Metadata, Get Api V 4 Version |
-| Ml Model Registry | — |
-| Npm Packages | — |
-| Nuget Packages | — |
-| Package Files | — |
-| Plan Limits | — |
-| Project Export | — |
-| Project Hooks | — |
-| Project Import | Post Api V 4 Projects Import Authorize, Post Api V 4 Projects Import Relation Authorize |
-| Project Import Bitbucket | — |
-| Project Import Github | — |
-| Project Packages | — |
-| Projects | — |
-| Protected Environments | — |
-| Pypi Packages | — |
-| Release Links | — |
-| Releases | — |
-| Resource Milestone Events | — |
-| Rpm Packages | — |
-| Rubygem Packages | — |
-| Suggestions | — |
-| System Hooks | — |
-| Terraform State | — |
-| Terraform Registry | — |
-| Unleash Api | — |
+| Groups | Reset the runner registration token for the instance |
+| Runners | Reset the runner registration token for the instance |
+| Packages | Authenticate user against conan CLI, Check for valid user credentials per conan CLI, Ping the Conan API, NPM registry bulk advisory endpoint, NPM registry quick audit endpoint |
+| Group Import And Export | Workhorse authorize the group import upload |
+| Access Tokens | Retrieve a personal access token, Revoke a personal access token |
+| Ci Jobs | Retrieve a job by job token |
+| Applications | Get applications |
+| Agents | List all GitLab agents for Kubernetes by job token |
+| Ci Runners | Discover Job Router information |
+| Internal Operations | Process Slack interaction events, Get Slack interactive component options |
+| Usage Data | Get the latest ServicePing payload, Get Non SQL usage ping metrics, Get raw SQL queries for usage data SQL metrics |
+| Users | Return the user specific counts |
+| Instance | Get Api V 4 Application Appearance, Retrieve application statistics |
+| Web Commits | Get the public key for web commits |
+| Clusters | List all instance clusters |
+| Container Registry | Receives notifications from the container registry when an operation occurs |
+| Features | List all feature flags, List all feature flag definitions |
+| Geo | Determine if a Geo site should proxy requests |
+| Integrations | Process Slack interaction events, Get Slack interactive component options |
+| Metadata | Retrieve metadata information for this GitLab instance, Retrieves version information for the GitLab instance |
+| Project Import | Workhorse authorize the project import upload, Workhorse authorize the project relation import upload |
 
 ---
 
