@@ -1,6 +1,6 @@
 {
   "name": "@n8n-dev/n8n-nodes-gitlab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitLab DevOps platform",
   "license": "MIT",
   "homepage": "",

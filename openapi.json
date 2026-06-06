@@ -3741,8 +3741,8 @@
     },
     "/api/v4/groups/{id}/runners": {
       "get": {
-        "summary": "List group's runners",
-        "description": "List all runners available in the group as well as its ancestor groups, including any allowed shared runners.",
+        "summary": "List all runners in a group",
+        "description": "Lists all runners available in a specified group and any ancestor groups, including any allowed instance runners.",
         "produces": [
           "application/json"
         ],
@@ -3833,7 +3833,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get runners available for group",
+            "description": "List all runners in a group",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_Runner"
             }
@@ -17027,8 +17027,8 @@
         "operationId": "getApiV4ProjectsIdRunners"
       },
       "post": {
-        "summary": "Assign a runner to project",
-        "description": "Assign an available project runner to the project.",
+        "summary": "Assign a runner to a project",
+        "description": "Assigns an available project runner to a project.",
         "produces": [
           "application/json"
         ],
@@ -17054,7 +17054,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Assign a runner to project",
+            "description": "Assign a runner to a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_Runner"
             }
@@ -17078,8 +17078,8 @@
     },
     "/api/v4/projects/{id}/runners/{runner_id}": {
       "delete": {
-        "summary": "Unassign a project runner from the project",
-        "description": "It is not possible to unassign a runner from the owner project. If so, an error is returned. Use the call to delete a runner instead.",
+        "summary": "Unassign a runner from a project",
+        "description": "Unassigns a specified project runner from a project. You cannot unassign a runner from the owner project. Use the delete a runner operation instead.",
         "produces": [
           "application/json"
         ],
@@ -17102,7 +17102,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Unassign a runner from project",
+            "description": "Unassign a runner from a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_Runner"
             }
@@ -19677,8 +19677,8 @@
     },
     "/api/v4/projects/{id}/cluster_agents/{agent_id}/tokens": {
       "get": {
-        "summary": "List tokens for an agent",
-        "description": "This feature was introduced in GitLab 15.0. Returns a list of tokens for an agent.",
+        "summary": "List all agent tokens",
+        "description": "Lists all active tokens for an agent. You must have the Developer, Maintainer, or Owner role to use this endpoint.",
         "produces": [
           "application/json"
         ],
@@ -19721,7 +19721,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List tokens for an agent",
+            "description": "List all agent tokens",
             "schema": {
               "$ref": "#/definitions/API_Entities_Clusters_AgentTokenBasic"
             }
@@ -19734,7 +19734,7 @@
       },
       "post": {
         "summary": "Create an agent token",
-        "description": "This feature was introduced in GitLab 15.0. Creates a new token for an agent.",
+        "description": "Creates a token for an agent. You must have the Maintainer or Owner role to use this endpoint. An agent can have only two active tokens at one time.",
         "produces": [
           "application/json"
         ],
@@ -19782,8 +19782,8 @@
     },
     "/api/v4/projects/{id}/cluster_agents/{agent_id}/tokens/{token_id}": {
       "get": {
-        "summary": "Get a single agent token",
-        "description": "This feature was introduced in GitLab 15.0. Gets a single agent token.",
+        "summary": "Retrieve an agent token",
+        "description": "Retrieves a specified agent token. You must have the Developer, Maintainer, or Owner role to use this endpoint. Returns a `404` if the agent token has been revoked.",
         "produces": [
           "application/json"
         ],
@@ -19814,7 +19814,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a single agent token",
+            "description": "Retrieve an agent token",
             "schema": {
               "$ref": "#/definitions/API_Entities_Clusters_AgentToken"
             }
@@ -19827,7 +19827,7 @@
       },
       "delete": {
         "summary": "Revoke an agent token",
-        "description": "This feature was introduced in GitLab 15.0. Revokes an agent token.",
+        "description": "Revokes an agent token. You must have the Maintainer or Owner role to use this endpoint.",
         "produces": [
           "application/json"
         ],
@@ -19869,8 +19869,8 @@
     },
     "/api/v4/projects/{id}/cluster_agents": {
       "get": {
-        "summary": "List the agents for a project",
-        "description": "This feature was introduced in GitLab 14.10. Returns the list of agents registered for the project.",
+        "summary": "List all agents",
+        "description": "Lists all agents registered for the project. You must have the Developer, Maintainer, or Owner role to use this endpoint.",
         "produces": [
           "application/json"
         ],
@@ -19905,7 +19905,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List the agents for a project",
+            "description": "List all agents",
             "schema": {
               "$ref": "#/definitions/API_Entities_Clusters_Agent"
             }
@@ -19917,8 +19917,8 @@
         "operationId": "getApiV4ProjectsIdClusterAgents"
       },
       "post": {
-        "summary": "Register an agent with a project",
-        "description": "This feature was introduced in GitLab 14.10. Registers an agent to the project.",
+        "summary": "Create an agent",
+        "description": "Creates an agent for the project. You must have the Maintainer or Owner role to use this endpoint.",
         "produces": [
           "application/json"
         ],
@@ -19944,7 +19944,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Register an agent with a project",
+            "description": "Create an agent",
             "schema": {
               "$ref": "#/definitions/API_Entities_Clusters_Agent"
             }
@@ -19958,8 +19958,8 @@
     },
     "/api/v4/projects/{id}/cluster_agents/{agent_id}": {
       "get": {
-        "summary": "Get details about an agent",
-        "description": "This feature was introduced in GitLab 14.10. Gets a single agent details.",
+        "summary": "Retrieve details on an agent",
+        "description": "Retrieves details on a specified agent. You must have the Developer, Maintainer, or Owner role to use this endpoint.",
         "produces": [
           "application/json"
         ],
@@ -19982,7 +19982,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get details about an agent",
+            "description": "Retrieve details on an agent",
             "schema": {
               "$ref": "#/definitions/API_Entities_Clusters_Agent"
             }
@@ -19994,8 +19994,8 @@
         "operationId": "getApiV4ProjectsIdClusterAgentsAgentId"
       },
       "delete": {
-        "summary": "Delete a registered agent",
-        "description": "This feature was introduced in GitLab 14.10. Deletes an existing agent registration.",
+        "summary": "Delete an agent",
+        "description": "Deletes an existing agent registration. You must have the Maintainer or Owner role to use this endpoint.",
         "produces": [
           "application/json"
         ],
@@ -58075,8 +58075,8 @@
     },
     "/api/v4/runners": {
       "post": {
-        "summary": "Register a new runner",
-        "description": "Register a new runner for the instance",
+        "summary": "Create a runner",
+        "description": "Creates a runner.",
         "produces": [
           "application/json"
         ],
@@ -58095,7 +58095,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Register a new runner",
+            "description": "Create a runner",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_RunnerRegistrationDetails"
             }
@@ -58117,7 +58117,7 @@
       },
       "delete": {
         "summary": "Delete a runner by authentication token",
-        "description": "Delete a registered runner",
+        "description": "Deletes a specified registered runner.",
         "produces": [
           "application/json"
         ],
@@ -58145,7 +58145,7 @@
       },
       "get": {
         "summary": "List available runners",
-        "description": "Get runners available for user",
+        "description": "Lists all runners available to the user. For group runners, you must have the Owner role in the owner namespace.",
         "produces": [
           "application/json"
         ],
@@ -58249,7 +58249,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get runners available for user",
+            "description": "List all available runners",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_Runner"
             }
@@ -58313,7 +58313,7 @@
     "/api/v4/runners/verify": {
       "post": {
         "summary": "Verify authentication for a registered runner",
-        "description": "Validate authentication credentials",
+        "description": "Verifies authentication for a registered runner.",
         "produces": [
           "application/json"
         ],
@@ -58352,7 +58352,8 @@
     },
     "/api/v4/runners/reset_authentication_token": {
       "post": {
-        "description": "Reset runner authentication token with current token",
+        "summary": "Reset a runner authentication token with the current token",
+        "description": "Resets a runner authentication token with the token used to authenticate the request.",
         "produces": [
           "application/json"
         ],
@@ -58371,7 +58372,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Reset runner authentication token with current token",
+            "description": "Reset a runner authentication token with the current token",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_ResetTokenResult"
             }
@@ -58392,7 +58393,7 @@
     "/api/v4/runners/router/discovery": {
       "get": {
         "summary": "Discover Job Router information",
-        "description": "This endpoint can be used by the runner to retrieve information about the Job Router.",
+        "description": "Discovers Job Router information for a runner. You must provide a valid runner authentication token.",
         "produces": [
           "application/json"
         ],
@@ -58419,7 +58420,7 @@
     "/api/v4/runners/all": {
       "get": {
         "summary": "List all runners",
-        "description": "Get a list of all runners in the GitLab instance (shared and project). Access is restricted to users with either administrator access or auditor access.",
+        "description": "Lists all runners in the GitLab instance (project and shared). You must have either administrator access or auditor access.",
         "produces": [
           "application/json"
         ],
@@ -58523,7 +58524,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get all runners - shared and project",
+            "description": "List all runners",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_Runner"
             }
@@ -58543,8 +58544,8 @@
     },
     "/api/v4/runners/{id}": {
       "get": {
-        "summary": "Get runner's details",
-        "description": "At least the Maintainer role is required to get runner details at the project and group level. Instance-level runner details via this endpoint are available to all signed in users.",
+        "summary": "Retrieve details on a runner",
+        "description": "Retrieves details of a runner. Instance runner details are available to all authenticated users through this endpoint. For groups and projects, you must have the Maintainer or Owner role for the associated project or group.",
         "produces": [
           "application/json"
         ],
@@ -58568,7 +58569,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get runner's details",
+            "description": "Retrieve details on a runner",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_RunnerDetails"
             }
@@ -58590,7 +58591,7 @@
       },
       "put": {
         "summary": "Update details of a runner",
-        "description": "Update runner's details",
+        "description": "Updates a specified runner.",
         "produces": [
           "application/json"
         ],
@@ -58617,7 +58618,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update runner's details",
+            "description": "Update a runner",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_RunnerDetails"
             }
@@ -58642,7 +58643,7 @@
       },
       "delete": {
         "summary": "Delete a runner",
-        "description": "Remove a runner",
+        "description": "Deletes a specified runner.",
         "produces": [
           "application/json"
         ],
@@ -58658,7 +58659,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Remove a runner",
+            "description": "Delete a runner",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_Runner"
             }
@@ -58684,7 +58685,8 @@
     },
     "/api/v4/runners/{id}/managers": {
       "get": {
-        "description": "Get a list of all runner's managers",
+        "summary": "List all managers for a runner",
+        "description": "List all managers for a specified runner.",
         "produces": [
           "application/json"
         ],
@@ -58700,7 +58702,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of all runner's managers",
+            "description": "List all managers for a runner",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_RunnerManager"
             }
@@ -58898,7 +58900,7 @@
     "/api/v4/runners/{id}/reset_authentication_token": {
       "post": {
         "summary": "Reset runner's authentication token",
-        "description": "Reset runner authentication token",
+        "description": "Resets the authentication token for a specified runner.",
         "produces": [
           "application/json"
         ],
@@ -58917,7 +58919,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Reset runner authentication token",
+            "description": "Reset an authentication token for a runner",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_ResetTokenResult"
             }
@@ -67070,8 +67072,8 @@
     },
     "/api/v4/discover-cert-based-clusters": {
       "get": {
-        "summary": "Discover all descendant certificate-based clusters in a group",
-        "description": "This feature was introduced in GitLab 17.9. It will be removed in 18.0.",
+        "summary": "List all certificate-based clusters",
+        "description": "Lists all certificate-based clusters associated with a project. This feature was introduced in GitLab 17.9.",
         "produces": [
           "application/json"
         ],
@@ -67087,7 +67089,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Discover all descendant certificate-based clusters in a group",
+            "description": "List all certificate-based clusters",
             "schema": {
               "$ref": "#/definitions/API_Entities_DiscoveredClusters"
             }
@@ -79134,7 +79136,7 @@
       "required": [
         "runner_id"
       ],
-      "description": "Assign a runner to project"
+      "description": "Assign a runner to a project"
     },
     "API_Entities_Ci_SecureFile": {
       "type": "object",
@@ -80731,7 +80733,7 @@
       "required": [
         "name"
       ],
-      "description": "Register an agent with a project"
+      "description": "Create an agent"
     },
     "postApiV4ProjectsIdRepositoryCommits": {
       "type": "object",
@@ -99239,7 +99241,7 @@
       "required": [
         "token"
       ],
-      "description": "Register a new runner"
+      "description": "Create a runner"
     },
     "API_Entities_Ci_RunnerRegistrationDetails": {
       "type": "object",
@@ -99276,7 +99278,7 @@
       "required": [
         "token"
       ],
-      "description": "Validate authentication credentials"
+      "description": "Verify authentication for a registered runner"
     },
     "postApiV4RunnersResetAuthenticationToken": {
       "type": "object",
@@ -99289,7 +99291,7 @@
       "required": [
         "token"
       ],
-      "description": "Reset runner authentication token with current token"
+      "description": "Reset a runner authentication token with the current token"
     },
     "API_Entities_Ci_JobRouter_DiscoveryInformation": {
       "type": "object",
@@ -99489,7 +99491,7 @@
           "description": "Free-form maintenance notes for the runner (1024 characters)"
         }
       },
-      "description": "Update runner's details"
+      "description": "Update a runner"
     },
     "API_Entities_Ci_JobBasicWithProject": {
       "type": "object",
