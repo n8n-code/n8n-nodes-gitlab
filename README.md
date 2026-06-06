@@ -53,27 +53,27 @@ That's it. No configuration files. No code. It just works.
 
 | Resource | Operations |
 |----------|------------|
-| Groups | Reset the runner registration token for the instance |
-| Runners | Reset the runner registration token for the instance |
-| Packages | Authenticate user against conan CLI, Check for valid user credentials per conan CLI, Ping the Conan API, NPM registry bulk advisory endpoint, NPM registry quick audit endpoint |
-| Group Import And Export | Workhorse authorize the group import upload |
-| Access Tokens | Retrieve a personal access token, Revoke a personal access token |
-| Ci Jobs | Retrieve a job by job token |
-| Applications | Get applications |
-| Agents | List all GitLab agents for Kubernetes by job token |
-| Ci Runners | Discover Job Router information |
-| Internal Operations | Process Slack interaction events, Get Slack interactive component options |
-| Usage Data | Get the latest ServicePing payload, Get Non SQL usage ping metrics, Get raw SQL queries for usage data SQL metrics |
-| Users | Return the user specific counts |
-| Instance | Get Api V 4 Application Appearance, Retrieve application statistics |
-| Web Commits | Get the public key for web commits |
-| Clusters | List all instance clusters |
-| Container Registry | Receives notifications from the container registry when an operation occurs |
-| Features | List all feature flags, List all feature flag definitions |
-| Geo | Determine if a Geo site should proxy requests |
-| Integrations | Process Slack interaction events, Get Slack interactive component options |
-| Metadata | Retrieve metadata information for this GitLab instance, Retrieves version information for the GitLab instance |
-| Project Import | Workhorse authorize the project import upload, Workhorse authorize the project relation import upload |
+| Groups | POST Reset the runner registration token for the instance |
+| Runners | POST Reset the runner registration token for the instance |
+| Packages | GET Authenticate user against conan CLI, GET Check for valid user credentials per conan CLI, GET Ping the Conan API, POST NPM registry bulk advisory endpoint, POST NPM registry quick audit endpoint |
+| Group Import And Export | POST Workhorse authorize the group import upload |
+| Access Tokens | GET Retrieve a personal access token, DELETE Revoke a personal access token |
+| Ci Jobs | GET Retrieve a job by job token |
+| Applications | GET Get applications |
+| Agents | GET List all GitLab agents for Kubernetes by job token |
+| Ci Runners | GET Discover Job Router information |
+| Internal Operations | POST Process Slack interaction events, POST Get Slack interactive component options |
+| Usage Data | GET Get the latest ServicePing payload, GET Get Non SQL usage ping metrics, GET Get raw SQL queries for usage data SQL metrics |
+| Users | GET Return the user specific counts |
+| Instance | GET Get Api V 4 Application Appearance, GET Retrieve application statistics |
+| Web Commits | GET Get the public key for web commits |
+| Clusters | GET List all instance clusters |
+| Container Registry | POST Receives notifications from the container registry when an operation occurs |
+| Features | GET List all feature flags, GET List all feature flag definitions |
+| Geo | GET Determine if a Geo site should proxy requests |
+| Integrations | POST Process Slack interaction events, POST Get Slack interactive component options |
+| Metadata | GET Retrieve metadata information for this GitLab instance, GET Retrieves version information for the GitLab instance |
+| Project Import | POST Workhorse authorize the project import upload, POST Workhorse authorize the project relation import upload |
 
 ---
 
