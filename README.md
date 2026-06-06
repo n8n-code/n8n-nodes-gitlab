@@ -1,7 +1,5 @@
 # @n8n-dev/n8n-nodes-gitlab
 
-[![Keep It Moving.](https://crypto-donate.insidexofficial.workers.dev/eyJ0aXRsZSI6IktlZXAgSXQgTW92aW5nIiwiZGVzYyI6Ik9uZSBkZXZlbG9wZXIgYnVpbHQgYSB0b29sIHRoYXQgYXV0by1nZW5lcmF0ZXNcbm44biBub2RlcyBmcm9tIGFueSBPcGVuQVBJIHNwZWMuXG5cbllvdXIgZG9uYXRpb24gZnVuZHMgbmV3IGZlYXR1cmVzLCBtb3JlIEFQSSBzdXBwb3J0LFxuYW5kIGJldHRlciB0b29saW5nIGZvciBldmVyeSBkZXZlbG9wZXIgYWZ0ZXIgeW91LiIsInRhcmdldCI6NTAwMCwiYWRkcmVzc2VzIjp7ImV0aGVyZXVtIjoiMHhmMDU1NWQ0MGRiRkI0ZTNCZjA3MDQ0MjgyQjc4RjJmRTFmNTFFZjcyIiwic29sYW5hIjoiNlpEVk5BYmpZZExEcXo4cGt3VUNHYllaNVV3QlFranB0QzU1Wk5vTFcybVUifSwiZGlzY29yZCI6Imh0dHBzOi8vZGlzY29yZC5nZy9wdERaOGU0aDkzIn0/badge)](https://n8n-code.github.io/membership/#/eyJ0aXRsZSI6IktlZXAgSXQgTW92aW5nIiwiZGVzYyI6Ik9uZSBkZXZlbG9wZXIgYnVpbHQgYSB0b29sIHRoYXQgYXV0by1nZW5lcmF0ZXNcbm44biBub2RlcyBmcm9tIGFueSBPcGVuQVBJIHNwZWMuXG5cbllvdXIgZG9uYXRpb24gZnVuZHMgbmV3IGZlYXR1cmVzLCBtb3JlIEFQSSBzdXBwb3J0LFxuYW5kIGJldHRlciB0b29saW5nIGZvciBldmVyeSBkZXZlbG9wZXIgYWZ0ZXIgeW91LiIsInRhcmdldCI6NTAwMCwiYWRkcmVzc2VzIjp7ImV0aGVyZXVtIjoiMHhmMDU1NWQ0MGRiRkI0ZTNCZjA3MDQ0MjgyQjc4RjJmRTFmNTFFZjcyIiwic29sYW5hIjoiNlpEVk5BYmpZZExEcXo4cGt3VUNHYllaNVV3QlFranB0QzU1Wk5vTFcybVUifSwiZGlzY29yZCI6Imh0dHBzOi8vZGlzY29yZC5nZy9wdERaOGU0aDkzIn0)
-
 [![npm version](https://img.shields.io/npm/v/@n8n-dev/n8n-nodes-gitlab.svg)](https://www.npmjs.com/package/@n8n-dev/n8n-nodes-gitlab)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -9,21 +7,152 @@
 
 **Stop writing gitlab API integrations by hand.**
 
-Every time you connect n8n to gitlab, you waste hours mapping endpoints, defining parameters, and debugging schemas. You copy-paste from docs, fix edge cases, and pray nothing breaks.
+This n8n community node was auto-generated from the official **gitlab** OpenAPI specification.
+It exposes whatever operations the spec defines — no more, no less.
 
-**What if your n8n node just... worked?**
-
-This node gives you **135+ resources** out of the box: **Award Emoji**, **Badges**, **Custom Attributes**, **Groups**, **Ldap**, and 130 more: with full CRUD operations, typed parameters, and zero manual configuration.
+> ⚠️ **This node maps operations 1:1 from the OpenAPI spec.** If the spec only defines GET and POST for a resource, the node will only have those operations. It does not invent missing endpoints.
 
 ---
 
-## What You Get
+## Resources (135)
 
-- **135+ resources**: **Award Emoji**, **Badges**, **Custom Attributes**, **Groups**, **Ldap**, and 130 more
-- **Full CRUD**: Create, Read, Update, Delete operations for every resource
-- **Typed parameters**: No more guessing field types
-- **Built-in auth**: API key authentication, ready to go
-- **Declarative**: Native n8n performance, no custom execute() overhead
+| Resource | Operations |
+|----------|------------|
+| Award Emoji | — |
+| Badges | — |
+| Custom Attributes | — |
+| Groups | Post Api V 4 Runners Reset Registration Token |
+| Ldap | — |
+| Audit Events | — |
+| Keys | — |
+| Runners | Post Api V 4 Runners Reset Registration Token |
+| Packages | Get Api V 4 Packages Conan V 1 Users Authenticate, Get Api V 4 Packages Conan V 1 Users Check Credentials, Get Api V 4 Packages Conan V 1 Ping, Post Api V 4 Packages Npm Npm V 1 Security Advisories Bulk, Post Api V 4 Packages Npm Npm V 1 Security Audits Quick |
+| Deploy Resources | — |
+| Avatars | — |
+| Group Import And Export | Post Api V 4 Groups Import Authorize |
+| Invitations | — |
+| Members | — |
+| Access Tokens | Get Api V 4 Personal Access Tokens Self, Delete Api V 4 Personal Access Tokens Self |
+| Search | — |
+| Wikis | — |
+| Alert Management | — |
+| Branches | — |
+| Ci Catalog | — |
+| Job Artifacts | — |
+| Ci Jobs | Get Api V 4 Job |
+| Secure Files | — |
+| Pipelines | — |
+| Pipeline Schedules | — |
+| Ci Triggers | — |
+| Commits | — |
+| Commit Statuses | — |
+| Draft Notes | — |
+| Error Tracking | — |
+| Files | — |
+| Issues | — |
+| Metric Images | — |
+| Merge Request Approvals | — |
+| Gitlab Pages | — |
+| Events | — |
+| Hooks | — |
+| Projects Job Token Scope | — |
+| Project Snapshots | — |
+| Snippets | — |
+| Project Templates | — |
+| Protected Branches | — |
+| Protected Tags | — |
+| Remote Mirrors | — |
+| Repositories | — |
+| Resource Events | — |
+| Submodules | — |
+| Attestations | — |
+| Tags | — |
+| Terraform | — |
+| Batched Background Migrations | — |
+| Batched Background Operations | — |
+| Database Dictionary | — |
+| Migrations | — |
+| Broadcast Messages | — |
+| Applications | Get Api V 4 Applications |
+| Imports | — |
+| Agents | Get Api V 4 Job Allowed Agents |
+| Ci Runners | Get Api V 4 Runners Router Discovery |
+| Jobs | — |
+| Glql | — |
+| Internal Operations | Post Api V 4 Integrations Slack Interactions, Post Api V 4 Integrations Slack Options |
+| Markdown | — |
+| Namespaces | — |
+| Offline Transfers | — |
+| Organizations | — |
+| Unleash | — |
+| Usage Data | Get Api V 4 Usage Data Service Ping, Get Api V 4 Usage Data Non Sql Metrics, Get Api V 4 Usage Data Queries |
+| Metrics | — |
+| Users | Get Api V 4 User Counts |
+| Instance | Get Api V 4 Application Appearance, Get Api V 4 Application Statistics |
+| Project Topics | — |
+| Web Commits | Get Api V 4 Web Commits Public Key |
+| Access Requests | — |
+| Ci Lint | — |
+| Ci Resource Groups | — |
+| Ci Variables | — |
+| Cluster Agents | — |
+| Clusters | Get Api V 4 Admin Clusters |
+| Composer Packages | — |
+| Conan Packages | — |
+| Container Registry | Post Api V 4 Container Registry Event Events |
+| Container Registry Event | — |
+| Debian Distribution | — |
+| Debian Packages | — |
+| Dependency Proxy | — |
+| Deploy Keys | — |
+| Deploy Tokens | — |
+| Deployments | — |
+| Dora Metrics | — |
+| Environments | — |
+| Error Tracking Client Keys | — |
+| Error Tracking Project Settings | — |
+| Feature Flags User Lists | — |
+| Feature Flags | — |
+| Features | Get Api V 4 Features, Get Api V 4 Features Definitions |
+| Freeze Periods | — |
+| Generic Packages | — |
+| Geo | Get Api V 4 Geo Proxy |
+| Geo Nodes | — |
+| Go Proxy | — |
+| Group Export | — |
+| Group Import | — |
+| Group Packages | — |
+| Helm Packages | — |
+| Integrations | Post Api V 4 Integrations Slack Interactions, Post Api V 4 Integrations Slack Options |
+| Issue Links | — |
+| Jira Connect Subscriptions | — |
+| Maven Packages | — |
+| Merge Requests | — |
+| Metadata | Get Api V 4 Metadata, Get Api V 4 Version |
+| Ml Model Registry | — |
+| Npm Packages | — |
+| Nuget Packages | — |
+| Package Files | — |
+| Plan Limits | — |
+| Project Export | — |
+| Project Hooks | — |
+| Project Import | Post Api V 4 Projects Import Authorize, Post Api V 4 Projects Import Relation Authorize |
+| Project Import Bitbucket | — |
+| Project Import Github | — |
+| Project Packages | — |
+| Projects | — |
+| Protected Environments | — |
+| Pypi Packages | — |
+| Release Links | — |
+| Releases | — |
+| Resource Milestone Events | — |
+| Rpm Packages | — |
+| Rubygem Packages | — |
+| Suggestions | — |
+| System Hooks | — |
+| Terraform State | — |
+| Terraform Registry | — |
+| Unleash Api | — |
 
 ---
 
@@ -47,184 +176,14 @@ npm install @n8n-dev/n8n-nodes-gitlab
 3. Drag the **gitlab** node into your workflow
 4. Pick a resource → pick an operation → done.
 
-That's it. No configuration files. No code. It just works.
-
----
-
-## Resources
-
-| Resource | Operations |
-|----------|------------|
-| Award Emoji | Create, Get, List, Update, Delete |
-| Badges | Create, Get, List, Update, Delete |
-| Custom Attributes | Create, Get, List, Update, Delete |
-| Groups | Create, Get, List, Update, Delete |
-| Ldap | Create, Get, List, Update, Delete |
-| Audit Events | Create, Get, List, Update, Delete |
-| Keys | Create, Get, List, Update, Delete |
-| Runners | Create, Get, List, Update, Delete |
-| Packages | Create, Get, List, Update, Delete |
-| Deploy Resources | Create, Get, List, Update, Delete |
-| Avatars | Create, Get, List, Update, Delete |
-| Group Import And Export | Create, Get, List, Update, Delete |
-| Invitations | Create, Get, List, Update, Delete |
-| Members | Create, Get, List, Update, Delete |
-| Access Tokens | Create, Get, List, Update, Delete |
-| Search | Create, Get, List, Update, Delete |
-| Wikis | Create, Get, List, Update, Delete |
-| Alert Management | Create, Get, List, Update, Delete |
-| Branches | Create, Get, List, Update, Delete |
-| Ci Catalog | Create, Get, List, Update, Delete |
-| Job Artifacts | Create, Get, List, Update, Delete |
-| Ci Jobs | Create, Get, List, Update, Delete |
-| Secure Files | Create, Get, List, Update, Delete |
-| Pipelines | Create, Get, List, Update, Delete |
-| Pipeline Schedules | Create, Get, List, Update, Delete |
-| Ci Triggers | Create, Get, List, Update, Delete |
-| Commits | Create, Get, List, Update, Delete |
-| Commit Statuses | Create, Get, List, Update, Delete |
-| Draft Notes | Create, Get, List, Update, Delete |
-| Error Tracking | Create, Get, List, Update, Delete |
-| Files | Create, Get, List, Update, Delete |
-| Issues | Create, Get, List, Update, Delete |
-| Metric Images | Create, Get, List, Update, Delete |
-| Merge Request Approvals | Create, Get, List, Update, Delete |
-| Gitlab Pages | Create, Get, List, Update, Delete |
-| Events | Create, Get, List, Update, Delete |
-| Hooks | Create, Get, List, Update, Delete |
-| Projects Job Token Scope | Create, Get, List, Update, Delete |
-| Project Snapshots | Create, Get, List, Update, Delete |
-| Snippets | Create, Get, List, Update, Delete |
-| Project Templates | Create, Get, List, Update, Delete |
-| Protected Branches | Create, Get, List, Update, Delete |
-| Protected Tags | Create, Get, List, Update, Delete |
-| Remote Mirrors | Create, Get, List, Update, Delete |
-| Repositories | Create, Get, List, Update, Delete |
-| Resource Events | Create, Get, List, Update, Delete |
-| Submodules | Create, Get, List, Update, Delete |
-| Attestations | Create, Get, List, Update, Delete |
-| Tags | Create, Get, List, Update, Delete |
-| Terraform | Create, Get, List, Update, Delete |
-| Batched Background Migrations | Create, Get, List, Update, Delete |
-| Batched Background Operations | Create, Get, List, Update, Delete |
-| Database Dictionary | Create, Get, List, Update, Delete |
-| Migrations | Create, Get, List, Update, Delete |
-| Broadcast Messages | Create, Get, List, Update, Delete |
-| Applications | Create, Get, List, Update, Delete |
-| Imports | Create, Get, List, Update, Delete |
-| Agents | Create, Get, List, Update, Delete |
-| Ci Runners | Create, Get, List, Update, Delete |
-| Jobs | Create, Get, List, Update, Delete |
-| Glql | Create, Get, List, Update, Delete |
-| Internal Operations | Create, Get, List, Update, Delete |
-| Markdown | Create, Get, List, Update, Delete |
-| Namespaces | Create, Get, List, Update, Delete |
-| Offline Transfers | Create, Get, List, Update, Delete |
-| Organizations | Create, Get, List, Update, Delete |
-| Unleash | Create, Get, List, Update, Delete |
-| Usage Data | Create, Get, List, Update, Delete |
-| Metrics | Create, Get, List, Update, Delete |
-| Users | Create, Get, List, Update, Delete |
-| Instance | Create, Get, List, Update, Delete |
-| Project Topics | Create, Get, List, Update, Delete |
-| Web Commits | Create, Get, List, Update, Delete |
-| Access Requests | Create, Get, List, Update, Delete |
-| Ci Lint | Create, Get, List, Update, Delete |
-| Ci Resource Groups | Create, Get, List, Update, Delete |
-| Ci Variables | Create, Get, List, Update, Delete |
-| Cluster Agents | Create, Get, List, Update, Delete |
-| Clusters | Create, Get, List, Update, Delete |
-| Composer Packages | Create, Get, List, Update, Delete |
-| Conan Packages | Create, Get, List, Update, Delete |
-| Container Registry | Create, Get, List, Update, Delete |
-| Container Registry Event | Create, Get, List, Update, Delete |
-| Debian Distribution | Create, Get, List, Update, Delete |
-| Debian Packages | Create, Get, List, Update, Delete |
-| Dependency Proxy | Create, Get, List, Update, Delete |
-| Deploy Keys | Create, Get, List, Update, Delete |
-| Deploy Tokens | Create, Get, List, Update, Delete |
-| Deployments | Create, Get, List, Update, Delete |
-| Dora Metrics | Create, Get, List, Update, Delete |
-| Environments | Create, Get, List, Update, Delete |
-| Error Tracking Client Keys | Create, Get, List, Update, Delete |
-| Error Tracking Project Settings | Create, Get, List, Update, Delete |
-| Feature Flags User Lists | Create, Get, List, Update, Delete |
-| Feature Flags | Create, Get, List, Update, Delete |
-| Features | Create, Get, List, Update, Delete |
-| Freeze Periods | Create, Get, List, Update, Delete |
-| Generic Packages | Create, Get, List, Update, Delete |
-| Geo | Create, Get, List, Update, Delete |
-| Geo Nodes | Create, Get, List, Update, Delete |
-| Go Proxy | Create, Get, List, Update, Delete |
-| Group Export | Create, Get, List, Update, Delete |
-| Group Import | Create, Get, List, Update, Delete |
-| Group Packages | Create, Get, List, Update, Delete |
-| Helm Packages | Create, Get, List, Update, Delete |
-| Integrations | Create, Get, List, Update, Delete |
-| Issue Links | Create, Get, List, Update, Delete |
-| Jira Connect Subscriptions | Create, Get, List, Update, Delete |
-| Maven Packages | Create, Get, List, Update, Delete |
-| Merge Requests | Create, Get, List, Update, Delete |
-| Metadata | Create, Get, List, Update, Delete |
-| Ml Model Registry | Create, Get, List, Update, Delete |
-| Npm Packages | Create, Get, List, Update, Delete |
-| Nuget Packages | Create, Get, List, Update, Delete |
-| Package Files | Create, Get, List, Update, Delete |
-| Plan Limits | Create, Get, List, Update, Delete |
-| Project Export | Create, Get, List, Update, Delete |
-| Project Hooks | Create, Get, List, Update, Delete |
-| Project Import | Create, Get, List, Update, Delete |
-| Project Import Bitbucket | Create, Get, List, Update, Delete |
-| Project Import Github | Create, Get, List, Update, Delete |
-| Project Packages | Create, Get, List, Update, Delete |
-| Projects | Create, Get, List, Update, Delete |
-| Protected Environments | Create, Get, List, Update, Delete |
-| Pypi Packages | Create, Get, List, Update, Delete |
-| Release Links | Create, Get, List, Update, Delete |
-| Releases | Create, Get, List, Update, Delete |
-| Resource Milestone Events | Create, Get, List, Update, Delete |
-| Rpm Packages | Create, Get, List, Update, Delete |
-| Rubygem Packages | Create, Get, List, Update, Delete |
-| Suggestions | Create, Get, List, Update, Delete |
-| System Hooks | Create, Get, List, Update, Delete |
-| Terraform State | Create, Get, List, Update, Delete |
-| Terraform Registry | Create, Get, List, Update, Delete |
-| Unleash Api | Create, Get, List, Update, Delete |
-
----
-
-## Why This Node?
-
-**Without this node:**
-- Hours of manual API integration
-- Copy-pasting from gitlab docs
-- Debugging auth, pagination, error handling
-- Maintaining your own client code
-
-**With this node:**
-- Install → configure → use. 5 minutes.
-- Auto-generated from the official gitlab OpenAPI spec
-- Always up to date when the API changes
-- Native n8n performance
-
 ---
 
 ## Auto-Generated
 
 This node was auto-generated from the official **gitlab** OpenAPI specification using
-[@kelvinzer0/n8n-openapi-node-ultimate](https://github.com/kelvinzer0/n8n-openapi-node-ultimate).
+[@n8n-dev/n8n-openapi-node-ultimate](https://github.com/kelvinzer0/n8n-openapi-node-ultimate).
 
 When the gitlab API updates, this node updates too.
-
----
-
-## Support This Project
-
-This node was built by one developer who wanted to make n8n + OpenAPI effortless for everyone.
-
-Your donation funds new features, more API support, and better tooling for every developer after you.
-
-[![Keep It Moving.](https://crypto-donate.insidexofficial.workers.dev/eyJ0aXRsZSI6IktlZXAgSXQgTW92aW5nIiwiZGVzYyI6Ik9uZSBkZXZlbG9wZXIgYnVpbHQgYSB0b29sIHRoYXQgYXV0by1nZW5lcmF0ZXNcbm44biBub2RlcyBmcm9tIGFueSBPcGVuQVBJIHNwZWMuXG5cbllvdXIgZG9uYXRpb24gZnVuZHMgbmV3IGZlYXR1cmVzLCBtb3JlIEFQSSBzdXBwb3J0LFxuYW5kIGJldHRlciB0b29saW5nIGZvciBldmVyeSBkZXZlbG9wZXIgYWZ0ZXIgeW91LiIsInRhcmdldCI6NTAwMCwiYWRkcmVzc2VzIjp7ImV0aGVyZXVtIjoiMHhmMDU1NWQ0MGRiRkI0ZTNCZjA3MDQ0MjgyQjc4RjJmRTFmNTFFZjcyIiwic29sYW5hIjoiNlpEVk5BYmpZZExEcXo4cGt3VUNHYllaNVV3QlFranB0QzU1Wk5vTFcybVUifSwiZGlzY29yZCI6Imh0dHBzOi8vZGlzY29yZC5nZy9wdERaOGU0aDkzIn0/badge)](https://n8n-code.github.io/membership/#/eyJ0aXRsZSI6IktlZXAgSXQgTW92aW5nIiwiZGVzYyI6Ik9uZSBkZXZlbG9wZXIgYnVpbHQgYSB0b29sIHRoYXQgYXV0by1nZW5lcmF0ZXNcbm44biBub2RlcyBmcm9tIGFueSBPcGVuQVBJIHNwZWMuXG5cbllvdXIgZG9uYXRpb24gZnVuZHMgbmV3IGZlYXR1cmVzLCBtb3JlIEFQSSBzdXBwb3J0LFxuYW5kIGJldHRlciB0b29saW5nIGZvciBldmVyeSBkZXZlbG9wZXIgYWZ0ZXIgeW91LiIsInRhcmdldCI6NTAwMCwiYWRkcmVzc2VzIjp7ImV0aGVyZXVtIjoiMHhmMDU1NWQ0MGRiRkI0ZTNCZjA3MDQ0MjgyQjc4RjJmRTFmNTFFZjcyIiwic29sYW5hIjoiNlpEVk5BYmpZZExEcXo4cGt3VUNHYllaNVV3QlFranB0QzU1Wk5vTFcybVUifSwiZGlzY29yZCI6Imh0dHBzOi8vZGlzY29yZC5nZy9wdERaOGU0aDkzIn0)
 
 ---
 
