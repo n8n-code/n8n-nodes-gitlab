@@ -1,9 +1,9 @@
 {
   "name": "@n8n-dev/n8n-nodes-gitlab",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "GitLab DevOps platform",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://n8n-code.github.io/n8n-dev/#/gitlab",
   "keywords": [
     "n8n",
     "n8n-community-node",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kelvinzer0/n8n-nodes-gitlab.git"
+    "url": "https://github.com/n8n-code/n8n-nodes-gitlab.git"
   },
   "scripts": {
     "build": "n8n-node build",

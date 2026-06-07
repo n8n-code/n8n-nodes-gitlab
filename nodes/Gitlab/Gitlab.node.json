@@ -8,12 +8,12 @@
   "resources": {
     "primaryDocumentation": [
       {
-        "url": "https://github.com/kelvinzer0/n8n-nodes-gitlab"
+        "url": "https://github.com/n8n-code/n8n-nodes-gitlab"
       }
     ],
     "credentialDocumentation": [
       {
-        "url": "https://github.com/kelvinzer0/n8n-nodes-gitlab?tab=readme-ov-file#credentials"
+        "url": "https://github.com/n8n-code/n8n-nodes-gitlab?tab=readme-ov-file#credentials"
       }
     ]
   }
