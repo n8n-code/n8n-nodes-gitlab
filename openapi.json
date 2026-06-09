@@ -3583,7 +3583,7 @@
     "/api/v4/groups/{id}/ssh_certificates": {
       "get": {
         "summary": "Get a list of Groups::SshCertificate for a Group.",
-        "description": "Get a list of ssh certificates created for a group.",
+        "description": "Lists all SSH certificates for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -3618,7 +3618,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of ssh certificates created for a group.",
+            "description": "List all group SSH certificates",
             "schema": {
               "type": "array",
               "items": {
@@ -3643,7 +3643,7 @@
       },
       "post": {
         "summary": "Add a Groups::SshCertificate.",
-        "description": "Create a ssh certificate for a group.",
+        "description": "Adds a group SSH certificate for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -3669,7 +3669,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Create a ssh certificate for a group.",
+            "description": "Add a group SSH certificate",
             "schema": {
               "$ref": "#/definitions/API_Entities_SshCertificate"
             }
@@ -3695,8 +3695,8 @@
     },
     "/api/v4/groups/{id}/ssh_certificates/{ssh_certificates_id}": {
       "delete": {
-        "summary": "Removes an ssh certificate from a group.",
-        "description": "Removes a Groups::SshCertificate",
+        "summary": "Delete a group SSH certificate",
+        "description": "Deletes a specified group SSH certificate.",
         "produces": [
           "application/json"
         ],
@@ -3718,7 +3718,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Removes an ssh certificate from a group."
+            "description": "Delete a group SSH certificate"
           },
           "400": {
             "description": "Bad request"
@@ -26290,8 +26290,8 @@
     },
     "/api/v4/projects/{id}/deployments/{deployment_id}/approval": {
       "post": {
-        "summary": "Approve or reject a blocked deployment",
-        "description": "This feature was introduced in GitLab 14.8.",
+        "summary": "Approve or reject a deployment",
+        "description": "Approves or rejects a deployment.",
         "produces": [
           "application/json"
         ],
@@ -26325,7 +26325,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Approve or reject a blocked deployment",
+            "description": "Approve or reject a deployment",
             "schema": {
               "$ref": "#/definitions/API_Entities_Deployments_Approval"
             }
@@ -39958,7 +39958,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/approvals": {
       "get": {
-        "description": "List approvals for merge request",
+        "summary": "Retrieve approval state for a merge request",
+        "description": "Retrieves the approval state for a specified merge request. In the response, `approved_by` contains information about all approvers of the merge request, regardless of whether those approvals satisfy any approval rule.",
         "produces": [
           "application/json"
         ],
@@ -39980,7 +39981,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List approvals for merge request",
+            "description": "Retrieve approval state for a merge request",
             "schema": {
               "$ref": "#/definitions/API_Entities_MergeRequestApprovals"
             }
@@ -40045,7 +40046,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/approve": {
       "post": {
-        "description": "Approve a merge request",
+        "summary": "Approve merge request",
+        "description": "Approves a specified merge request. The currently authenticated user must be an eligible approver. The `sha` parameter ensures you are approving the current version of the merge request. If defined, the value must match the merge request’s HEAD commit SHA. A mismatch returns a `409 Conflict` response.",
         "produces": [
           "application/json"
         ],
@@ -40078,7 +40080,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Approve a merge request",
+            "description": "Approve merge request",
             "schema": {
               "$ref": "#/definitions/API_Entities_MergeRequestApprovals"
             }
@@ -40098,7 +40100,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/unapprove": {
       "post": {
-        "description": "Remove an approval from a merge request",
+        "summary": "Unapprove a merge request",
+        "description": "Unapproves a merge request. Removes the approval for the currently authenticated user from a specified merge request.",
         "produces": [
           "application/json"
         ],
@@ -40123,7 +40126,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Remove an approval from a merge request",
+            "description": "Unapprove a merge request",
             "schema": {
               "$ref": "#/definitions/API_Entities_MergeRequestApprovals"
             }
@@ -40143,8 +40146,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/reset_approvals": {
       "put": {
-        "summary": "Remove all merge request approvals",
-        "description": "Clear all approvals of merge request. This feature was added in GitLab 15.4",
+        "summary": "Reset approvals for a merge request",
+        "description": "Resets all approvals for a specified merge request. Available only to bot users with a valid project or group token. Human users receive a `401 Unauthorized` response.",
         "produces": [
           "application/json"
         ],
@@ -40169,7 +40172,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Remove all merge request approvals"
+            "description": "Reset approvals for a merge request"
           },
           "401": {
             "description": "Unauthorized"
@@ -40186,7 +40189,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/approval_state": {
       "get": {
-        "description": "Get approval state of merge request",
+        "summary": "Retrieve approval details for a merge request",
+        "description": "Retrieves approval details for a specified merge request. If a user has modified the approval rules for the merge request, the response includes `approval_rules_overwritten`.",
         "produces": [
           "application/json"
         ],
@@ -40209,7 +40213,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get approval state of merge request",
+            "description": "Retrieve approval details for a merge request",
             "schema": {
               "$ref": "#/definitions/API_Entities_MergeRequestApprovalState"
             }
@@ -40223,8 +40227,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/versions": {
       "get": {
-        "summary": "Get a list of merge request diff versions",
-        "description": "This feature was introduced in GitLab 8.12.",
+        "summary": "Retrieve merge request diff versions",
+        "description": "Retrieves merge request diff versions.",
         "produces": [
           "application/json"
         ],
@@ -40267,7 +40271,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of merge request diff versions",
+            "description": "Retrieve merge request diff versions",
             "schema": {
               "type": "array",
               "items": {
@@ -40284,8 +40288,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/versions/{version_id}": {
       "get": {
-        "summary": "Get a single merge request diff version",
-        "description": "This feature was introduced in GitLab 8.12.",
+        "summary": "Retrieve a merge request diff version",
+        "description": "Retrieves a merge request diff version.",
         "produces": [
           "application/json"
         ],
@@ -40324,7 +40328,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a single merge request diff version",
+            "description": "Retrieve a merge request diff version",
             "schema": {
               "$ref": "#/definitions/API_Entities_MergeRequestDiffFull"
             }
@@ -52819,8 +52823,8 @@
     },
     "/api/v4/projects/{id}/releases/{tag_name}/evidence": {
       "post": {
-        "summary": "Collect release evidence",
-        "description": "Creates an evidence for an existing Release. This feature was introduced in GitLab 12.10.",
+        "summary": "Generate release evidence",
+        "description": "Generates an evidence for an existing release.",
         "produces": [
           "application/json"
         ],
@@ -52845,7 +52849,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Collect release evidence",
+            "description": "Generate release evidence",
             "schema": {
               "$ref": "#/definitions/API_Entities_Release"
             }
@@ -57327,6 +57331,15 @@
             "schema": {
               "$ref": "#/definitions/API_Entities_ApplicationWithSecret"
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "tags": [
@@ -57349,6 +57362,12 @@
                 "$ref": "#/definitions/API_Entities_Application"
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "tags": [
@@ -57377,6 +57396,15 @@
         "responses": {
           "204": {
             "description": "Delete an application"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
           }
         },
         "tags": [
@@ -57411,6 +57439,15 @@
             "schema": {
               "$ref": "#/definitions/API_Entities_ApplicationWithSecret"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
           }
         },
         "tags": [
@@ -62557,6 +62594,12 @@
                 "$ref": "#/definitions/API_Entities_Feature"
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "tags": [
@@ -62581,6 +62624,12 @@
                 "$ref": "#/definitions/API_Entities_Feature_Definition"
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "tags": [
@@ -62981,8 +63030,8 @@
     },
     "/api/v4/glql": {
       "post": {
-        "summary": "Execute GLQL query",
-        "description": "Execute a GLQL (GitLab Query Language) query",
+        "summary": "Execute a GLQL query",
+        "description": "Executes a GLQL query to search and filter GitLab resources.",
         "produces": [
           "application/json"
         ],
@@ -63001,7 +63050,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Execute GLQL query",
+            "description": "Execute a GLQL query",
             "schema": {
               "$ref": "#/definitions/API_Entities_Glql_Result"
             }
@@ -63682,8 +63731,8 @@
     },
     "/api/v4/markdown": {
       "post": {
-        "summary": "Render an arbitrary Markdown document",
-        "description": "This feature was introduced in GitLab 11.0.",
+        "summary": "Render Markdown content",
+        "description": "Renders Markdown content as HTML.",
         "produces": [
           "application/json"
         ],
@@ -63702,7 +63751,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Render an arbitrary Markdown document",
+            "description": "Render Markdown content",
             "schema": {
               "$ref": "#/definitions/API_Entities_Markdown"
             }
@@ -65807,7 +65856,8 @@
     },
     "/api/v4/suggestions/{id}/apply": {
       "put": {
-        "description": "Apply suggestion patch in the Merge Request it was created",
+        "summary": "Apply a suggestion to a merge request",
+        "description": "Applies a suggested patch in a merge request. You must have the Developer, Maintainer, or Owner role.",
         "produces": [
           "application/json"
         ],
@@ -65834,7 +65884,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Apply suggestion patch in the Merge Request it was created",
+            "description": "Apply a suggestion to a merge request",
             "schema": {
               "$ref": "#/definitions/API_Entities_Suggestion"
             }
@@ -65848,7 +65898,8 @@
     },
     "/api/v4/suggestions/batch_apply": {
       "put": {
-        "description": "Apply multiple suggestion patches in the Merge Request where they were created",
+        "summary": "Apply multiple suggestions to a merge request",
+        "description": "Applies multiple suggested patches in a merge request. You must have the Developer, Maintainer, or Owner role.",
         "produces": [
           "application/json"
         ],
@@ -65867,7 +65918,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Apply multiple suggestion patches in the Merge Request where they were created",
+            "description": "Apply multiple suggestions to a merge request",
             "schema": {
               "$ref": "#/definitions/API_Entities_Suggestion"
             }
@@ -66740,6 +66791,9 @@
             "schema": {
               "$ref": "#/definitions/API_Entities_UserCounts"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "tags": [
@@ -66892,6 +66946,12 @@
             "schema": {
               "$ref": "#/definitions/API_Entities_Appearance"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "tags": [
@@ -67041,6 +67101,15 @@
             "schema": {
               "$ref": "#/definitions/API_Entities_Appearance"
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "tags": [
@@ -67062,6 +67131,12 @@
             "schema": {
               "$ref": "#/definitions/API_Entities_ApplicationStatistics"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         },
         "tags": [
@@ -69448,11 +69523,12 @@
         },
         "duo_availability": {
           "type": "string",
-          "description": "Duo availability. One of `default_on`, `default_off` or `never_on`",
+          "description": "Duo availability. One of `default_on`, `default_off`, `never_on` or `always_on`",
           "enum": [
             "default_on",
             "default_off",
-            "never_on"
+            "never_on",
+            "always_on"
           ]
         },
         "duo_remote_flows_availability": {
@@ -69835,11 +69911,12 @@
         },
         "duo_availability": {
           "type": "string",
-          "description": "Duo availability. One of `default_on`, `default_off` or `never_on`",
+          "description": "Duo availability. One of `default_on`, `default_off`, `never_on` or `always_on`",
           "enum": [
             "default_on",
             "default_off",
-            "never_on"
+            "never_on",
+            "always_on"
           ]
         },
         "duo_remote_flows_availability": {
@@ -71886,7 +71963,7 @@
         "title",
         "key"
       ],
-      "description": "Create a ssh certificate for a group."
+      "description": "Add a group SSH certificate"
     },
     "API_Entities_Ci_Runner": {
       "type": "object",
@@ -78793,8 +78870,7 @@
             "repository_xray",
             "jacoco",
             "scip",
-            "sarif",
-            "environment_key"
+            "sarif"
           ],
           "example": "archive"
         },
@@ -82068,7 +82144,7 @@
       "required": [
         "status"
       ],
-      "description": "Approve or reject a blocked deployment"
+      "description": "Approve or reject a deployment"
     },
     "API_Entities_DraftNote": {
       "type": "object",
@@ -90579,7 +90655,7 @@
           "example": "secret"
         }
       },
-      "description": "Approve a merge request"
+      "description": "Approve merge request"
     },
     "API_Entities_MergeRequestApprovalState": {
       "type": "object",
@@ -100241,8 +100317,7 @@
             "repository_xray",
             "jacoco",
             "scip",
-            "sarif",
-            "environment_key"
+            "sarif"
           ],
           "default": "archive"
         }
@@ -100301,8 +100376,7 @@
             "repository_xray",
             "jacoco",
             "scip",
-            "sarif",
-            "environment_key"
+            "sarif"
           ],
           "default": "archive"
         },
@@ -103585,7 +103659,7 @@
       "required": [
         "glql_yaml"
       ],
-      "description": "Execute GLQL query"
+      "description": "Execute a GLQL query"
     },
     "API_Entities_Glql_Result": {
       "type": "object",
@@ -104103,7 +104177,7 @@
       "required": [
         "text"
       ],
-      "description": "Render an arbitrary Markdown document"
+      "description": "Render Markdown content"
     },
     "API_Entities_Markdown": {
       "type": "object",
@@ -105393,7 +105467,7 @@
           "description": "A custom commit message to use instead of the default generated message or the project's default message"
         }
       },
-      "description": "Apply suggestion patch in the Merge Request it was created"
+      "description": "Apply a suggestion to a merge request"
     },
     "putApiV4SuggestionsBatchApply": {
       "type": "object",
@@ -105414,7 +105488,7 @@
       "required": [
         "ids"
       ],
-      "description": "Apply multiple suggestion patches in the Merge Request where they were created"
+      "description": "Apply multiple suggestions to a merge request"
     },
     "putApiV4HooksHookIdUrlVariablesKey": {
       "type": "object",
