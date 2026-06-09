@@ -15,9 +15,9 @@ export const instanceDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Application Appearance",
-					"value": "Get Api V 4 Application Appearance",
-					"action": "Get Api V 4 Application Appearance",
+					"name": "Get API v4 Application Appearance",
+					"value": "Get API v4 Application Appearance",
+					"action": "Get API v4 Application Appearance",
 					"description": "Get the current appearance",
 					"routing": {
 						"request": {
@@ -27,8 +27,8 @@ export const instanceDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Get Api V 4 Application Statistics",
-					"value": "Get Api V 4 Application Statistics",
+					"name": "Get API v4 Application Statistics",
+					"value": "Get API v4 Application Statistics",
 					"action": "Retrieve application statistics",
 					"description": "Retrieves the current application statistics for this GitLab instance.",
 					"routing": {
@@ -55,7 +55,7 @@ export const instanceDescription: INodeProperties[] = [
 						"Instance"
 					],
 					"operation": [
-						"Get Api V 4 Application Appearance"
+						"Get API v4 Application Appearance"
 					]
 				}
 			}
@@ -74,7 +74,7 @@ export const instanceDescription: INodeProperties[] = [
 						"Instance"
 					],
 					"operation": [
-						"Get Api V 4 Application Statistics"
+						"Get API v4 Application Statistics"
 					]
 				}
 			}

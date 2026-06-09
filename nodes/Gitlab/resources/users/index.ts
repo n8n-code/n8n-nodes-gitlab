@@ -15,8 +15,8 @@ export const usersDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 User Counts",
-					"value": "Get Api V 4 User Counts",
+					"name": "Get API v4 User Counts",
+					"value": "Get API v4 User Counts",
 					"action": "Return the user specific counts",
 					"description": "Assigned open issues, assigned MRs and pending todos count",
 					"routing": {
@@ -43,7 +43,7 @@ export const usersDescription: INodeProperties[] = [
 						"Users"
 					],
 					"operation": [
-						"Get Api V 4 User Counts"
+						"Get API v4 User Counts"
 					]
 				}
 			}

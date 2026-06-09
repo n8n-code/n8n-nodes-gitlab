@@ -15,8 +15,8 @@ export const webCommitsDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Web Commits Public Key",
-					"value": "Get Api V 4 Web Commits Public Key",
+					"name": "Get API v4 Web Commits Public Key",
+					"value": "Get API v4 Web Commits Public Key",
 					"action": "Get the public key for web commits",
 					"description": "This feature was introduced in GitLab 17.4.",
 					"routing": {
@@ -43,7 +43,7 @@ export const webCommitsDescription: INodeProperties[] = [
 						"Web Commits"
 					],
 					"operation": [
-						"Get Api V 4 Web Commits Public Key"
+						"Get API v4 Web Commits Public Key"
 					]
 				}
 			}

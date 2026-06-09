@@ -10328,7 +10328,8 @@
         "operationId": "postApiV4GroupsIdUploads"
       },
       "get": {
-        "description": "Get the list of uploads of a group",
+        "summary": "List all uploads for a group",
+        "description": "Lists all uploads for a specified group sorted by `created_at` in descending order. You must have the Maintainer or Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -10363,7 +10364,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get the list of uploads of a group",
+            "description": "List all uploads for a group",
             "schema": {
               "type": "array",
               "items": {
@@ -10386,7 +10387,8 @@
     },
     "/api/v4/groups/{id}/uploads/{upload_id}": {
       "get": {
-        "description": "Download a single group upload by ID",
+        "summary": "Download an uploaded file by ID",
+        "description": "Downloads an uploaded file with a specified ID. You must have the Maintainer or Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -10409,7 +10411,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download a single group upload by ID",
+            "description": "Download an uploaded file by ID",
             "schema": {
               "type": "file"
             }
@@ -10427,7 +10429,8 @@
         "operationId": "getApiV4GroupsIdUploadsUploadId"
       },
       "delete": {
-        "description": "Delete a single group upload",
+        "summary": "Delete an uploaded file by ID",
+        "description": "Deletes an uploaded file with a specified ID. You must have the Maintainer or Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -10450,7 +10453,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete a single group upload"
+            "description": "Delete an uploaded file by ID"
           },
           "400": {
             "description": "Bad request"
@@ -10470,7 +10473,8 @@
     },
     "/api/v4/groups/{id}/uploads/{secret}/{filename}": {
       "get": {
-        "description": "Download a single group upload by secret and filename",
+        "summary": "Download an uploaded file by secret and filename",
+        "description": "Downloads an uploaded file with a specified secret and filename. You must have the Guest, Planner, Reporter, Developer, Maintainer, or Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -10499,7 +10503,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download a single group upload by secret and filename",
+            "description": "Download an uploaded file by secret and filename",
             "schema": {
               "type": "file"
             }
@@ -10517,7 +10521,8 @@
         "operationId": "getApiV4GroupsIdUploadsSecretFilename"
       },
       "delete": {
-        "description": "Delete a single group upload by secret and filename",
+        "summary": "Delete an uploaded file by secret and filename",
+        "description": "Deletes an uploaded file with a specified secret and filename. You must have the Maintainer or Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -10546,7 +10551,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete a single group upload by secret and filename"
+            "description": "Delete an uploaded file by secret and filename"
           },
           "400": {
             "description": "Bad request"
@@ -10621,7 +10626,8 @@
     },
     "/api/v4/groups/{id}/members": {
       "get": {
-        "description": "Gets a list of group or project members viewable by the authenticated user,\n          excluding those with inherited membership from ancestor groups.",
+        "summary": "List all direct members of a group",
+        "description": "Lists all direct members of a specified group viewable by the authenticated user. Does not return inherited members from ancestor groups or invited groups.",
         "produces": [
           "application/json"
         ],
@@ -10699,7 +10705,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Gets a list of group or project members viewable by the authenticated user,\n          excluding those with inherited membership from ancestor groups.",
+            "description": "List all direct members of a group",
             "schema": {
               "type": "array",
               "items": {
@@ -10754,7 +10760,8 @@
     },
     "/api/v4/groups/{id}/members/all": {
       "get": {
-        "description": "Gets a list of group or project members viewable by the authenticated user,\n          including those with inherited membership from ancestor groups.",
+        "summary": "List all members of a group",
+        "description": "Lists all members of a specified group viewable by the authenticated user. Also returns inherited members from ancestor groups or invited groups. If a user is a member of this group and one or more ancestor groups, only returns the highest `access_level`. Members from an invited group are returned if the invited group is public, the requester is a member of an invited group, or the requester is a member of the shared group or project.",
         "produces": [
           "application/json"
         ],
@@ -10825,7 +10832,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Gets a list of group or project members viewable by the authenticated user,\n          including those with inherited membership from ancestor groups.",
+            "description": "List all members of a group",
             "schema": {
               "type": "array",
               "items": {
@@ -12967,7 +12974,8 @@
     },
     "/api/v4/groups/{id}/wikis": {
       "get": {
-        "description": "Get a list of wiki pages",
+        "summary": "List all wiki pages for a group",
+        "description": "Lists all wiki pages for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -12990,7 +12998,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of wiki pages",
+            "description": "List all wiki pages for a group",
             "schema": {
               "type": "array",
               "items": {
@@ -13008,7 +13016,8 @@
         "operationId": "getApiV4GroupsIdWikis"
       },
       "post": {
-        "description": "Create a wiki page",
+        "summary": "Create a wiki page for a group",
+        "description": "Creates a wiki page for a specified group. Requests can define the title, slug, and content.",
         "produces": [
           "application/json"
         ],
@@ -13034,7 +13043,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Create a wiki page",
+            "description": "Create a wiki page for a group",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiPage"
             }
@@ -13057,7 +13066,8 @@
     },
     "/api/v4/groups/{id}/wikis/{slug}": {
       "get": {
-        "description": "Get a wiki page",
+        "summary": "Retrieve a wiki page for a group",
+        "description": "Retrieves a specified wiki page for a group.",
         "produces": [
           "application/json"
         ],
@@ -13094,7 +13104,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a wiki page",
+            "description": "Retrieve a wiki page for a group",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiPage"
             }
@@ -13109,7 +13119,8 @@
         "operationId": "getApiV4GroupsIdWikisSlug"
       },
       "put": {
-        "description": "Update a wiki page",
+        "summary": "Update a wiki page for a group",
+        "description": "Updates a specified wiki page for a group.",
         "produces": [
           "application/json"
         ],
@@ -13142,7 +13153,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update a wiki page",
+            "description": "Update a wiki page for a group",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiPage"
             }
@@ -13163,7 +13174,8 @@
         "operationId": "putApiV4GroupsIdWikisSlug"
       },
       "delete": {
-        "description": "Delete a wiki page",
+        "summary": "Delete a wiki page for a group",
+        "description": "Deletes a specified wiki page for a group.",
         "produces": [
           "application/json"
         ],
@@ -13185,7 +13197,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete a wiki page"
+            "description": "Delete a wiki page for a group"
           },
           "400": {
             "description": "Validation error"
@@ -13202,8 +13214,8 @@
     },
     "/api/v4/groups/{id}/wikis/attachments": {
       "post": {
-        "summary": "Upload an attachment to the wiki repository",
-        "description": "This feature was introduced in GitLab 11.3.",
+        "summary": "Upload an attachment to a group wiki",
+        "description": "Uploads a file to the `uploads` directory in a specified group wiki.",
         "produces": [
           "application/json"
         ],
@@ -13229,7 +13241,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Upload an attachment to the wiki repository",
+            "description": "Upload an attachment to a group wiki",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiAttachment"
             }
@@ -13453,7 +13465,8 @@
     },
     "/api/v4/projects/{id}/alert_management_alerts/{alert_iid}/metric_images": {
       "post": {
-        "description": "Upload a metric image for an alert",
+        "summary": "Upload a metric image",
+        "description": "Uploads a metric image for a specified alert.",
         "produces": [
           "application/json"
         ],
@@ -13504,7 +13517,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Upload a metric image for an alert",
+            "description": "Upload a metric image",
             "schema": {
               "$ref": "#/definitions/API_Entities_MetricImage"
             }
@@ -13519,7 +13532,8 @@
         "operationId": "postApiV4ProjectsIdAlertManagementAlertsAlertIidMetricImages"
       },
       "get": {
-        "description": "Metric Images for alert",
+        "summary": "List all metric images",
+        "description": "Lists all metric images for a specified alert.",
         "produces": [
           "application/json"
         ],
@@ -13544,7 +13558,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Metric Images for alert",
+            "description": "List all metric images",
             "schema": {
               "type": "array",
               "items": {
@@ -13564,7 +13578,8 @@
     },
     "/api/v4/projects/{id}/alert_management_alerts/{alert_iid}/metric_images/{metric_image_id}": {
       "put": {
-        "description": "Update a metric image for an alert",
+        "summary": "Update a metric image",
+        "description": "Updates a specified metric image for an alert.",
         "produces": [
           "application/json"
         ],
@@ -13617,7 +13632,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update a metric image for an alert",
+            "description": "Update a metric image",
             "schema": {
               "$ref": "#/definitions/API_Entities_MetricImage"
             }
@@ -13635,7 +13650,8 @@
         "operationId": "putApiV4ProjectsIdAlertManagementAlertsAlertIidMetricImagesMetricImageId"
       },
       "delete": {
-        "description": "Remove a metric image for an alert",
+        "summary": "Delete a metric image",
+        "description": "Deletes a specified metric image for an alert.",
         "produces": [
           "application/json"
         ],
@@ -13669,7 +13685,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Remove a metric image for an alert",
+            "description": "Delete a metric image",
             "schema": {
               "$ref": "#/definitions/API_Entities_MetricImage"
             }
@@ -27139,8 +27155,8 @@
     },
     "/api/v4/projects/{id}/error_tracking/client_keys": {
       "get": {
-        "summary": "List project client keys",
-        "description": "List all client keys. This feature was introduced in GitLab 14.3.",
+        "summary": "List all project client keys",
+        "description": "Lists all integrated error tracking client keys for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -27155,7 +27171,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List project client keys",
+            "description": "List all project client keys",
             "schema": {
               "type": "array",
               "items": {
@@ -27171,7 +27187,7 @@
       },
       "post": {
         "summary": "Create a client key",
-        "description": "Creates a new client key for a project. The public key attribute is generated automatically.This feature was introduced in GitLab 14.3.",
+        "description": "Creates a client key for integrated error tracking in a specified project. The public key attribute is generated automatically.",
         "produces": [
           "application/json"
         ],
@@ -27204,7 +27220,7 @@
     "/api/v4/projects/{id}/error_tracking/client_keys/{key_id}": {
       "delete": {
         "summary": "Delete a client key",
-        "description": "Removes a client key from the project. This feature was introduced in GitLab 14.3.",
+        "description": "Deletes an integrated error tracking client key from a specified project.",
         "produces": [
           "application/json"
         ],
@@ -27243,8 +27259,8 @@
     },
     "/api/v4/projects/{id}/error_tracking/settings": {
       "get": {
-        "summary": "Get Error Tracking settings",
-        "description": "Get error tracking settings for the project. This feature was introduced in GitLab 12.7.",
+        "summary": "Retrieve Error Tracking settings for a project",
+        "description": "Retrieves the Error Tracking settings for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -27259,7 +27275,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get Error Tracking settings",
+            "description": "Retrieve Error Tracking settings for a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_ErrorTracking_ProjectSetting"
             }
@@ -27271,8 +27287,8 @@
         "operationId": "getApiV4ProjectsIdErrorTrackingSettings"
       },
       "patch": {
-        "summary": "Enable or disable the Error Tracking project settings",
-        "description": "The API allows you to enable or disable the Error Tracking settings for a project.Only for users with the Maintainer role for the project.",
+        "summary": "Update Error Tracking settings for a project",
+        "description": "Updates Error Tracking settings for a specified project. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -27298,7 +27314,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Enable or disable the Error Tracking project settings",
+            "description": "Update Error Tracking settings for a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_ErrorTracking_ProjectSetting"
             }
@@ -27319,8 +27335,8 @@
         "operationId": "patchApiV4ProjectsIdErrorTrackingSettings"
       },
       "put": {
-        "summary": "Update Error Tracking project settings. Available in GitLab 15.10 and later.",
-        "description": "Update Error Tracking settings for a project. Only for users with Maintainer role for the project.",
+        "summary": "Create Error Tracking settings for a project",
+        "description": "Creates Error Tracking settings for a specified project. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -27346,7 +27362,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update Error Tracking project settings. Available in GitLab 15.10 and later.",
+            "description": "Create Error Tracking settings for a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_ErrorTracking_ProjectSetting"
             }
@@ -36809,7 +36825,8 @@
     },
     "/api/v4/projects/{id}/issues/{issue_iid}/participants": {
       "get": {
-        "description": "List participants for an issue",
+        "summary": "List all participants in an issue",
+        "description": "Lists all users that are participants in a specified issue. If the project is private or the issue is confidential, you need to provide credentials to authorize. In most cases, you should authenticate with a personal access token.",
         "produces": [
           "application/json"
         ],
@@ -36832,7 +36849,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List participants for an issue",
+            "description": "List all participants in an issue",
             "schema": {
               "$ref": "#/definitions/API_Entities_UserBasic"
             }
@@ -37101,8 +37118,8 @@
     },
     "/api/v4/projects/{id}/ci/lint": {
       "get": {
-        "summary": "Validates a CI YAML configuration with a namespace",
-        "description": "Checks if a project’s .gitlab-ci.yml configuration in a given commit (by default HEAD of the\n        project’s default branch) is valid",
+        "summary": "Validate existing CI/CD configuration",
+        "description": "Validates the `.gitlab-ci.yml` configuration for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -37160,7 +37177,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Validates a CI YAML configuration with a namespace",
+            "description": "Validate existing CI/CD configuration",
             "schema": {
               "$ref": "#/definitions/API_Entities_Ci_Lint_Result"
             }
@@ -37249,7 +37266,8 @@
     },
     "/api/v4/projects/{id}/uploads": {
       "post": {
-        "description": "Upload a file",
+        "summary": "Create an upload",
+        "description": "Creates an upload.",
         "produces": [
           "application/json"
         ],
@@ -37275,7 +37293,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Upload a file",
+            "description": "Create an upload",
             "schema": {
               "$ref": "#/definitions/API_Entities_ProjectUpload"
             }
@@ -37290,7 +37308,8 @@
         "operationId": "postApiV4ProjectsIdUploads"
       },
       "get": {
-        "description": "Get the list of uploads of a project",
+        "summary": "List all uploads",
+        "description": "Lists all uploads of a project sorted by `created_at` in descending order. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -37325,7 +37344,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get the list of uploads of a project",
+            "description": "List all uploads",
             "schema": {
               "type": "array",
               "items": {
@@ -37348,7 +37367,8 @@
     },
     "/api/v4/projects/{id}/uploads/{upload_id}": {
       "get": {
-        "description": "Download a single project upload by ID",
+        "summary": "Download an uploaded file by ID",
+        "description": "Downloads an uploaded file by ID. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -37371,7 +37391,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download a single project upload by ID",
+            "description": "Download an uploaded file by ID",
             "schema": {
               "type": "file"
             }
@@ -37389,7 +37409,8 @@
         "operationId": "getApiV4ProjectsIdUploadsUploadId"
       },
       "delete": {
-        "description": "Delete a single project upload by ID",
+        "summary": "Delete an uploaded file by ID",
+        "description": "Deletes an uploaded file by ID. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -37412,7 +37433,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete a single project upload by ID"
+            "description": "Delete an uploaded file by ID"
           },
           "400": {
             "description": "Bad request"
@@ -37432,7 +37453,8 @@
     },
     "/api/v4/projects/{id}/uploads/{secret}/{filename}": {
       "get": {
-        "description": "Download a single project upload by secret and filename",
+        "summary": "Download an uploaded file by secret and filename",
+        "description": "Downloads an uploaded file by secret and filename.",
         "produces": [
           "application/json"
         ],
@@ -37461,7 +37483,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download a single project upload by secret and filename",
+            "description": "Download an uploaded file by secret and filename",
             "schema": {
               "type": "file"
             }
@@ -37479,7 +37501,8 @@
         "operationId": "getApiV4ProjectsIdUploadsSecretFilename"
       },
       "delete": {
-        "description": "Delete a single project upload by secret and filename",
+        "summary": "Delete an uploaded file by secret and filename",
+        "description": "Deletes an uploaded file by secret and filename. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -37508,7 +37531,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete a single project upload by secret and filename"
+            "description": "Delete an uploaded file by secret and filename"
           },
           "400": {
             "description": "Bad request"
@@ -37700,7 +37723,8 @@
     },
     "/api/v4/projects/{id}/members": {
       "get": {
-        "description": "Gets a list of group or project members viewable by the authenticated user,\n          excluding those with inherited membership from ancestor groups.",
+        "summary": "List all direct members of a project",
+        "description": "Lists all direct members of a specified project viewable by the authenticated user. Does not return inherited members from ancestor groups or invited groups.",
         "produces": [
           "application/json"
         ],
@@ -37778,7 +37802,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Gets a list of group or project members viewable by the authenticated user,\n          excluding those with inherited membership from ancestor groups.",
+            "description": "List all direct members of a project",
             "schema": {
               "type": "array",
               "items": {
@@ -37833,7 +37857,8 @@
     },
     "/api/v4/projects/{id}/members/all": {
       "get": {
-        "description": "Gets a list of group or project members viewable by the authenticated user,\n          including those with inherited membership from ancestor groups.",
+        "summary": "List all members of a project",
+        "description": "Lists all members of a specified project viewable by the authenticated user. Also returns inherited members from ancestor groups or invited groups. If a user is a member of this project and one or more ancestor groups, only returns the highest `access_level`. Members from an invited group are returned if the invited group is public, the requester is a member of an invited group, or the requester is a member of the shared group or project.",
         "produces": [
           "application/json"
         ],
@@ -37904,7 +37929,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Gets a list of group or project members viewable by the authenticated user,\n          including those with inherited membership from ancestor groups.",
+            "description": "List all members of a project",
             "schema": {
               "type": "array",
               "items": {
@@ -42002,8 +42027,8 @@
     },
     "/api/v4/projects/{id}/pages": {
       "delete": {
-        "summary": "Unpublish pages",
-        "description": "Remove pages. The user must have the Maintainer or Owner role for the project. This feature was introduced in GitLab 12.6",
+        "summary": "Unpublish Pages",
+        "description": "Unpublishes Pages from a specified project. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -42018,7 +42043,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Unpublish pages"
+            "description": "Unpublish Pages"
           },
           "401": {
             "description": "Unauthorized"
@@ -42033,8 +42058,8 @@
         "operationId": "deleteApiV4ProjectsIdPages"
       },
       "patch": {
-        "summary": "Update pages settings",
-        "description": "Update page settings for a project. The user must have the Maintainer or Owner role for the project.",
+        "summary": "Update Pages settings for a project",
+        "description": "Updates Pages settings for a specified project. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -42060,7 +42085,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update pages settings"
+            "description": "Update Pages settings for a project"
           },
           "401": {
             "description": "Unauthorized"
@@ -42075,8 +42100,8 @@
         "operationId": "patchApiV4ProjectsIdPages"
       },
       "get": {
-        "summary": "Get pages settings",
-        "description": "Get pages URL and other settings. The user must have the Maintainer or Owner role for the project. This feature was introduced in GitLab 16.8",
+        "summary": "Retrieve Pages settings for a project",
+        "description": "Retrieves Pages settings for a specified project. You must have the Maintainer or Owner role for the project.",
         "produces": [
           "application/json"
         ],
@@ -42091,7 +42116,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get pages settings"
+            "description": "Retrieve Pages settings for a project"
           },
           "401": {
             "description": "Unauthorized"
@@ -42108,7 +42133,8 @@
     },
     "/api/v4/projects/{id}/pages/domains": {
       "get": {
-        "description": "Get all pages domains",
+        "summary": "List all Pages domains in a project",
+        "description": "Lists all Pages domains in a specified project. You must have permissions to view Pages domains.",
         "produces": [
           "application/json"
         ],
@@ -42143,7 +42169,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get all pages domains",
+            "description": "List all Pages domains in a project",
             "schema": {
               "type": "array",
               "items": {
@@ -42158,7 +42184,8 @@
         "operationId": "getApiV4ProjectsIdPagesDomains"
       },
       "post": {
-        "description": "Create a new pages domain",
+        "summary": "Create Pages domain",
+        "description": "Creates a Pages domain in a specified project. You must have permissions to create Pages domains.",
         "produces": [
           "application/json"
         ],
@@ -42184,7 +42211,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Create a new pages domain",
+            "description": "Create Pages domain",
             "schema": {
               "$ref": "#/definitions/API_Entities_PagesDomain"
             }
@@ -42198,7 +42225,8 @@
     },
     "/api/v4/projects/{id}/pages/domains/{domain}": {
       "get": {
-        "description": "Get a single pages domain",
+        "summary": "Retrieve a Pages domain",
+        "description": "Retrieves a Pages domain from a specified project. You must have permissions to view Pages domains.",
         "produces": [
           "application/json"
         ],
@@ -42220,7 +42248,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a single pages domain",
+            "description": "Retrieve a Pages domain",
             "schema": {
               "$ref": "#/definitions/API_Entities_PagesDomain"
             }
@@ -42232,7 +42260,8 @@
         "operationId": "getApiV4ProjectsIdPagesDomainsDomain"
       },
       "put": {
-        "description": "Updates a pages domain",
+        "summary": "Update Pages domain",
+        "description": "Updates a specified Pages domain in a project. You must have permissions to change an existing Pages domain.",
         "produces": [
           "application/json"
         ],
@@ -42265,7 +42294,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Updates a pages domain"
+            "description": "Update Pages domain"
           }
         },
         "tags": [
@@ -42274,7 +42303,8 @@
         "operationId": "putApiV4ProjectsIdPagesDomainsDomain"
       },
       "delete": {
-        "description": "Delete a pages domain",
+        "summary": "Delete Pages domain",
+        "description": "Deletes a specified Pages domain in a project.",
         "produces": [
           "application/json"
         ],
@@ -42307,7 +42337,8 @@
     },
     "/api/v4/projects/{id}/pages/domains/{domain}/verify": {
       "put": {
-        "description": "Verify a pages domain",
+        "summary": "Verify Pages domain",
+        "description": "Verifies a specified Pages domain in a project. You must have permissions to update Pages domains.",
         "produces": [
           "application/json"
         ],
@@ -42332,7 +42363,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Verify a pages domain",
+            "description": "Verify Pages domain",
             "schema": {
               "$ref": "#/definitions/API_Entities_PagesDomain"
             }
@@ -49299,7 +49330,8 @@
     },
     "/api/v4/projects/{id}/statistics": {
       "get": {
-        "description": "Get the list of project fetch statistics for the last 30 days",
+        "summary": "Retrieve the statistics of the last 30 days",
+        "description": "Retrieves the clone and pull statistics for the last 30 days from a specified project.",
         "produces": [
           "application/json"
         ],
@@ -49314,7 +49346,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get the list of project fetch statistics for the last 30 days",
+            "description": "Retrieve the statistics of the last 30 days",
             "schema": {
               "$ref": "#/definitions/API_Entities_ProjectDailyStatistics"
             }
@@ -49334,8 +49366,8 @@
     },
     "/api/v4/projects/{id}/templates/{type}": {
       "get": {
-        "summary": "Get a list of templates available to this project",
-        "description": "This endpoint was introduced in GitLab 11.4",
+        "summary": "List all templates of a particular type",
+        "description": "Lists all templates of a specified type for a project.",
         "produces": [
           "application/json"
         ],
@@ -49385,7 +49417,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of templates available to this project",
+            "description": "List all templates of a particular type",
             "schema": {
               "type": "array",
               "items": {
@@ -49408,8 +49440,8 @@
     },
     "/api/v4/projects/{id}/templates/{type}/{name}": {
       "get": {
-        "summary": "Download a template available to this project",
-        "description": "This endpoint was introduced in GitLab 11.4",
+        "summary": "Retrieve a template of a particular type",
+        "description": "Retrieves a template of a specified type for a project.",
         "produces": [
           "application/json"
         ],
@@ -49472,7 +49504,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download a template available to this project",
+            "description": "Retrieve a template of a particular type",
             "schema": {
               "$ref": "#/definitions/API_Entities_License"
             }
@@ -51747,7 +51779,8 @@
     },
     "/api/v4/projects/{id}/protected_branches": {
       "get": {
-        "description": "Get a project's protected branches",
+        "summary": "List all protected branches",
+        "description": "Lists all protected branches for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -51791,7 +51824,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a project's protected branches",
+            "description": "List all protected branches",
             "schema": {
               "type": "array",
               "items": {
@@ -51812,7 +51845,8 @@
         "operationId": "getApiV4ProjectsIdProtectedBranches"
       },
       "post": {
-        "description": "Protect a single branch",
+        "summary": "Protect repository branches",
+        "description": "Protects a specified repository branch or several project repository branches using a wildcard protected branch.",
         "produces": [
           "application/json"
         ],
@@ -51839,7 +51873,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Protect a single branch",
+            "description": "Protect repository branches",
             "schema": {
               "$ref": "#/definitions/API_Entities_ProtectedBranch"
             }
@@ -51865,7 +51899,8 @@
     },
     "/api/v4/projects/{id}/protected_branches/{name}": {
       "get": {
-        "description": "Get a single protected branch",
+        "summary": "Retrieve a protected branch or wildcard protected branch",
+        "description": "Retrieves a specified protected branch or wildcard protected branch.",
         "produces": [
           "application/json"
         ],
@@ -51889,7 +51924,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a single protected branch",
+            "description": "Retrieve a protected branch or wildcard protected branch",
             "schema": {
               "$ref": "#/definitions/API_Entities_ProtectedBranch"
             }
@@ -51907,7 +51942,8 @@
         "operationId": "getApiV4ProjectsIdProtectedBranchesName"
       },
       "patch": {
-        "description": "Update a protected branch",
+        "summary": "Update a protected branch",
+        "description": "Updates a protected branch for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -51966,7 +52002,8 @@
         "operationId": "patchApiV4ProjectsIdProtectedBranchesName"
       },
       "delete": {
-        "description": "Unprotect a single branch",
+        "summary": "Unprotect repository branches",
+        "description": "Unprotects a specified protected branch or wildcard protected branch.",
         "produces": [
           "application/json"
         ],
@@ -51990,7 +52027,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Unprotect a single branch"
+            "description": "Unprotect repository branches"
           },
           "401": {
             "description": "401 Unauthorized"
@@ -52007,8 +52044,8 @@
     },
     "/api/v4/projects/{id}/protected_tags": {
       "get": {
-        "summary": "Get a project's protected tags",
-        "description": "This feature was introduced in GitLab 11.3.",
+        "summary": "List all protected tags",
+        "description": "Lists all protected tags for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -52043,7 +52080,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a project's protected tags",
+            "description": "List all protected tags",
             "schema": {
               "type": "array",
               "items": {
@@ -52064,8 +52101,8 @@
         "operationId": "getApiV4ProjectsIdProtectedTags"
       },
       "post": {
-        "summary": "Protect a single tag or wildcard",
-        "description": "This feature was introduced in GitLab 11.3.",
+        "summary": "Protect a repository tag",
+        "description": "Protects a specified repository tag using a wildcard protected tag.",
         "produces": [
           "application/json"
         ],
@@ -52091,7 +52128,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Protect a single tag or wildcard",
+            "description": "Protect a repository tag",
             "schema": {
               "$ref": "#/definitions/API_Entities_ProtectedTag"
             }
@@ -52114,8 +52151,8 @@
     },
     "/api/v4/projects/{id}/protected_tags/{name}": {
       "get": {
-        "summary": "Get a single protected tag",
-        "description": "This feature was introduced in GitLab 11.3.",
+        "summary": "Retrieve a protected tag or wildcard protected tag",
+        "description": "Retrieves a specified protected tag or wildcard protected tag.",
         "produces": [
           "application/json"
         ],
@@ -52138,7 +52175,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a single protected tag",
+            "description": "Retrieve a protected tag or wildcard protected tag",
             "schema": {
               "$ref": "#/definitions/API_Entities_ProtectedTag"
             }
@@ -52156,8 +52193,8 @@
         "operationId": "getApiV4ProjectsIdProtectedTagsName"
       },
       "delete": {
-        "summary": "Unprotect a single tag",
-        "description": "This feature was introduced in GitLab 11.3.",
+        "summary": "Unprotect repository tags",
+        "description": "Unprotects a specified protected tag or wildcard protected tag.",
         "produces": [
           "application/json"
         ],
@@ -52180,7 +52217,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Unprotect a single tag"
+            "description": "Unprotect repository tags"
           },
           "403": {
             "description": "Unauthenticated"
@@ -56023,7 +56060,8 @@
     },
     "/api/v4/projects/{id}/wikis": {
       "get": {
-        "description": "Get a list of wiki pages",
+        "summary": "List all wiki pages for a project",
+        "description": "Lists all wiki pages for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -56046,7 +56084,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of wiki pages",
+            "description": "List all wiki pages for a project",
             "schema": {
               "type": "array",
               "items": {
@@ -56064,7 +56102,8 @@
         "operationId": "getApiV4ProjectsIdWikis"
       },
       "post": {
-        "description": "Create a wiki page",
+        "summary": "Create a wiki page for a project",
+        "description": "Creates a wiki page for a specified project. Requests can define the title, slug, and content.",
         "produces": [
           "application/json"
         ],
@@ -56090,7 +56129,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Create a wiki page",
+            "description": "Create a wiki page for a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiPage"
             }
@@ -56113,7 +56152,8 @@
     },
     "/api/v4/projects/{id}/wikis/{slug}": {
       "get": {
-        "description": "Get a wiki page",
+        "summary": "Retrieve a wiki page for a project",
+        "description": "Retrieves a specified wiki page for a project.",
         "produces": [
           "application/json"
         ],
@@ -56150,7 +56190,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a wiki page",
+            "description": "Retrieve a wiki page for a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiPage"
             }
@@ -56165,7 +56205,8 @@
         "operationId": "getApiV4ProjectsIdWikisSlug"
       },
       "put": {
-        "description": "Update a wiki page",
+        "summary": "Update a wiki page for a project",
+        "description": "Updates a specified wiki page for a project.",
         "produces": [
           "application/json"
         ],
@@ -56198,7 +56239,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update a wiki page",
+            "description": "Update a wiki page for a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiPage"
             }
@@ -56219,7 +56260,8 @@
         "operationId": "putApiV4ProjectsIdWikisSlug"
       },
       "delete": {
-        "description": "Delete a wiki page",
+        "summary": "Delete a wiki page for a project",
+        "description": "Deletes a specified wiki page for a project.",
         "produces": [
           "application/json"
         ],
@@ -56241,7 +56283,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete a wiki page"
+            "description": "Delete a wiki page for a project"
           },
           "400": {
             "description": "Validation error"
@@ -56258,8 +56300,8 @@
     },
     "/api/v4/projects/{id}/wikis/attachments": {
       "post": {
-        "summary": "Upload an attachment to the wiki repository",
-        "description": "This feature was introduced in GitLab 11.3.",
+        "summary": "Upload an attachment to a project wiki",
+        "description": "Uploads a file to the `uploads` directory in a specified project wiki.",
         "produces": [
           "application/json"
         ],
@@ -56285,7 +56327,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Upload an attachment to the wiki repository",
+            "description": "Upload an attachment to a project wiki",
             "schema": {
               "$ref": "#/definitions/API_Entities_WikiAttachment"
             }
@@ -57042,7 +57084,8 @@
     },
     "/api/v4/admin/migrations/pending": {
       "get": {
-        "description": "List pending database migrations",
+        "summary": "List all pending migrations",
+        "description": "Lists all pending migrations for the instance.",
         "produces": [
           "application/json"
         ],
@@ -57082,7 +57125,8 @@
     },
     "/api/v4/admin/migrations/{timestamp}/mark": {
       "post": {
-        "description": "Mark the migration as successfully executed",
+        "summary": "Update status of a migration",
+        "description": "Updates the status of a migration to indicate a successful execution. This prevent them from being executed by the `db:migrate` tasks. Use this API to skip failing migrations after you determine they are safe to skip.",
         "produces": [
           "application/json"
         ],
@@ -57132,8 +57176,8 @@
     },
     "/api/v4/broadcast_messages": {
       "get": {
-        "summary": "Get all broadcast messages",
-        "description": "This feature was introduced in GitLab 8.12.",
+        "summary": "List all broadcast messages",
+        "description": "Lists all broadcast messages for the instance.",
         "produces": [
           "application/json"
         ],
@@ -57161,7 +57205,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get all broadcast messages",
+            "description": "List all broadcast messages",
             "schema": {
               "$ref": "#/definitions/API_Entities_System_BroadcastMessage"
             }
@@ -57207,8 +57251,8 @@
     },
     "/api/v4/broadcast_messages/{id}": {
       "get": {
-        "summary": "Get a specific broadcast message",
-        "description": "This feature was introduced in GitLab 8.12.",
+        "summary": "Retrieve a broadcast message",
+        "description": "Retrieves a specified broadcast message.",
         "produces": [
           "application/json"
         ],
@@ -57224,7 +57268,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a specific broadcast message",
+            "description": "Retrieve a broadcast message",
             "schema": {
               "$ref": "#/definitions/API_Entities_System_BroadcastMessage"
             }
@@ -57237,7 +57281,7 @@
       },
       "put": {
         "summary": "Update a broadcast message",
-        "description": "This feature was introduced in GitLab 8.12.",
+        "description": "Updates a specified broadcast message.",
         "produces": [
           "application/json"
         ],
@@ -57277,7 +57321,7 @@
       },
       "delete": {
         "summary": "Delete a broadcast message",
-        "description": "This feature was introduced in GitLab 8.12.",
+        "description": "Deletes a specified broadcast message.",
         "produces": [
           "application/json"
         ],
@@ -63669,8 +63713,8 @@
     },
     "/api/v4/keys/{id}": {
       "get": {
-        "summary": "Get single ssh key by id. Only available to admin users",
-        "description": "Get SSH key with user by ID of an SSH key. Note only administrators can lookup SSH key with user by ID\\\n        of an SSH key",
+        "summary": "Retrieve user by SSH key ID",
+        "description": "Retrieves user by SSH key ID. Administrators only.",
         "produces": [
           "application/json"
         ],
@@ -63686,7 +63730,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get single ssh key by id. Only available to admin users",
+            "description": "Retrieve user by SSH key ID",
             "schema": {
               "$ref": "#/definitions/API_Entities_SSHKeyWithUser"
             }
@@ -63700,8 +63744,8 @@
     },
     "/api/v4/keys": {
       "get": {
-        "summary": "Get user by fingerprint of SSH key",
-        "description": "You can search for a user that owns a specific SSH key. Note only administrators can lookup SSH key\\\n        with the fingerprint of an SSH key",
+        "summary": "Retrieve user by SSH key fingerprint",
+        "description": "Retrieves user by SSH key fingerprint. Administrators only.",
         "produces": [
           "application/json"
         ],
@@ -63717,7 +63761,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get user by fingerprint of SSH key",
+            "description": "Retrieve user by SSH key fingerprint",
             "schema": {
               "$ref": "#/definitions/API_Entities_UserWithAdmin"
             }
@@ -64788,7 +64832,8 @@
     },
     "/api/v4/pages/domains": {
       "get": {
-        "description": "Get all pages domains",
+        "summary": "List all Pages domains",
+        "description": "Lists all Pages domains on the instance. You must have administrator access to the instance.",
         "produces": [
           "application/json"
         ],
@@ -64823,7 +64868,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get all pages domains",
+            "description": "List all Pages domains",
             "schema": {
               "$ref": "#/definitions/API_Entities_PagesDomainBasic"
             }
@@ -68619,7 +68664,7 @@
         "read_virtual_registry": {
           "type": "boolean"
         },
-        "update_sast_vulnerability_resolution_setting": {
+        "update_sec_ai_workflow_settings": {
           "type": "boolean"
         },
         "read_admin_cicd": {
@@ -68692,7 +68737,7 @@
         "read_compliance_dashboard",
         "read_security_scan_profiles",
         "read_virtual_registry",
-        "update_sast_vulnerability_resolution_setting",
+        "update_sec_ai_workflow_settings",
         "read_admin_cicd",
         "read_crm_contact",
         "read_dependency",
@@ -78053,7 +78098,7 @@
         "title",
         "content"
       ],
-      "description": "Create a wiki page"
+      "description": "Create a wiki page for a group"
     },
     "putApiV4GroupsIdWikisSlug": {
       "type": "object",
@@ -78088,7 +78133,7 @@
           "default": "markdown"
         }
       },
-      "description": "Update a wiki page"
+      "description": "Update a wiki page for a group"
     },
     "postApiV4GroupsIdWikisAttachments": {
       "type": "object",
@@ -78105,7 +78150,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload an attachment to the wiki repository"
+      "description": "Upload an attachment to a group wiki"
     },
     "API_Entities_WikiAttachment": {
       "type": "object",
@@ -82793,7 +82838,7 @@
       "required": [
         "active"
       ],
-      "description": "Enable or disable the Error Tracking project settings"
+      "description": "Update Error Tracking settings for a project"
     },
     "putApiV4ProjectsIdErrorTrackingSettings": {
       "type": "object",
@@ -82811,7 +82856,7 @@
         "active",
         "integrated"
       ],
-      "description": "Update Error Tracking project settings. Available in GitLab 15.10 and later."
+      "description": "Create Error Tracking settings for a project"
     },
     "API_Entities_FeatureFlag": {
       "type": "object",
@@ -89434,7 +89479,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload a file"
+      "description": "Create an upload"
     },
     "API_Entities_ProjectUpload": {
       "type": "object",
@@ -91276,7 +91321,7 @@
           "description": "Set pages primary domain"
         }
       },
-      "description": "Update pages settings"
+      "description": "Update Pages settings for a project"
     },
     "API_Entities_PagesDomain": {
       "type": "object",
@@ -91366,7 +91411,7 @@
       "required": [
         "domain"
       ],
-      "description": "Create a new pages domain"
+      "description": "Create Pages domain"
     },
     "putApiV4ProjectsIdPagesDomainsDomain": {
       "type": "object",
@@ -91384,7 +91429,7 @@
           "description": "Enables automatic generation of SSL certificates issued by Let's Encrypt for custom domains."
         }
       },
-      "description": "Updates a pages domain"
+      "description": "Update Pages domain"
     },
     "API_Entities_ClusterProject": {
       "type": "object",
@@ -96724,7 +96769,7 @@
       "required": [
         "name"
       ],
-      "description": "Protect a single branch"
+      "description": "Protect repository branches"
     },
     "patchApiV4ProjectsIdProtectedBranchesName": {
       "type": "object",
@@ -96960,7 +97005,7 @@
       "required": [
         "name"
       ],
-      "description": "Protect a single tag or wildcard"
+      "description": "Protect a repository tag"
     },
     "postApiV4ProjectsIdPackagesPypi": {
       "type": "object",
@@ -98198,7 +98243,7 @@
         "title",
         "content"
       ],
-      "description": "Create a wiki page"
+      "description": "Create a wiki page for a project"
     },
     "putApiV4ProjectsIdWikisSlug": {
       "type": "object",
@@ -98233,7 +98278,7 @@
           "default": "markdown"
         }
       },
-      "description": "Update a wiki page"
+      "description": "Update a wiki page for a project"
     },
     "postApiV4ProjectsIdWikisAttachments": {
       "type": "object",
@@ -98250,7 +98295,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload an attachment to the wiki repository"
+      "description": "Upload an attachment to a project wiki"
     },
     "API_Entities_BatchedBackgroundMigration": {
       "type": "object",
@@ -98658,7 +98703,7 @@
           "default": "main"
         }
       },
-      "description": "Mark the migration as successfully executed"
+      "description": "Update status of a migration"
     },
     "API_Entities_System_BroadcastMessage": {
       "type": "object",

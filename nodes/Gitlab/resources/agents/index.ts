@@ -15,8 +15,8 @@ export const agentsDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Job Allowed Agents",
-					"value": "Get Api V 4 Job Allowed Agents",
+					"name": "Get API v4 Job Allowed Agents",
+					"value": "Get API v4 Job Allowed Agents",
 					"action": "List all GitLab agents for Kubernetes by job token",
 					"description": "Lists all GitLab agents for Kubernetes with a specified `CI_JOB_TOKEN`.",
 					"routing": {
@@ -43,7 +43,7 @@ export const agentsDescription: INodeProperties[] = [
 						"Agents"
 					],
 					"operation": [
-						"Get Api V 4 Job Allowed Agents"
+						"Get API v4 Job Allowed Agents"
 					]
 				}
 			}

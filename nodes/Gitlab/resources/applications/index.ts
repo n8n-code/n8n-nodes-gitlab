@@ -15,8 +15,8 @@ export const applicationsDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Applications",
-					"value": "Get Api V 4 Applications",
+					"name": "Get API v4 Applications",
+					"value": "Get API v4 Applications",
 					"action": "Get applications",
 					"description": "List all registered applications",
 					"routing": {
@@ -43,7 +43,7 @@ export const applicationsDescription: INodeProperties[] = [
 						"Applications"
 					],
 					"operation": [
-						"Get Api V 4 Applications"
+						"Get API v4 Applications"
 					]
 				}
 			}

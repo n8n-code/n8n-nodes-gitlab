@@ -8,7 +8,7 @@ import type {
 export class GitlabApi implements ICredentialType {
 	name = 'N8nDevGitlabApi';
 
-	displayName = 'gitlab API';
+	displayName = 'GitLab API';
 
 	icon: Icon = { light: 'file:../nodes/Gitlab/gitlab.svg', dark: 'file:../nodes/Gitlab/gitlab.dark.svg' };
 
@@ -22,7 +22,7 @@ export class GitlabApi implements ICredentialType {
 			default: '',
 			required: true,
 			placeholder: 'https://api.example.com',
-			description: 'The base URL of your gitlab API server',
+			description: 'The base URL of your GitLab API server',
 		},
 		{
 			displayName: 'API Key',

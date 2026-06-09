@@ -15,8 +15,8 @@ export const ciRunnersDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Runners Router Discovery",
-					"value": "Get Api V 4 Runners Router Discovery",
+					"name": "Get API v4 Runners Router Discovery",
+					"value": "Get API v4 Runners Router Discovery",
 					"action": "Discover Job Router information",
 					"description": "Discovers Job Router information for a runner. You must provide a valid runner authentication token.",
 					"routing": {
@@ -43,7 +43,7 @@ export const ciRunnersDescription: INodeProperties[] = [
 						"Ci Runners"
 					],
 					"operation": [
-						"Get Api V 4 Runners Router Discovery"
+						"Get API v4 Runners Router Discovery"
 					]
 				}
 			}

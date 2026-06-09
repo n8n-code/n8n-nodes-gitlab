@@ -15,8 +15,8 @@ export const containerRegistryDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Post Api V 4 Container Registry Event Events",
-					"value": "Post Api V 4 Container Registry Event Events",
+					"name": "Post API v4 Container Registry Event Events",
+					"value": "Post API v4 Container Registry Event Events",
 					"action": "Receives notifications from the container registry when an operation occurs",
 					"description": "This feature was introduced in GitLab 12.10",
 					"routing": {
@@ -43,7 +43,7 @@ export const containerRegistryDescription: INodeProperties[] = [
 						"Container Registry"
 					],
 					"operation": [
-						"Post Api V 4 Container Registry Event Events"
+						"Post API v4 Container Registry Event Events"
 					]
 				}
 			}

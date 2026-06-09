@@ -15,8 +15,8 @@ export const geoDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Geo Proxy",
-					"value": "Get Api V 4 Geo Proxy",
+					"name": "Get API v4 Geo Proxy",
+					"value": "Get API v4 Geo Proxy",
 					"action": "Determine if a Geo site should proxy requests",
 					"description": "Returns a Geo proxy response",
 					"routing": {
@@ -43,7 +43,7 @@ export const geoDescription: INodeProperties[] = [
 						"Geo"
 					],
 					"operation": [
-						"Get Api V 4 Geo Proxy"
+						"Get API v4 Geo Proxy"
 					]
 				}
 			}

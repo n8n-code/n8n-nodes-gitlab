@@ -53,29 +53,165 @@ That's it. No configuration files. No code. It just works.
 
 ## Resources
 
-| Resource | Operations |
-|----------|------------|
-| Groups | Post reset the runner registration token for the instance |
-| Runners | Post reset the runner registration token for the instance |
-| Packages | Get authenticate user against conan cli, Get check for valid user credentials per conan cli, Get ping the conan api, Post npm registry bulk advisory endpoint, Post npm registry quick audit endpoint |
-| Group Import And Export | Post workhorse authorize the group import upload |
-| Access Tokens | Get retrieve a personal access token, Delete revoke a personal access token |
-| Ci Jobs | Get retrieve a job by job token |
-| Applications | Get applications |
-| Agents | Get list all gitlab agents for kubernetes by job token |
-| Ci Runners | Get discover job router information |
-| Internal Operations | Post process slack interaction events, Post get slack interactive component options |
-| Usage Data | Get the latest serviceping payload, Get non sql usage ping metrics, Get raw sql queries for usage data sql metrics |
-| Users | Get return the user specific counts |
-| Instance | Get api v 4 application appearance, Get retrieve application statistics |
-| Web Commits | Get the public key for web commits |
-| Clusters | Get list all instance clusters |
-| Container Registry | Post receives notifications from the container registry when an operation occurs |
-| Features | Get list all feature flags, Get list all feature flag definitions |
-| Geo | Get determine if a geo site should proxy requests |
-| Integrations | Post process slack interaction events, Post get slack interactive component options |
-| Metadata | Get retrieve metadata information for this gitlab instance, Get retrieves version information for the gitlab instance |
-| Project Import | Post workhorse authorize the project import upload, Post workhorse authorize the project relation import upload |
+<details>
+<summary><b>Groups</b> (1 operations)</summary>
+
+- Post Reset the runner registration token for the instance
+
+</details>
+
+<details>
+<summary><b>Runners</b> (1 operations)</summary>
+
+- Post Reset the runner registration token for the instance
+
+</details>
+
+<details>
+<summary><b>Packages</b> (5 operations)</summary>
+
+- Get Authenticate user against conan CLI
+- Get Check for valid user credentials per conan CLI
+- Get Ping the Conan API
+- Post NPM registry bulk advisory endpoint
+- Post NPM registry quick audit endpoint
+
+</details>
+
+<details>
+<summary><b>Group Import And Export</b> (1 operations)</summary>
+
+- Post Workhorse authorize the group import upload
+
+</details>
+
+<details>
+<summary><b>Access Tokens</b> (2 operations)</summary>
+
+- Get Retrieve a personal access token
+- Delete Revoke a personal access token
+
+</details>
+
+<details>
+<summary><b>Ci Jobs</b> (1 operations)</summary>
+
+- Get Retrieve a job by job token
+
+</details>
+
+<details>
+<summary><b>Applications</b> (1 operations)</summary>
+
+- Get applications
+
+</details>
+
+<details>
+<summary><b>Agents</b> (1 operations)</summary>
+
+- Get List all GitLab agents for Kubernetes by job token
+
+</details>
+
+<details>
+<summary><b>Ci Runners</b> (1 operations)</summary>
+
+- Get Discover Job Router information
+
+</details>
+
+<details>
+<summary><b>Internal Operations</b> (2 operations)</summary>
+
+- Post Process Slack interaction events
+- Post Get Slack interactive component options
+
+</details>
+
+<details>
+<summary><b>Usage Data</b> (3 operations)</summary>
+
+- Get the latest ServicePing payload
+- Get Non SQL usage ping metrics
+- Get raw SQL queries for usage data SQL metrics
+
+</details>
+
+<details>
+<summary><b>Users</b> (1 operations)</summary>
+
+- Get Return the user specific counts
+
+</details>
+
+<details>
+<summary><b>Instance</b> (2 operations)</summary>
+
+- Get API v4 Application Appearance
+- Get Retrieve application statistics
+
+</details>
+
+<details>
+<summary><b>Web Commits</b> (1 operations)</summary>
+
+- Get the public key for web commits
+
+</details>
+
+<details>
+<summary><b>Clusters</b> (1 operations)</summary>
+
+- Get List all instance clusters
+
+</details>
+
+<details>
+<summary><b>Container Registry</b> (1 operations)</summary>
+
+- Post Receives notifications from the container registry when an operation occurs
+
+</details>
+
+<details>
+<summary><b>Features</b> (2 operations)</summary>
+
+- Get List all feature flags
+- Get List all feature flag definitions
+
+</details>
+
+<details>
+<summary><b>Geo</b> (1 operations)</summary>
+
+- Get Determine if a Geo site should proxy requests
+
+</details>
+
+<details>
+<summary><b>Integrations</b> (2 operations)</summary>
+
+- Post Process Slack interaction events
+- Post Get Slack interactive component options
+
+</details>
+
+<details>
+<summary><b>Metadata</b> (2 operations)</summary>
+
+- Get Retrieve metadata information for this GitLab instance
+- Get Retrieves version information for the GitLab instance
+
+</details>
+
+<details>
+<summary><b>Project Import</b> (2 operations)</summary>
+
+- Post Workhorse authorize the project import upload
+- Post Workhorse authorize the project relation import upload
+
+</details>
 
 ---
 

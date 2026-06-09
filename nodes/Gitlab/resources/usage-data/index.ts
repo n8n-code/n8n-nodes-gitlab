@@ -15,8 +15,8 @@ export const usageDataDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Usage Data Service Ping",
-					"value": "Get Api V 4 Usage Data Service Ping",
+					"name": "Get API v4 Usage Data Service Ping",
+					"value": "Get API v4 Usage Data Service Ping",
 					"action": "Get the latest ServicePing payload",
 					"description": "Introduces in Gitlab 16.9. Requires personal access token with read_service_ping scope.",
 					"routing": {
@@ -27,8 +27,8 @@ export const usageDataDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Get Api V 4 Usage Data Non Sql Metrics",
-					"value": "Get Api V 4 Usage Data Non Sql Metrics",
+					"name": "Get API v4 Usage Data Non SQL Metrics",
+					"value": "Get API v4 Usage Data Non SQL Metrics",
 					"action": "Get Non SQL usage ping metrics",
 					"description": "This feature was introduced in GitLab 13.11.",
 					"routing": {
@@ -39,8 +39,8 @@ export const usageDataDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Get Api V 4 Usage Data Queries",
-					"value": "Get Api V 4 Usage Data Queries",
+					"name": "Get API v4 Usage Data Queries",
+					"value": "Get API v4 Usage Data Queries",
 					"action": "Get raw SQL queries for usage data SQL metrics",
 					"description": "This feature was introduced in GitLab 13.11.",
 					"routing": {
@@ -67,7 +67,7 @@ export const usageDataDescription: INodeProperties[] = [
 						"Usage Data"
 					],
 					"operation": [
-						"Get Api V 4 Usage Data Service Ping"
+						"Get API v4 Usage Data Service Ping"
 					]
 				}
 			}
@@ -86,7 +86,7 @@ export const usageDataDescription: INodeProperties[] = [
 						"Usage Data"
 					],
 					"operation": [
-						"Get Api V 4 Usage Data Non Sql Metrics"
+						"Get API v4 Usage Data Non SQL Metrics"
 					]
 				}
 			}
@@ -105,7 +105,7 @@ export const usageDataDescription: INodeProperties[] = [
 						"Usage Data"
 					],
 					"operation": [
-						"Get Api V 4 Usage Data Queries"
+						"Get API v4 Usage Data Queries"
 					]
 				}
 			}

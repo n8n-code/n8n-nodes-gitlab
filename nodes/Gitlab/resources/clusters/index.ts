@@ -15,8 +15,8 @@ export const clustersDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Admin Clusters",
-					"value": "Get Api V 4 Admin Clusters",
+					"name": "Get API v4 Admin Clusters",
+					"value": "Get API v4 Admin Clusters",
 					"action": "List all instance clusters",
 					"description": "Lists all instance clusters for the instance.",
 					"routing": {
@@ -43,7 +43,7 @@ export const clustersDescription: INodeProperties[] = [
 						"Clusters"
 					],
 					"operation": [
-						"Get Api V 4 Admin Clusters"
+						"Get API v4 Admin Clusters"
 					]
 				}
 			}

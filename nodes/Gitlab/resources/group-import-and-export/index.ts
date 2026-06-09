@@ -15,8 +15,8 @@ export const groupImportAndExportDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Post Api V 4 Groups Import Authorize",
-					"value": "Post Api V 4 Groups Import Authorize",
+					"name": "Post API v4 Groups Import Authorize",
+					"value": "Post API v4 Groups Import Authorize",
 					"action": "Workhorse authorize the group import upload",
 					"description": "This feature was introduced in GitLab 12.8",
 					"routing": {
@@ -43,7 +43,7 @@ export const groupImportAndExportDescription: INodeProperties[] = [
 						"Group Import And Export"
 					],
 					"operation": [
-						"Post Api V 4 Groups Import Authorize"
+						"Post API v4 Groups Import Authorize"
 					]
 				}
 			}

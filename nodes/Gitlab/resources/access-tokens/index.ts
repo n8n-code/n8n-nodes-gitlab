@@ -15,8 +15,8 @@ export const accessTokensDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Personal Access Tokens Self",
-					"value": "Get Api V 4 Personal Access Tokens Self",
+					"name": "Get API v4 Personal Access Tokens Self",
+					"value": "Get API v4 Personal Access Tokens Self",
 					"action": "Retrieve a personal access token",
 					"description": "Retrieves a specified personal access token by passing it to the API in a header.",
 					"routing": {
@@ -27,8 +27,8 @@ export const accessTokensDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Delete Api V 4 Personal Access Tokens Self",
-					"value": "Delete Api V 4 Personal Access Tokens Self",
+					"name": "Delete API v4 Personal Access Tokens Self",
+					"value": "Delete API v4 Personal Access Tokens Self",
 					"action": "Revoke a personal access token",
 					"description": "Revokes a personal access token by passing it to the API in a header.",
 					"routing": {
@@ -55,7 +55,7 @@ export const accessTokensDescription: INodeProperties[] = [
 						"Access Tokens"
 					],
 					"operation": [
-						"Get Api V 4 Personal Access Tokens Self"
+						"Get API v4 Personal Access Tokens Self"
 					]
 				}
 			}
@@ -74,7 +74,7 @@ export const accessTokensDescription: INodeProperties[] = [
 						"Access Tokens"
 					],
 					"operation": [
-						"Delete Api V 4 Personal Access Tokens Self"
+						"Delete API v4 Personal Access Tokens Self"
 					]
 				}
 			}

@@ -15,8 +15,8 @@ export const featuresDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Features",
-					"value": "Get Api V 4 Features",
+					"name": "Get API v4 Features",
+					"value": "Get API v4 Features",
 					"action": "List all feature flags",
 					"description": "Lists all feature flags for the instance.",
 					"routing": {
@@ -27,8 +27,8 @@ export const featuresDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Get Api V 4 Features Definitions",
-					"value": "Get Api V 4 Features Definitions",
+					"name": "Get API v4 Features Definitions",
+					"value": "Get API v4 Features Definitions",
 					"action": "List all feature flag definitions",
 					"description": "Lists all feature flag definitions.",
 					"routing": {
@@ -55,7 +55,7 @@ export const featuresDescription: INodeProperties[] = [
 						"Features"
 					],
 					"operation": [
-						"Get Api V 4 Features"
+						"Get API v4 Features"
 					]
 				}
 			}
@@ -74,7 +74,7 @@ export const featuresDescription: INodeProperties[] = [
 						"Features"
 					],
 					"operation": [
-						"Get Api V 4 Features Definitions"
+						"Get API v4 Features Definitions"
 					]
 				}
 			}

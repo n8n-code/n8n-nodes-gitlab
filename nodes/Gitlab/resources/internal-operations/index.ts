@@ -15,8 +15,8 @@ export const internalOperationsDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Post Api V 4 Integrations Slack Interactions",
-					"value": "Post Api V 4 Integrations Slack Interactions",
+					"name": "Post API v4 Integrations Slack Interactions",
+					"value": "Post API v4 Integrations Slack Interactions",
 					"action": "Process Slack interaction events",
 					"description": "Processes interaction events from Slack",
 					"routing": {
@@ -27,8 +27,8 @@ export const internalOperationsDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Post Api V 4 Integrations Slack Options",
-					"value": "Post Api V 4 Integrations Slack Options",
+					"name": "Post API v4 Integrations Slack Options",
+					"value": "Post API v4 Integrations Slack Options",
 					"action": "Get Slack interactive component options",
 					"description": "Retrieves options for Slack interactive components",
 					"routing": {
@@ -55,7 +55,7 @@ export const internalOperationsDescription: INodeProperties[] = [
 						"Internal Operations"
 					],
 					"operation": [
-						"Post Api V 4 Integrations Slack Interactions"
+						"Post API v4 Integrations Slack Interactions"
 					]
 				}
 			}
@@ -74,7 +74,7 @@ export const internalOperationsDescription: INodeProperties[] = [
 						"Internal Operations"
 					],
 					"operation": [
-						"Post Api V 4 Integrations Slack Options"
+						"Post API v4 Integrations Slack Options"
 					]
 				}
 			}

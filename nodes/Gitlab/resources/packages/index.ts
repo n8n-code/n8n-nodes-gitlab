@@ -15,8 +15,8 @@ export const packagesDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Packages Conan V 1 Users Authenticate",
-					"value": "Get Api V 4 Packages Conan V 1 Users Authenticate",
+					"name": "Get API v4 Packages Conan v1 Users Authenticate",
+					"value": "Get API v4 Packages Conan v1 Users Authenticate",
 					"action": "Authenticate user against conan CLI",
 					"description": "This feature was introduced in GitLab 12.2",
 					"routing": {
@@ -27,8 +27,8 @@ export const packagesDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Get Api V 4 Packages Conan V 1 Users Check Credentials",
-					"value": "Get Api V 4 Packages Conan V 1 Users Check Credentials",
+					"name": "Get API v4 Packages Conan v1 Users Check Credentials",
+					"value": "Get API v4 Packages Conan v1 Users Check Credentials",
 					"action": "Check for valid user credentials per conan CLI",
 					"description": "This feature was introduced in GitLab 12.4",
 					"routing": {
@@ -39,8 +39,8 @@ export const packagesDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Get Api V 4 Packages Conan V 1 Ping",
-					"value": "Get Api V 4 Packages Conan V 1 Ping",
+					"name": "Get API v4 Packages Conan v1 Ping",
+					"value": "Get API v4 Packages Conan v1 Ping",
 					"action": "Ping the Conan API",
 					"description": "This feature was introduced in GitLab 12.2",
 					"routing": {
@@ -51,8 +51,8 @@ export const packagesDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Post Api V 4 Packages Npm Npm V 1 Security Advisories Bulk",
-					"value": "Post Api V 4 Packages Npm Npm V 1 Security Advisories Bulk",
+					"name": "Post API v4 Packages Npm Npm v1 Security Advisories Bulk",
+					"value": "Post API v4 Packages Npm Npm v1 Security Advisories Bulk",
 					"action": "NPM registry bulk advisory endpoint",
 					"description": "This feature was introduced in GitLab 15.6",
 					"routing": {
@@ -63,8 +63,8 @@ export const packagesDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Post Api V 4 Packages Npm Npm V 1 Security Audits Quick",
-					"value": "Post Api V 4 Packages Npm Npm V 1 Security Audits Quick",
+					"name": "Post API v4 Packages Npm Npm v1 Security Audits Quick",
+					"value": "Post API v4 Packages Npm Npm v1 Security Audits Quick",
 					"action": "NPM registry quick audit endpoint",
 					"description": "This feature was introduced in GitLab 15.6",
 					"routing": {
@@ -91,7 +91,7 @@ export const packagesDescription: INodeProperties[] = [
 						"Packages"
 					],
 					"operation": [
-						"Get Api V 4 Packages Conan V 1 Users Authenticate"
+						"Get API v4 Packages Conan v1 Users Authenticate"
 					]
 				}
 			}
@@ -110,7 +110,7 @@ export const packagesDescription: INodeProperties[] = [
 						"Packages"
 					],
 					"operation": [
-						"Get Api V 4 Packages Conan V 1 Users Check Credentials"
+						"Get API v4 Packages Conan v1 Users Check Credentials"
 					]
 				}
 			}
@@ -129,7 +129,7 @@ export const packagesDescription: INodeProperties[] = [
 						"Packages"
 					],
 					"operation": [
-						"Get Api V 4 Packages Conan V 1 Ping"
+						"Get API v4 Packages Conan v1 Ping"
 					]
 				}
 			}
@@ -148,7 +148,7 @@ export const packagesDescription: INodeProperties[] = [
 						"Packages"
 					],
 					"operation": [
-						"Post Api V 4 Packages Npm Npm V 1 Security Advisories Bulk"
+						"Post API v4 Packages Npm Npm v1 Security Advisories Bulk"
 					]
 				}
 			}
@@ -167,7 +167,7 @@ export const packagesDescription: INodeProperties[] = [
 						"Packages"
 					],
 					"operation": [
-						"Post Api V 4 Packages Npm Npm V 1 Security Audits Quick"
+						"Post API v4 Packages Npm Npm v1 Security Audits Quick"
 					]
 				}
 			}

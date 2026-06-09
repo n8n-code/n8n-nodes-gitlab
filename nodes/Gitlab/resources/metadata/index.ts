@@ -15,8 +15,8 @@ export const metadataDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Get Api V 4 Metadata",
-					"value": "Get Api V 4 Metadata",
+					"name": "Get API v4 Metadata",
+					"value": "Get API v4 Metadata",
 					"action": "Retrieve metadata information for this GitLab instance",
 					"description": "Retrieves metadata information for the GitLab instance.",
 					"routing": {
@@ -27,8 +27,8 @@ export const metadataDescription: INodeProperties[] = [
 					}
 				},
 				{
-					"name": "Get Api V 4 Version",
-					"value": "Get Api V 4 Version",
+					"name": "Get API v4 Version",
+					"value": "Get API v4 Version",
 					"action": "Retrieves version information for the GitLab instance",
 					"description": "This feature was introduced in GitLab 8.13 and deprecated in 15.5. We recommend you instead use the Metadata API.",
 					"routing": {
@@ -55,7 +55,7 @@ export const metadataDescription: INodeProperties[] = [
 						"Metadata"
 					],
 					"operation": [
-						"Get Api V 4 Metadata"
+						"Get API v4 Metadata"
 					]
 				}
 			}
@@ -74,7 +74,7 @@ export const metadataDescription: INodeProperties[] = [
 						"Metadata"
 					],
 					"operation": [
-						"Get Api V 4 Version"
+						"Get API v4 Version"
 					]
 				}
 			}

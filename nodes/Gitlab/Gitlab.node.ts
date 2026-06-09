@@ -23,14 +23,14 @@ import { projectImportDescription } from './resources/project-import';
 
 export class Gitlab implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'gitlab',
+		displayName: 'GitLab',
 		name: 'N8nDevGitlab',
 		icon: { light: 'file:./gitlab.svg', dark: 'file:./gitlab.dark.svg' },
 		group: ['input'],
 		version: 1,
 		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
 		description: 'GitLab DevOps platform',
-		defaults: { name: 'gitlab' },
+		defaults: { name: 'GitLab' },
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],

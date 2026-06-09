@@ -15,8 +15,8 @@ export const runnersDescription: INodeProperties[] = [
 			},
 			"options": [
 				{
-					"name": "Post Api V 4 Runners Reset Registration Token",
-					"value": "Post Api V 4 Runners Reset Registration Token",
+					"name": "Post API v4 Runners Reset Registration Token",
+					"value": "Post API v4 Runners Reset Registration Token",
 					"action": "Reset the runner registration token for the instance",
 					"description": "Resets the runner registration token for the GitLab instance.",
 					"routing": {
@@ -43,7 +43,7 @@ export const runnersDescription: INodeProperties[] = [
 						"Runners"
 					],
 					"operation": [
-						"Post Api V 4 Runners Reset Registration Token"
+						"Post API v4 Runners Reset Registration Token"
 					]
 				}
 			}
