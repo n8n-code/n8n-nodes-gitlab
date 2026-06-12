@@ -22,32 +22,32 @@ import { metadataDescription } from './resources/metadata';
 import { projectImportDescription } from './resources/project-import';
 
 export class Gitlab implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'GitLab',
-		name: 'N8nDevGitlab',
-		icon: { light: 'file:./gitlab.svg', dark: 'file:./gitlab.dark.svg' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'GitLab DevOps platform',
-		defaults: { name: 'GitLab' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevGitlabApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'GitLab',
+                name: 'N8nDevGitlab',
+                icon: { light: 'file:./gitlab.svg', dark: 'file:./gitlab.dark.svg' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'GitLab DevOps platform',
+                defaults: { name: 'GitLab' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevGitlabApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -183,6 +183,6 @@ export class Gitlab implements INodeType {
 		...integrationsDescription,
 		...metadataDescription,
 		...projectImportDescription
-		],
-	};
+                ],
+        };
 }
