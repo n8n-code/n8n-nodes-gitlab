@@ -20083,13 +20083,217 @@
         "operationId": "getApiV4ProjectsIdPackagesCargoConfigJson"
       }
     },
+    "/api/v4/projects/{id}/packages/cargo/1/{package_name}": {
+      "get": {
+        "summary": "Get the sparse index for a Cargo crate (1-character name)",
+        "description": "Returns newline-delimited JSON, one line per published version, most recently published first. Limited to the 500 most recently published versions.",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "package_name",
+            "description": "The cargo package name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the sparse index for a Cargo crate (1-character name)"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "tags": [
+          "packages"
+        ],
+        "operationId": "getApiV4ProjectsIdPackagesCargo1PackageName"
+      }
+    },
+    "/api/v4/projects/{id}/packages/cargo/2/{package_name}": {
+      "get": {
+        "summary": "Get the sparse index for a Cargo crate (2-character name)",
+        "description": "Returns newline-delimited JSON, one line per published version, most recently published first. Limited to the 500 most recently published versions.",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "package_name",
+            "description": "The cargo package name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the sparse index for a Cargo crate (2-character name)"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "tags": [
+          "packages"
+        ],
+        "operationId": "getApiV4ProjectsIdPackagesCargo2PackageName"
+      }
+    },
+    "/api/v4/projects/{id}/packages/cargo/3/{first_char}/{package_name}": {
+      "get": {
+        "summary": "Get the sparse index for a Cargo crate (3-character name)",
+        "description": "Returns newline-delimited JSON, one line per published version, most recently published first. Limited to the 500 most recently published versions.",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "first_char",
+            "description": "First character of the cargo package name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "package_name",
+            "description": "The cargo package name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the sparse index for a Cargo crate (3-character name)"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "tags": [
+          "packages"
+        ],
+        "operationId": "getApiV4ProjectsIdPackagesCargo3FirstCharPackageName"
+      }
+    },
+    "/api/v4/projects/{id}/packages/cargo/{prefix_1}/{prefix_2}/{package_name}": {
+      "get": {
+        "summary": "Get the sparse index for a Cargo crate (4+ character name)",
+        "description": "Returns newline-delimited JSON, one line per published version, most recently published first. Limited to the 500 most recently published versions.",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "prefix_1",
+            "description": "First two characters of the cargo package name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "prefix_2",
+            "description": "Next two characters of the cargo package name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "package_name",
+            "description": "The cargo package name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the sparse index for a Cargo crate (4+ character name)"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "tags": [
+          "packages"
+        ],
+        "operationId": "getApiV4ProjectsIdPackagesCargoPrefix1Prefix2PackageName"
+      }
+    },
     "/api/v4/projects/{id}/packages/cargo/{package_name}/{package_version}/download": {
       "get": {
         "summary": "Download a Cargo crate",
         "description": "This endpoint serves the .crate file for a given package name and version",
         "produces": [
-          "application/octet-stream",
-          "application/json"
+          "application/octet-stream"
         ],
         "parameters": [
           {
@@ -26672,7 +26876,7 @@
     "/api/v4/projects/{id}/merge_requests/{merge_request_iid}/draft_notes/bulk_publish": {
       "post": {
         "summary": "Publish all pending draft notes",
-        "description": "Publishes all pending draft notes for a specified merge request that belong to the currently authenticated user.",
+        "description": "Publishes all pending draft notes for the current user on the specified merge request. Optionally sets the reviewer state and posts a summary note.",
         "produces": [
           "application/json"
         ],
@@ -26694,6 +26898,14 @@
             "type": "integer",
             "format": "int32",
             "required": true
+          },
+          {
+            "name": "postApiV4ProjectsIdMergeRequestsMergeRequestIidDraftNotesBulkPublish",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/postApiV4ProjectsIdMergeRequestsMergeRequestIidDraftNotesBulkPublish"
+            }
           }
         ],
         "responses": {
@@ -56849,6 +57061,114 @@
         "operationId": "getApiV4AdminBatchedBackgroundOperationsId"
       }
     },
+    "/api/v4/admin/batched_background_operations/{id}/stop": {
+      "put": {
+        "summary": "Stop a batched background operation",
+        "description": "This feature was introduced in GitLab 19.2.",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The batched background operation id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
+            "name": "putApiV4AdminBatchedBackgroundOperationsIdStop",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/putApiV4AdminBatchedBackgroundOperationsIdStop"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Stop a batched background operation",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_BatchedBackgroundOperation"
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized"
+          },
+          "403": {
+            "description": "403 Forbidden"
+          },
+          "404": {
+            "description": "404 Not found"
+          },
+          "422": {
+            "description": "You can stop only `queued`, `active` or `paused` operations."
+          }
+        },
+        "tags": [
+          "batched_background_operations"
+        ],
+        "operationId": "putApiV4AdminBatchedBackgroundOperationsIdStop"
+      }
+    },
+    "/api/v4/admin/batched_background_operations/{id}/restart": {
+      "put": {
+        "summary": "Restart a batched background operation",
+        "description": "This feature was introduced in GitLab 19.2.",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The batched background operation id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
+            "name": "putApiV4AdminBatchedBackgroundOperationsIdRestart",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/putApiV4AdminBatchedBackgroundOperationsIdRestart"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Restart a batched background operation",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_BatchedBackgroundOperation"
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized"
+          },
+          "403": {
+            "description": "403 Forbidden"
+          },
+          "404": {
+            "description": "404 Not found"
+          },
+          "422": {
+            "description": "You can restart only `stopped` operations."
+          }
+        },
+        "tags": [
+          "batched_background_operations"
+        ],
+        "operationId": "putApiV4AdminBatchedBackgroundOperationsIdRestart"
+      }
+    },
     "/api/v4/admin/ci/variables": {
       "get": {
         "summary": "List all instance variables",
@@ -65017,6 +65337,46 @@
         "operationId": "postApiV4Organizations"
       }
     },
+    "/api/v4/organizations/{id}": {
+      "delete": {
+        "summary": "Soft-delete an organization",
+        "description": "This feature was introduced in GitLab 19.2.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the organization",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Soft-delete an organization"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "organizations"
+        ],
+        "operationId": "deleteApiV4OrganizationsId"
+      }
+    },
     "/api/v4/pages/domains": {
       "get": {
         "summary": "List all Pages domains",
@@ -71434,6 +71794,10 @@
         },
         "auto_duo_code_review_enabled": {
           "type": "string"
+        },
+        "reviewer_assignment_strategy": {
+          "type": "string",
+          "example": "code_owners"
         },
         "duo_remote_flows_enabled": {
           "type": "string"
@@ -82795,6 +83159,29 @@
         }
       },
       "description": "Update a draft note"
+    },
+    "postApiV4ProjectsIdMergeRequestsMergeRequestIidDraftNotesBulkPublish": {
+      "type": "object",
+      "properties": {
+        "reviewer_state": {
+          "type": "string",
+          "description": "Set reviewer review state after publishing. Does not record a formal approval",
+          "enum": [
+            "requested_changes",
+            "reviewed"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "description": "Summary note body to post on the merge request"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "If true, the summary note is internal",
+          "default": false
+        }
+      },
+      "description": "Publish all pending draft notes"
     },
     "API_Entities_Environment": {
       "type": "object",
@@ -95671,6 +96058,10 @@
         "auto_duo_code_review_enabled": {
           "type": "string"
         },
+        "reviewer_assignment_strategy": {
+          "type": "string",
+          "example": "code_owners"
+        },
         "duo_remote_flows_enabled": {
           "type": "string"
         },
@@ -96550,6 +96941,15 @@
         "security_policy_pipeline_must_succeed": {
           "type": "boolean",
           "description": "Require all security policy pipelines to succeed before merge requests can be merged"
+        },
+        "reviewer_assignment_strategy": {
+          "type": "string",
+          "description": "Strategy used to automatically assign reviewers to merge requests. One of `disabled`, `code_owners`, or `dap_powered`.",
+          "enum": [
+            "disabled",
+            "code_owners",
+            "dap_powered"
+          ]
         }
       },
       "description": "Update a project"
@@ -98749,6 +99149,42 @@
         "on_hold_until"
       ],
       "description": "API_Entities_BatchedBackgroundOperation model"
+    },
+    "putApiV4AdminBatchedBackgroundOperationsIdStop": {
+      "type": "object",
+      "properties": {
+        "database": {
+          "type": "string",
+          "description": "The name of the database",
+          "enum": [
+            "main",
+            "ci",
+            "sec",
+            "embedding",
+            "geo"
+          ],
+          "default": "main"
+        }
+      },
+      "description": "Stop a batched background operation"
+    },
+    "putApiV4AdminBatchedBackgroundOperationsIdRestart": {
+      "type": "object",
+      "properties": {
+        "database": {
+          "type": "string",
+          "description": "The name of the database",
+          "enum": [
+            "main",
+            "ci",
+            "sec",
+            "embedding",
+            "geo"
+          ],
+          "default": "main"
+        }
+      },
+      "description": "Restart a batched background operation"
     },
     "postApiV4AdminCiVariables": {
       "type": "object",
