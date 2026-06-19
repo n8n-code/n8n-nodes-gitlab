@@ -89677,6 +89677,17 @@
             "ticket"
           ]
         },
+        "severity": {
+          "type": "string",
+          "description": "The severity of the issue. Only applies to incidents. Accepts: unknown, low, medium, high, critical",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
         "weight": {
           "type": "integer",
           "format": "int32",
@@ -89791,6 +89802,17 @@
             "requirement",
             "task",
             "ticket"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "description": "The severity of the issue. Only applies to incidents. Accepts: unknown, low, medium, high, critical",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high",
+            "critical"
           ]
         },
         "weight": {
@@ -102446,6 +102468,39 @@
         "container_repositories_oldest_unsynced_time": {
           "type": "string"
         },
+        "dependency_list_export_part_uploads_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_checksum_total_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_checksummed_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_checksum_failed_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_synced_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_failed_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_registry_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_verification_total_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_verified_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_verification_failed_count": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_oldest_unsynced_time": {
+          "type": "string"
+        },
         "dependency_list_export_uploads_count": {
           "type": "string"
         },
@@ -102840,6 +102895,39 @@
           "type": "string"
         },
         "merge_request_diffs_oldest_unsynced_time": {
+          "type": "string"
+        },
+        "organization_detail_uploads_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_checksum_total_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_checksummed_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_checksum_failed_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_synced_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_failed_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_registry_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_verification_total_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_verified_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_verification_failed_count": {
+          "type": "string"
+        },
+        "organization_detail_uploads_oldest_unsynced_time": {
           "type": "string"
         },
         "package_files_count": {
@@ -103562,6 +103650,12 @@
         "container_repositories_verified_in_percentage": {
           "type": "string"
         },
+        "dependency_list_export_part_uploads_synced_in_percentage": {
+          "type": "string"
+        },
+        "dependency_list_export_part_uploads_verified_in_percentage": {
+          "type": "string"
+        },
         "dependency_list_export_uploads_synced_in_percentage": {
           "type": "string"
         },
@@ -103632,6 +103726,12 @@
           "type": "string"
         },
         "merge_request_diffs_verified_in_percentage": {
+          "type": "string"
+        },
+        "organization_detail_uploads_synced_in_percentage": {
+          "type": "string"
+        },
+        "organization_detail_uploads_verified_in_percentage": {
           "type": "string"
         },
         "package_files_synced_in_percentage": {
@@ -103920,6 +104020,17 @@
         "container_repositories_verified_count",
         "container_repositories_verification_failed_count",
         "container_repositories_oldest_unsynced_time",
+        "dependency_list_export_part_uploads_count",
+        "dependency_list_export_part_uploads_checksum_total_count",
+        "dependency_list_export_part_uploads_checksummed_count",
+        "dependency_list_export_part_uploads_checksum_failed_count",
+        "dependency_list_export_part_uploads_synced_count",
+        "dependency_list_export_part_uploads_failed_count",
+        "dependency_list_export_part_uploads_registry_count",
+        "dependency_list_export_part_uploads_verification_total_count",
+        "dependency_list_export_part_uploads_verified_count",
+        "dependency_list_export_part_uploads_verification_failed_count",
+        "dependency_list_export_part_uploads_oldest_unsynced_time",
         "dependency_list_export_uploads_count",
         "dependency_list_export_uploads_checksum_total_count",
         "dependency_list_export_uploads_checksummed_count",
@@ -104052,6 +104163,17 @@
         "merge_request_diffs_verified_count",
         "merge_request_diffs_verification_failed_count",
         "merge_request_diffs_oldest_unsynced_time",
+        "organization_detail_uploads_count",
+        "organization_detail_uploads_checksum_total_count",
+        "organization_detail_uploads_checksummed_count",
+        "organization_detail_uploads_checksum_failed_count",
+        "organization_detail_uploads_synced_count",
+        "organization_detail_uploads_failed_count",
+        "organization_detail_uploads_registry_count",
+        "organization_detail_uploads_verification_total_count",
+        "organization_detail_uploads_verified_count",
+        "organization_detail_uploads_verification_failed_count",
+        "organization_detail_uploads_oldest_unsynced_time",
         "package_files_count",
         "package_files_checksum_total_count",
         "package_files_checksummed_count",
@@ -104292,6 +104414,8 @@
         "ci_secure_files_verified_in_percentage",
         "container_repositories_synced_in_percentage",
         "container_repositories_verified_in_percentage",
+        "dependency_list_export_part_uploads_synced_in_percentage",
+        "dependency_list_export_part_uploads_verified_in_percentage",
         "dependency_list_export_uploads_synced_in_percentage",
         "dependency_list_export_uploads_verified_in_percentage",
         "dependency_proxy_blobs_synced_in_percentage",
@@ -104316,6 +104440,8 @@
         "lfs_objects_verified_in_percentage",
         "merge_request_diffs_synced_in_percentage",
         "merge_request_diffs_verified_in_percentage",
+        "organization_detail_uploads_synced_in_percentage",
+        "organization_detail_uploads_verified_in_percentage",
         "package_files_synced_in_percentage",
         "package_files_verified_in_percentage",
         "packages_debian_project_component_files_synced_in_percentage",
