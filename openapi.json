@@ -69144,6 +69144,9 @@
         "admin_ai_catalog_item_consumer": {
           "type": "boolean"
         },
+        "destroy_package": {
+          "type": "boolean"
+        },
         "remove_project": {
           "type": "boolean"
         },
@@ -69263,6 +69266,7 @@
         "admin_merge_request",
         "archive_project",
         "admin_ai_catalog_item_consumer",
+        "destroy_package",
         "remove_project",
         "remove_group",
         "manage_security_policy_link",
