@@ -51965,7 +51965,7 @@
     "/api/v4/projects/{id}/audit_events/{audit_event_id}": {
       "get": {
         "summary": "Retrieve a project audit event",
-        "description": "Retrieves an audit event for a specified project. Only available to users with the Maintainer or Owner role for the project.",
+        "description": "Retrieves an audit event for a specified project. Only available to users with at least the Developer role for the project.",
         "produces": [
           "application/json"
         ],
@@ -68819,7 +68819,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "username": {
@@ -68911,7 +68911,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "username": {
@@ -69006,7 +69006,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "username": {
@@ -69872,7 +69872,7 @@
         },
         "member_role_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 12
         }
       },
@@ -69896,7 +69896,7 @@
         },
         "member_role_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 12
         },
         "provider": {
@@ -71784,6 +71784,9 @@
         "merge_trains_skip_train_allowed": {
           "type": "string"
         },
+        "merge_train_enforcement": {
+          "type": "string"
+        },
         "max_pipelines_per_merge_train": {
           "type": "string"
         },
@@ -72356,7 +72359,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "username": {
@@ -72574,7 +72577,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 142
         },
         "title": {
@@ -72718,7 +72721,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -72802,7 +72805,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -73254,7 +73257,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -73267,7 +73270,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 9
         },
         "location": {
@@ -73411,7 +73414,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "codename": {
@@ -73643,7 +73646,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -73688,13 +73691,13 @@
         },
         "creator_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1,
           "description": "ID of the user who created the package"
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "project_path": {
@@ -73970,7 +73973,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 75
         },
         "title": {
@@ -76494,7 +76497,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 75
         },
         "title": {
@@ -77266,7 +77269,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "size": {
@@ -77301,7 +77304,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "username": {
@@ -78501,7 +78504,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "name": {
@@ -78527,7 +78530,7 @@
         },
         "user_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "last_used_at": {
@@ -79287,7 +79290,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "username": {
@@ -82255,7 +82258,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "title": {
@@ -82362,7 +82365,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "title": {
@@ -91909,12 +91912,12 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 225
         },
         "package_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 4
         },
         "created_at": {
@@ -92349,12 +92352,12 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "repository_path_pattern": {
@@ -92445,12 +92448,12 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 123
         },
         "tag_name_pattern": {
@@ -93108,7 +93111,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "url": {
@@ -93869,12 +93872,12 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "package_name_pattern": {
@@ -96069,6 +96072,9 @@
         "merge_trains_skip_train_allowed": {
           "type": "string"
         },
+        "merge_train_enforcement": {
+          "type": "string"
+        },
         "max_pipelines_per_merge_train": {
           "type": "string"
         },
@@ -96951,6 +96957,15 @@
           "type": "boolean",
           "description": "Allow merge train merge requests to be merged without waiting for pipelines to finish."
         },
+        "merge_train_enforcement": {
+          "type": "string",
+          "description": "Merge train enforcement level. One of `allow_bypass`, `enforce_for_all_users`, or `enforce_with_owner_override`.",
+          "enum": [
+            "allow_bypass",
+            "enforce_for_all_users",
+            "enforce_with_owner_override"
+          ]
+        },
         "max_pipelines_per_merge_train": {
           "type": "integer",
           "format": "int32",
@@ -97139,7 +97154,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "repository_storage": {
@@ -99476,7 +99491,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "message": {
           "type": "string",
@@ -99735,7 +99750,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "application_id": {
@@ -99782,7 +99797,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "application_id": {
@@ -104879,7 +104894,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "title": {
@@ -104930,7 +104945,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "username": {
@@ -105922,7 +105937,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "name": {
@@ -105948,7 +105963,7 @@
         },
         "user_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "last_used_at": {
@@ -105997,7 +106012,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "name": {
@@ -106023,7 +106038,7 @@
         },
         "user_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "last_used_at": {
@@ -106075,7 +106090,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "name": {
@@ -106101,7 +106116,7 @@
         },
         "user_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "last_used_at": {
@@ -106538,7 +106553,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "url": {
