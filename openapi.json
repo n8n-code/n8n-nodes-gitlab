@@ -69102,12 +69102,12 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "group_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "name": {
@@ -69207,6 +69207,9 @@
         "admin_web_hook": {
           "type": "boolean"
         },
+        "read_agent_artifacts": {
+          "type": "boolean"
+        },
         "read_compliance_dashboard": {
           "type": "boolean"
         },
@@ -69287,6 +69290,7 @@
         "admin_terraform_state",
         "admin_vulnerability",
         "admin_web_hook",
+        "read_agent_artifacts",
         "read_compliance_dashboard",
         "read_security_scan_profiles",
         "read_virtual_registry",
@@ -69407,7 +69411,7 @@
         },
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "kind": {
@@ -69517,7 +69521,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "web_url": {
           "type": "string",
@@ -69618,7 +69622,7 @@
         },
         "organization_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "shared_runners_setting": {
           "type": "string"
@@ -70881,7 +70885,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "web_url": {
           "type": "string",
@@ -70982,7 +70986,7 @@
         },
         "organization_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "shared_runners_setting": {
           "type": "string"
@@ -71134,6 +71138,9 @@
         "experiment_features_enabled": {
           "type": "string"
         },
+        "ai_settings": {
+          "$ref": "#/definitions/API_Entities_AiSettings"
+        },
         "membership_lock": {
           "type": "string"
         },
@@ -71221,7 +71228,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "description": {
@@ -71532,7 +71539,7 @@
         },
         "creator_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "mr_default_target_self": {
@@ -71965,7 +71972,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "name": {
@@ -71986,7 +71993,7 @@
         },
         "parent_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "avatar_url": {
@@ -72014,7 +72021,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "description": {
@@ -72250,6 +72257,75 @@
         "container_registry_size"
       ]
     },
+    "API_Entities_AiSettings": {
+      "type": "object",
+      "properties": {
+        "duo_agent_platform_enabled": {
+          "type": "boolean",
+          "example": true
+        },
+        "duo_workflow_mcp_enabled": {
+          "type": "boolean",
+          "example": false
+        },
+        "foundational_agents_default_enabled": {
+          "type": "boolean",
+          "example": true
+        },
+        "ai_catalog_restricted_to_group_hierarchy": {
+          "type": "boolean",
+          "example": false
+        },
+        "ai_usage_data_collection_enabled": {
+          "type": "boolean",
+          "example": false
+        },
+        "prompt_injection_protection_level": {
+          "type": "string",
+          "example": "no_checks"
+        },
+        "include_recommended_allowed": {
+          "type": "boolean",
+          "example": false
+        },
+        "allow_all_unix_sockets": {
+          "type": "boolean",
+          "example": false
+        },
+        "allow_project_extension": {
+          "type": "boolean",
+          "example": true
+        },
+        "minimum_access_level_execute": {
+          "type": "integer",
+          "format": "int32",
+          "example": 30
+        },
+        "minimum_access_level_execute_async": {
+          "type": "integer",
+          "format": "int32",
+          "example": 30
+        },
+        "minimum_access_level_manage": {
+          "type": "integer",
+          "format": "int32",
+          "example": 40
+        },
+        "minimum_access_level_enable_on_projects": {
+          "type": "integer",
+          "format": "int32",
+          "example": 40
+        }
+      },
+      "required": [
+        "duo_agent_platform_enabled",
+        "duo_workflow_mcp_enabled",
+        "foundational_agents_default_enabled",
+        "ai_catalog_restricted_to_group_hierarchy",
+        "ai_usage_data_collection_enabled",
+        "prompt_injection_protection_level"
+      ]
+    },
     "postApiV4GroupsIdTransfer": {
       "type": "object",
       "properties": {
@@ -72319,15 +72395,15 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "author_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "entity_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "entity_type": {
           "type": "string"
@@ -72624,7 +72700,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 8
         },
         "description": {
@@ -72981,7 +73057,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "description": {
@@ -73097,7 +73173,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "web_url": {
           "type": "string",
@@ -73736,7 +73812,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "iid": {
@@ -73746,7 +73822,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "sha": {
@@ -77235,7 +77311,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "description": "The ID of the file"
         },
         "alt": {
@@ -79131,7 +79207,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "status": {
@@ -79411,7 +79487,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "iid": {
@@ -79421,7 +79497,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "sha": {
@@ -79560,7 +79636,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 8
         },
         "system_id": {
@@ -79688,7 +79764,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "status": {
@@ -79808,7 +79884,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "key": {
@@ -79874,7 +79950,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 123
         },
         "name": {
@@ -79991,7 +80067,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "iid": {
@@ -80001,7 +80077,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "sha": {
@@ -80214,7 +80290,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "iid": {
@@ -80224,7 +80300,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 3
         },
         "sha": {
@@ -80348,7 +80424,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "status": {
@@ -80745,7 +80821,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 13
         },
         "description": {
@@ -80824,7 +80900,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 13
         },
         "description": {
@@ -81109,7 +81185,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 10
         },
         "token": {
@@ -81288,7 +81364,9 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "name": {
           "type": "string"
@@ -81297,16 +81375,21 @@
           "type": "string"
         },
         "agent_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "status": {
           "type": "string"
         },
         "created_at": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         },
         "created_by_user_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         }
       },
       "required": [
@@ -81324,7 +81407,9 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "name": {
           "type": "string"
@@ -81333,19 +81418,25 @@
           "type": "string"
         },
         "agent_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "status": {
           "type": "string"
         },
         "created_at": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         },
         "created_by_user_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "last_used_at": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         }
       },
       "required": [
@@ -81381,7 +81472,9 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "name": {
           "type": "string"
@@ -81390,19 +81483,25 @@
           "type": "string"
         },
         "agent_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "status": {
           "type": "string"
         },
         "created_at": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         },
         "created_by_user_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "last_used_at": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         },
         "token": {
           "type": "string"
@@ -81425,7 +81524,9 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "name": {
           "type": "string"
@@ -81434,13 +81535,16 @@
           "$ref": "#/definitions/API_Entities_ProjectIdentity"
         },
         "created_at": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         },
         "created_by_user_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64",
+          "example": 1
         },
         "is_receptive": {
-          "type": "string"
+          "type": "boolean"
         }
       },
       "required": [
@@ -81854,7 +81958,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 93
         },
         "sha": {
@@ -81906,7 +82010,7 @@
         },
         "pipeline_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 101
         },
         "author": {
@@ -82466,7 +82570,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 41
         },
         "iid": {
@@ -82525,7 +82629,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -82566,7 +82670,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 41
         },
         "iid": {
@@ -83195,7 +83299,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -83402,7 +83506,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "active": {
@@ -83543,7 +83647,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -83574,7 +83678,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "environment_scope": {
@@ -83592,7 +83696,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "iid": {
@@ -83758,7 +83862,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "iid": {
@@ -83776,7 +83880,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "created_at": {
@@ -83953,7 +84057,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "freeze_start": {
@@ -90143,7 +90247,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "alt": {
@@ -92966,7 +93070,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "description": {
@@ -93206,7 +93310,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "issues_events": {
@@ -93631,7 +93735,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "description": {
@@ -95509,7 +95613,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "description": {
@@ -95820,7 +95924,7 @@
         },
         "creator_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "mr_default_target_self": {
@@ -97040,17 +97144,17 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "group_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "group_access": {
@@ -97083,7 +97187,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "web_url": {
           "type": "string",
@@ -98859,12 +98963,12 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "state_name": {
@@ -100213,7 +100317,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 8
         },
         "description": {
@@ -100400,7 +100504,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "status": {
@@ -105308,7 +105412,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "name": {
@@ -105329,7 +105433,7 @@
         },
         "parent_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "avatar_url": {
@@ -105535,12 +105639,12 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "namespace_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 123
         },
         "namespace_name": {
@@ -105827,7 +105931,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -107697,10 +107801,10 @@
       "type": "object",
       "properties": {
         "groups": {
-          "type": "string"
+          "type": "object"
         },
         "projects": {
-          "type": "string"
+          "type": "object"
         }
       },
       "required": [
@@ -108071,7 +108175,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -108093,7 +108197,7 @@
         },
         "organization_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "avatar_url": {
