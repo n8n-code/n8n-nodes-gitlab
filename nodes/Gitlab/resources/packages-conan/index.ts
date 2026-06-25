@@ -1,6 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-export const packagesDescription: INodeProperties[] = [
+export const packagesConanDescription: INodeProperties[] = [
                 {
 			"displayName": "Operation",
 			"name": "operation",
@@ -9,7 +9,7 @@ export const packagesDescription: INodeProperties[] = [
 			"displayOptions": {
 				"show": {
 					"resource": [
-						"Packages"
+						"Packages Conan"
 					]
 				}
 			},
@@ -49,30 +49,6 @@ export const packagesDescription: INodeProperties[] = [
 							"url": "=/api/v4/packages/conan/v1/ping"
 						}
 					}
-				},
-				{
-					"name": "Post API v4 Packages Npm Npm v1 Security Advisories Bulk",
-					"value": "Post API v4 Packages Npm Npm v1 Security Advisories Bulk",
-					"action": "NPM registry bulk advisory endpoint",
-					"description": "This feature was introduced in GitLab 15.6",
-					"routing": {
-						"request": {
-							"method": "POST",
-							"url": "=/api/v4/packages/npm/-/npm/v1/security/advisories/bulk"
-						}
-					}
-				},
-				{
-					"name": "Post API v4 Packages Npm Npm v1 Security Audits Quick",
-					"value": "Post API v4 Packages Npm Npm v1 Security Audits Quick",
-					"action": "NPM registry quick audit endpoint",
-					"description": "This feature was introduced in GitLab 15.6",
-					"routing": {
-						"request": {
-							"method": "POST",
-							"url": "=/api/v4/packages/npm/-/npm/v1/security/audits/quick"
-						}
-					}
 				}
 			],
 			"default": ""
@@ -88,7 +64,7 @@ export const packagesDescription: INodeProperties[] = [
 			"displayOptions": {
 				"show": {
 					"resource": [
-						"Packages"
+						"Packages Conan"
 					],
 					"operation": [
 						"Get API v4 Packages Conan v1 Users Authenticate"
@@ -107,7 +83,7 @@ export const packagesDescription: INodeProperties[] = [
 			"displayOptions": {
 				"show": {
 					"resource": [
-						"Packages"
+						"Packages Conan"
 					],
 					"operation": [
 						"Get API v4 Packages Conan v1 Users Check Credentials"
@@ -126,48 +102,10 @@ export const packagesDescription: INodeProperties[] = [
 			"displayOptions": {
 				"show": {
 					"resource": [
-						"Packages"
+						"Packages Conan"
 					],
 					"operation": [
 						"Get API v4 Packages Conan v1 Ping"
-					]
-				}
-			}
-		},
-		{
-			"displayName": "POST /api/v4/packages/npm/-/npm/v1/security/advisories/bulk",
-			"name": "operation",
-			"type": "notice",
-			"typeOptions": {
-				"theme": "info"
-			},
-			"default": "",
-			"displayOptions": {
-				"show": {
-					"resource": [
-						"Packages"
-					],
-					"operation": [
-						"Post API v4 Packages Npm Npm v1 Security Advisories Bulk"
-					]
-				}
-			}
-		},
-		{
-			"displayName": "POST /api/v4/packages/npm/-/npm/v1/security/audits/quick",
-			"name": "operation",
-			"type": "notice",
-			"typeOptions": {
-				"theme": "info"
-			},
-			"default": "",
-			"displayOptions": {
-				"show": {
-					"resource": [
-						"Packages"
-					],
-					"operation": [
-						"Post API v4 Packages Npm Npm v1 Security Audits Quick"
 					]
 				}
 			}

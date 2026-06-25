@@ -13,7 +13,7 @@ Every time you connect n8n to gitlab, you waste hours mapping endpoints, definin
 
 **What if connecting n8n to gitlab took 5 minutes, not half a day?**
 
-This node gives you **135+ resources** out of the box: **Award Emoji**, **Badges**, **Custom Attributes**, **Groups**, **Ldap**, and 130 more: with full CRUD operations, typed parameters, and zero manual configuration.
+This node gives you **145+ resources** out of the box: **Award Emoji**, **Badges**, **Custom Attributes**, **Groups**, **Ldap**, and 140 more: with full CRUD operations, typed parameters, and zero manual configuration.
 
 ---
 
@@ -68,20 +68,17 @@ That's it. No configuration files. No code. It just works.
 </details>
 
 <details>
-<summary><b>Packages</b> (5 operations)</summary>
+<summary><b>Group Import And Export</b> (1 operations)</summary>
 
-- Get Authenticate user against conan CLI
-- Get Check for valid user credentials per conan CLI
-- Get Ping the Conan API
-- Post NPM registry bulk advisory endpoint
-- Post NPM registry quick audit endpoint
+- Post Workhorse authorize the group import upload
 
 </details>
 
 <details>
-<summary><b>Group Import And Export</b> (1 operations)</summary>
+<summary><b>Packages Npm</b> (2 operations)</summary>
 
-- Post Workhorse authorize the group import upload
+- Post NPM registry bulk advisory endpoint
+- Post NPM registry quick audit endpoint
 
 </details>
 
@@ -97,6 +94,15 @@ That's it. No configuration files. No code. It just works.
 <summary><b>Ci Jobs</b> (1 operations)</summary>
 
 - Get Retrieve a job by job token
+
+</details>
+
+<details>
+<summary><b>Packages Conan</b> (3 operations)</summary>
+
+- Get Authenticate user against conan CLI
+- Get Check for valid user credentials per conan CLI
+- Get Ping the Conan API
 
 </details>
 

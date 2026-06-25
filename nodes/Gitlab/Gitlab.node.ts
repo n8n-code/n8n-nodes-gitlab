@@ -1,10 +1,11 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
 import { groupsDescription } from './resources/groups';
 import { runnersDescription } from './resources/runners';
-import { packagesDescription } from './resources/packages';
 import { groupImportAndExportDescription } from './resources/group-import-and-export';
+import { packagesNpmDescription } from './resources/packages-npm';
 import { accessTokensDescription } from './resources/access-tokens';
 import { ciJobsDescription } from './resources/ci-jobs';
+import { packagesConanDescription } from './resources/packages-conan';
 import { applicationsDescription } from './resources/applications';
 import { agentsDescription } from './resources/agents';
 import { ciRunnersDescription } from './resources/ci-runners';
@@ -65,14 +66,14 @@ export class Gitlab implements INodeType {
 					"description": "Operations about runners"
 				},
 				{
-					"name": "Packages",
-					"value": "Packages",
-					"description": "Operations about packages"
-				},
-				{
 					"name": "Group Import And Export",
 					"value": "Group Import And Export",
 					"description": "Operations about group_import_and_exports"
+				},
+				{
+					"name": "Packages Npm",
+					"value": "Packages Npm",
+					"description": "Operations about packages_npms"
 				},
 				{
 					"name": "Access Tokens",
@@ -83,6 +84,11 @@ export class Gitlab implements INodeType {
 					"name": "Ci Jobs",
 					"value": "Ci Jobs",
 					"description": "Operations about ci_jobs"
+				},
+				{
+					"name": "Packages Conan",
+					"value": "Packages Conan",
+					"description": "Operations about packages_conans"
 				},
 				{
 					"name": "Applications",
@@ -164,10 +170,11 @@ export class Gitlab implements INodeType {
 		},
 		...groupsDescription,
 		...runnersDescription,
-		...packagesDescription,
 		...groupImportAndExportDescription,
+		...packagesNpmDescription,
 		...accessTokensDescription,
 		...ciJobsDescription,
+		...packagesConanDescription,
 		...applicationsDescription,
 		...agentsDescription,
 		...ciRunnersDescription,

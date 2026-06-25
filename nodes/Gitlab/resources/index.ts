@@ -1,9 +1,10 @@
 export { groupsDescription } from './groups';
 export { runnersDescription } from './runners';
-export { packagesDescription } from './packages';
 export { groupImportAndExportDescription } from './group-import-and-export';
+export { packagesNpmDescription } from './packages-npm';
 export { accessTokensDescription } from './access-tokens';
 export { ciJobsDescription } from './ci-jobs';
+export { packagesConanDescription } from './packages-conan';
 export { applicationsDescription } from './applications';
 export { agentsDescription } from './agents';
 export { ciRunnersDescription } from './ci-runners';
