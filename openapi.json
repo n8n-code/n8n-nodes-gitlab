@@ -97414,6 +97414,15 @@
           "type": "integer",
           "format": "int32",
           "example": 1
+        },
+        "member_role_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": 42
+        },
+        "member_role_name": {
+          "type": "string",
+          "example": "Lead Developer"
         }
       },
       "required": [
