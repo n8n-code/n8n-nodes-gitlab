@@ -6104,8 +6104,8 @@
     },
     "/api/v4/groups/{id}/placeholder_reassignments": {
       "get": {
-        "summary": "Download the list of pending placeholder assignments for a group",
-        "description": "Downloads a CSV file of pending placeholder assignments for a group.\n          This feature was added in GitLab 17.10",
+        "summary": "Retrieve pending reassignments",
+        "description": "Retrieves a CSV file with a list of pending reassignments. This feature was added in GitLab 17.10",
         "produces": [
           "application/json"
         ],
@@ -6120,7 +6120,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download the list of pending placeholder assignments for a group"
+            "description": "Retrieve pending reassignments"
           }
         },
         "tags": [
@@ -17968,6 +17968,105 @@
     },
     "/api/v4/projects/{id}/pipelines/{pipeline_id}/bridges": {
       "get": {
+        "summary": "List all bridge jobs by pipeline",
+        "description": "Deprecated in GitLab 19.2. Use trigger_jobs endpoint instead.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The project ID or URL-encoded path",
+            "type": "string",
+            "required": true,
+            "example": "11"
+          },
+          {
+            "in": "path",
+            "name": "pipeline_id",
+            "description": "The pipeline ID",
+            "type": "integer",
+            "format": "int32",
+            "required": true,
+            "example": 18
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "description": "The scope of builds to show",
+            "type": "string",
+            "enum": [
+              "created",
+              "waiting_for_resource",
+              "preparing",
+              "waiting_for_callback",
+              "pending",
+              "running",
+              "success",
+              "failed",
+              "canceling",
+              "canceled",
+              "skipped",
+              "manual",
+              "scheduled"
+            ],
+            "required": false,
+            "example": [
+              "pending",
+              "running"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "Current page number",
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "required": false,
+            "example": 1
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "description": "Number of items per page",
+            "type": "integer",
+            "format": "int32",
+            "default": 20,
+            "required": false,
+            "example": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List all bridge jobs by pipeline",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/API_Entities_Ci_Bridge"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "getApiV4ProjectsIdPipelinesPipelineIdBridges",
+        "deprecated": true
+      }
+    },
+    "/api/v4/projects/{id}/pipelines/{pipeline_id}/trigger_jobs": {
+      "get": {
         "summary": "List all trigger jobs by pipeline",
         "description": "Lists all trigger jobs for a specified pipeline.",
         "produces": [
@@ -18061,7 +18160,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "getApiV4ProjectsIdPipelinesPipelineIdBridges"
+        "operationId": "getApiV4ProjectsIdPipelinesPipelineIdTriggerJobs"
       }
     },
     "/api/v4/projects/{id}/pipelines/{pipeline_id}/variables": {
@@ -35552,7 +35651,7 @@
       },
       "post": {
         "summary": "Create an issue link",
-        "description": "Creates a two-way relation between two issues.The user must be allowed to update both issues to succeed.",
+        "description": "Creates a two-way relationship between two issues. The user must be allowed to update both issues to succeed.",
         "produces": [
           "application/json"
         ],
@@ -62187,8 +62286,8 @@
     },
     "/api/v4/events": {
       "get": {
-        "summary": "List currently authenticated user's events",
-        "description": "This feature was introduced in GitLab 9.3.",
+        "summary": "List all events",
+        "description": "Lists all events for the authenticated user. Does not return events associated with epics or merge requests. Returns bulk push events with limited commit details.",
         "produces": [
           "application/json"
         ],
@@ -62277,7 +62376,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List currently authenticated user's events",
+            "description": "List all events",
             "schema": {
               "type": "array",
               "items": {
@@ -62297,8 +62396,8 @@
     },
     "/api/v4/users/{id}/events": {
       "get": {
-        "summary": "Get the contribution events of a specified user",
-        "description": "This feature was introduced in GitLab 8.13.",
+        "summary": "Retrieve contribution events for a user",
+        "description": "Retrieves the contribution events for a specified user. Does not return events associated with epics or merge requests. Returns bulk push events with limited commit details.",
         "produces": [
           "application/json"
         ],
@@ -62386,7 +62485,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get the contribution events of a specified user",
+            "description": "Retrieve contribution events for a user",
             "schema": {
               "type": "array",
               "items": {
