@@ -9,6 +9,8 @@ export { applicationsDescription } from './applications';
 export { agentsDescription } from './agents';
 export { ciRunnersDescription } from './ci-runners';
 export { internalOperationsDescription } from './internal-operations';
+export { jiraForgeInstallationDescription } from './jira-forge-installation';
+export { jiraForgeSubscriptionsDescription } from './jira-forge-subscriptions';
 export { usageDataDescription } from './usage-data';
 export { usersDescription } from './users';
 export { instanceDescription } from './instance';

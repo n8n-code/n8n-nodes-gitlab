@@ -10,6 +10,8 @@ import { applicationsDescription } from './resources/applications';
 import { agentsDescription } from './resources/agents';
 import { ciRunnersDescription } from './resources/ci-runners';
 import { internalOperationsDescription } from './resources/internal-operations';
+import { jiraForgeInstallationDescription } from './resources/jira-forge-installation';
+import { jiraForgeSubscriptionsDescription } from './resources/jira-forge-subscriptions';
 import { usageDataDescription } from './resources/usage-data';
 import { usersDescription } from './resources/users';
 import { instanceDescription } from './resources/instance';
@@ -111,6 +113,16 @@ export class Gitlab implements INodeType {
 					"description": "Operations about internal_operations"
 				},
 				{
+					"name": "Jira Forge Installation",
+					"value": "Jira Forge Installation",
+					"description": "Operations about jira_forge_installations"
+				},
+				{
+					"name": "Jira Forge Subscriptions",
+					"value": "Jira Forge Subscriptions",
+					"description": "Operations about jira_forge_subscriptions"
+				},
+				{
 					"name": "Usage Data",
 					"value": "Usage Data",
 					"description": "Operations about usage_data"
@@ -179,6 +191,8 @@ export class Gitlab implements INodeType {
 		...agentsDescription,
 		...ciRunnersDescription,
 		...internalOperationsDescription,
+		...jiraForgeInstallationDescription,
+		...jiraForgeSubscriptionsDescription,
 		...usageDataDescription,
 		...usersDescription,
 		...instanceDescription,

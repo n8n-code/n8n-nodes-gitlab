@@ -310,6 +310,14 @@
       "description": "Operations about internal_operations"
     },
     {
+      "name": "jira_forge_installation",
+      "description": "Operations about jira_forge_installations"
+    },
+    {
+      "name": "jira_forge_subscriptions",
+      "description": "Operations about jira_forge_subscriptions"
+    },
+    {
       "name": "markdown",
       "description": "Operations about markdowns"
     },
@@ -1836,7 +1844,8 @@
     },
     "/api/v4/groups/{id}": {
       "put": {
-        "description": "Update a group. Available only for users who can administrate groups.",
+        "summary": "Update group attributes",
+        "description": "Updates the attributes for a specified group. You must be an administrator or have the Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -1862,7 +1871,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update a group. Available only for users who can administrate groups.",
+            "description": "Update group attributes",
             "schema": {
               "$ref": "#/definitions/API_Entities_Group"
             }
@@ -1874,7 +1883,8 @@
         "operationId": "putApiV4GroupsId"
       },
       "get": {
-        "description": "Get a single group, with containing projects.",
+        "summary": "Retrieve a group",
+        "description": "Retrieves a specified group by ID or path.",
         "produces": [
           "application/json"
         ],
@@ -1905,7 +1915,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a single group, with containing projects.",
+            "description": "Retrieve a group",
             "schema": {
               "$ref": "#/definitions/API_Entities_GroupDetail"
             }
@@ -1917,7 +1927,8 @@
         "operationId": "getApiV4GroupsId"
       },
       "delete": {
-        "description": "Remove a group.",
+        "summary": "Schedule a group for deletion",
+        "description": "Schedules a group for deletion. Groups are deleted at the end of the retention period (30 days by default). Use the `permanently_remove` param to override the retention period.",
         "produces": [
           "application/json"
         ],
@@ -1979,7 +1990,8 @@
     },
     "/api/v4/groups/{id}/unarchive": {
       "post": {
-        "description": "Unarchive a group",
+        "summary": "Unarchive a group",
+        "description": "Unarchives a specified group. You must be an administrator or have the Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -2014,7 +2026,8 @@
     },
     "/api/v4/groups/{id}/restore": {
       "post": {
-        "description": "Restore a group.",
+        "summary": "Restore a group",
+        "description": "Restores a specified group that was previously scheduled for deletion. Can not restore groups outside of the retention period (30 days by default).",
         "produces": [
           "application/json"
         ],
@@ -2032,7 +2045,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Restore a group."
+            "description": "Restore a group"
           }
         },
         "tags": [
@@ -2043,7 +2056,8 @@
     },
     "/api/v4/groups/{id}/groups/shared": {
       "get": {
-        "description": "Get a list of shared groups this group was invited to",
+        "summary": "List all shared groups",
+        "description": "Lists all groups shared with a specified group.",
         "produces": [
           "application/json"
         ],
@@ -2159,7 +2173,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of shared groups this group was invited to",
+            "description": "List all shared groups",
             "schema": {
               "type": "array",
               "items": {
@@ -2176,7 +2190,8 @@
     },
     "/api/v4/groups/{id}/invited_groups": {
       "get": {
-        "description": "Get a list of invited groups in this group",
+        "summary": "List all invited groups",
+        "description": "Lists all groups invited to a specified group.",
         "produces": [
           "application/json"
         ],
@@ -2257,7 +2272,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of invited groups in this group",
+            "description": "List all invited groups",
             "schema": {
               "type": "array",
               "items": {
@@ -2274,7 +2289,8 @@
     },
     "/api/v4/groups/{id}/projects": {
       "get": {
-        "description": "Get a list of projects in this group.",
+        "summary": "List all projects in a group",
+        "description": "Lists all projects in a specified group accessible to the authenticated user. Unauthenticated requests return only public projects with a limited subset of attributes.",
         "produces": [
           "application/json"
         ],
@@ -2469,7 +2485,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of projects in this group.",
+            "description": "List all projects in a group",
             "schema": {
               "type": "array",
               "items": {
@@ -2486,7 +2502,8 @@
     },
     "/api/v4/groups/{id}/projects/shared": {
       "get": {
-        "description": "Get a list of shared projects in this group",
+        "summary": "List all shared projects",
+        "description": "Lists all projects shared with a specified group.",
         "produces": [
           "application/json"
         ],
@@ -2633,7 +2650,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of shared projects in this group",
+            "description": "List all shared projects",
             "schema": {
               "type": "array",
               "items": {
@@ -2650,7 +2667,8 @@
     },
     "/api/v4/groups/{id}/subgroups": {
       "get": {
-        "description": "Get a list of subgroups in this group.",
+        "summary": "List all subgroups",
+        "description": "Lists all subgroups for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -2825,7 +2843,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of subgroups in this group.",
+            "description": "List all subgroups",
             "schema": {
               "type": "array",
               "items": {
@@ -2842,7 +2860,8 @@
     },
     "/api/v4/groups/{id}/descendant_groups": {
       "get": {
-        "description": "Get a list of descendant groups of this group.",
+        "summary": "List all descendant groups",
+        "description": "Lists all descendant groups for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -3017,7 +3036,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of descendant groups of this group.",
+            "description": "List all descendant groups",
             "schema": {
               "type": "array",
               "items": {
@@ -3034,7 +3053,8 @@
     },
     "/api/v4/groups/{id}/projects/{project_id}": {
       "post": {
-        "description": "Transfer a project to the group namespace. Available only for admin.",
+        "summary": "Transfer a project to a group",
+        "description": "Transfers a specified project to another group. Administrators only.",
         "produces": [
           "application/json"
         ],
@@ -3059,7 +3079,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Transfer a project to the group namespace. Available only for admin.",
+            "description": "Transfer a project to a group",
             "schema": {
               "$ref": "#/definitions/API_Entities_GroupDetail"
             }
@@ -3073,7 +3093,8 @@
     },
     "/api/v4/groups/{id}/transfer_locations": {
       "get": {
-        "description": "Get the groups to where the current group can be transferred to",
+        "summary": "List all transfer locations for a group",
+        "description": "Lists all groups that a specified source group can be transferred to.",
         "produces": [
           "application/json"
         ],
@@ -3115,7 +3136,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get the groups to where the current group can be transferred to",
+            "description": "List all transfer locations for a group",
             "schema": {
               "type": "array",
               "items": {
@@ -3132,7 +3153,8 @@
     },
     "/api/v4/groups/{id}/transfer": {
       "post": {
-        "description": "Transfer a group to a new parent group or promote a subgroup to a top-level group",
+        "summary": "Transfer a group",
+        "description": "Transfers a group to another parent group or transforms a subgroup into a top-level group. You must be an administrator or have the Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -3158,7 +3180,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Transfer a group to a new parent group or promote a subgroup to a top-level group"
+            "description": "Transfer a group"
           }
         },
         "tags": [
@@ -3224,7 +3246,8 @@
     },
     "/api/v4/groups/{id}/share": {
       "post": {
-        "description": "Share a group with a group",
+        "summary": "Add a group to a group",
+        "description": "Adds a group to a group.",
         "produces": [
           "application/json"
         ],
@@ -3250,7 +3273,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Share a group with a group",
+            "description": "Add a group to a group",
             "schema": {
               "$ref": "#/definitions/API_Entities_GroupDetail"
             }
@@ -3264,7 +3287,8 @@
     },
     "/api/v4/groups/{id}/share/{group_id}": {
       "delete": {
-        "description": "Unshare a group with a group",
+        "summary": "Remove a group from a group",
+        "description": "Removes a group from a group.",
         "produces": [
           "application/json"
         ],
@@ -3294,6 +3318,50 @@
           "groups"
         ],
         "operationId": "deleteApiV4GroupsIdShareGroupId"
+      }
+    },
+    "/api/v4/groups/{id}/shared_projects/{project_id}": {
+      "delete": {
+        "summary": "Remove a shared project from a group",
+        "description": "Removes a shared project targeting this group. The group Owner can remove a shared project without access to the source project.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of a group",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "project_id",
+            "description": "The ID of the shared project",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Remove a shared project from a group"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "groups"
+        ],
+        "operationId": "deleteApiV4GroupsIdSharedProjectsProjectId"
       }
     },
     "/api/v4/groups/{id}/ldap_sync": {
@@ -21456,8 +21524,8 @@
     },
     "/api/v4/projects/{id}/packages/composer": {
       "post": {
-        "summary": "Composer packages endpoint for registering packages",
-        "description": "This feature was introduced in GitLab 13.1",
+        "summary": "Create a package",
+        "description": "Creates a Composer package from a specified Git tag or branch for a project.",
         "produces": [
           "application/json"
         ],
@@ -21483,7 +21551,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Composer packages endpoint for registering packages"
+            "description": "Create a package"
           },
           "400": {
             "description": "Bad Request"
@@ -23572,8 +23640,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v2/conans/{package_name}/{package_version}/{package_username}/{package_channel}/revisions/{recipe_revision}/files/{file_name}": {
       "get": {
-        "summary": "Download recipe files",
-        "description": "This feature was introduced in GitLab 17.8",
+        "summary": "Retrieve a recipe file",
+        "description": "Retrieves a specified recipe file from the package registry. This feature was introduced in GitLab 17.8.",
         "produces": [
           "application/json"
         ],
@@ -23644,7 +23712,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download recipe files"
+            "description": "Retrieve a recipe file"
           },
           "400": {
             "description": "Bad Request"
@@ -23869,8 +23937,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v2/conans/{package_name}/{package_version}/{package_username}/{package_channel}/revisions/{recipe_revision}/search": {
       "get": {
-        "summary": "Get package references metadata",
-        "description": "This feature was introduced in GitLab 18.1",
+        "summary": "Retrieve package references metadata by recipe revision",
+        "description": "Retrieves the metadata for all package references associated with a specified recipe revision. This feature was introduced in GitLab 18.1.",
         "produces": [
           "application/json"
         ],
@@ -23925,7 +23993,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get package references metadata"
+            "description": "Retrieve package references metadata by recipe revision"
           },
           "400": {
             "description": "Bad Request"
@@ -24128,8 +24196,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v2/conans/{package_name}/{package_version}/{package_username}/{package_channel}/revisions/{recipe_revision}/packages/{conan_package_reference}/revisions/{package_revision}": {
       "delete": {
-        "summary": "Delete package revision",
-        "description": "This feature was introduced in GitLab 18.1",
+        "summary": "Delete a package revision",
+        "description": "Deletes a specified package revision from the registry. If the package reference has only one package revision, the package reference is deleted as well. This feature was introduced in GitLab 18.1.",
         "produces": [
           "application/json"
         ],
@@ -24200,7 +24268,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete package revision"
+            "description": "Delete a package revision"
           },
           "400": {
             "description": "Bad Request"
@@ -24321,8 +24389,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v2/conans/{package_name}/{package_version}/{package_username}/{package_channel}/revisions/{recipe_revision}/packages/{conan_package_reference}/revisions/{package_revision}/files/{file_name}": {
       "get": {
-        "summary": "Download package files",
-        "description": "This feature was introduced in GitLab 17.11",
+        "summary": "Retrieve a package file",
+        "description": "Retrieves a specified package file from the package registry. This feature was introduced in GitLab 17.11.",
         "produces": [
           "application/json"
         ],
@@ -24409,7 +24477,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download package files"
+            "description": "Retrieve a package file"
           },
           "400": {
             "description": "Bad Request"
@@ -29263,7 +29331,7 @@
     "/api/v4/projects/{id}/packages/helm/{channel}/index.yaml": {
       "get": {
         "summary": "Download a chart index",
-        "description": "This feature was introduced in GitLab 14.0",
+        "description": "Downloads a specified chart index for a project.",
         "produces": [
           "application/json"
         ],
@@ -29305,7 +29373,7 @@
     "/api/v4/projects/{id}/packages/helm/{channel}/charts/{file_name}.tgz": {
       "get": {
         "summary": "Download a chart",
-        "description": "This feature was introduced in GitLab 14.0",
+        "description": "Downloads a specified chart for a project.",
         "produces": [
           "application/json"
         ],
@@ -29406,7 +29474,7 @@
     "/api/v4/projects/{id}/packages/helm/api/{channel}/charts": {
       "post": {
         "summary": "Upload a chart",
-        "description": "This feature was introduced in GitLab 14.0",
+        "description": "Uploads a specified chart for a project.",
         "produces": [
           "application/json"
         ],
@@ -46180,6 +46248,13 @@
           },
           {
             "in": "formData",
+            "name": "override_params[duo_dependency_bump_breaking_changes_enabled]",
+            "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "in": "formData",
             "name": "override_params[duo_sast_vr_workflow_enabled]",
             "description": "Enable GitLab Duo SAST vulnerability resolution workflow for this project",
             "type": "boolean",
@@ -47206,6 +47281,13 @@
             "in": "formData",
             "name": "override_params[duo_secret_detection_fp_enabled]",
             "description": "Enable GitLab Duo Secret Detection false positive detection for this project",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "override_params[duo_dependency_bump_breaking_changes_enabled]",
+            "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project",
             "type": "boolean",
             "required": false
           },
@@ -48292,6 +48374,13 @@
             "in": "formData",
             "name": "override_params[duo_secret_detection_fp_enabled]",
             "description": "Enable GitLab Duo Secret Detection false positive detection for this project",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "override_params[duo_dependency_bump_breaking_changes_enabled]",
+            "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project",
             "type": "boolean",
             "required": false
           },
@@ -60004,8 +60093,8 @@
     },
     "/api/v4/group/{id}/-/packages/composer/packages": {
       "get": {
-        "summary": "Composer packages endpoint at group level",
-        "description": "This feature was introduced in GitLab 13.1",
+        "summary": "Retrieve repository URL templates",
+        "description": "Retrieves the repository URL templates for requesting individual packages for a group.",
         "produces": [
           "application/json"
         ],
@@ -60020,7 +60109,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Composer packages endpoint at group level"
+            "description": "Retrieve repository URL templates"
           },
           "401": {
             "description": "Unauthorized"
@@ -60037,8 +60126,8 @@
     },
     "/api/v4/group/{id}/-/packages/composer/p/{sha}": {
       "get": {
-        "summary": "Composer packages endpoint at group level for packages list",
-        "description": "This feature was introduced in GitLab 13.1",
+        "summary": "List all packages for a group",
+        "description": "Lists all repository packages for a specified group. Composer V2 is recommended over V1.",
         "produces": [
           "application/json"
         ],
@@ -60061,7 +60150,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Composer packages endpoint at group level for packages list"
+            "description": "List all packages for a group"
           },
           "401": {
             "description": "Unauthorized"
@@ -63891,6 +63980,190 @@
           "jira_connect_subscriptions"
         ],
         "operationId": "postApiV4IntegrationsJiraConnectSubscriptions"
+      }
+    },
+    "/api/v4/integrations/jira_forge/installation": {
+      "put": {
+        "summary": "Update the GitLab for Jira (Forge) installation instance URL",
+        "description": "Sets the GitLab instance the installation points at. Omit instance_url (or send null) for GitLab.com. Requires a Jira site or organization admin.",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "putApiV4IntegrationsJiraForgeInstallation",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/putApiV4IntegrationsJiraForgeInstallation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update the GitLab for Jira (Forge) installation instance URL",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_BasicSuccess"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "tags": [
+          "jira_forge_installation"
+        ],
+        "operationId": "putApiV4IntegrationsJiraForgeInstallation"
+      }
+    },
+    "/api/v4/integrations/jira_forge/installation/forge_token": {
+      "post": {
+        "summary": "Register the GitLab for Jira (Forge) system token for direct dev-info sync",
+        "description": "Stores the Forge app system OAuth token (X-Forge-Oauth-System header) and the Jira apiBaseUrl (from the FIT), so GitLab pushes dev-info directly to Jira. See Atlassian::Forge::SystemTokenClient.",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Register the GitLab for Jira (Forge) system token for direct dev-info sync",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_BasicSuccess"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "tags": [
+          "jira_forge_installation"
+        ],
+        "operationId": "postApiV4IntegrationsJiraForgeInstallationForgeToken"
+      }
+    },
+    "/api/v4/integrations/jira_forge/subscriptions": {
+      "post": {
+        "summary": "Create a GitLab for Jira (Forge) namespace subscription",
+        "description": "Subscribes a GitLab namespace to the Forge installation so its development data syncs to Jira. Authenticated as the GitLab user (OAuth); the Jira installation and user are resolved from the Forge invocation context.",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "postApiV4IntegrationsJiraForgeSubscriptions",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/postApiV4IntegrationsJiraForgeSubscriptions"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Create a GitLab for Jira (Forge) namespace subscription",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_BasicSuccess"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "tags": [
+          "jira_forge_subscriptions"
+        ],
+        "operationId": "postApiV4IntegrationsJiraForgeSubscriptions"
+      },
+      "get": {
+        "summary": "List GitLab for Jira (Forge) namespace subscriptions",
+        "description": "Lists the GitLab namespaces subscribed to the Forge installation.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List GitLab for Jira (Forge) namespace subscriptions",
+            "schema": {
+              "$ref": "#/definitions/JiraConnect_SubscriptionEntity"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "tags": [
+          "jira_forge_subscriptions"
+        ],
+        "operationId": "getApiV4IntegrationsJiraForgeSubscriptions"
+      }
+    },
+    "/api/v4/integrations/jira_forge/subscriptions/{id}": {
+      "delete": {
+        "summary": "Delete a GitLab for Jira (Forge) namespace subscription",
+        "description": "Unsubscribes a GitLab namespace from the Forge installation.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the subscription to delete",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete a GitLab for Jira (Forge) namespace subscription",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_BasicSuccess"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "tags": [
+          "jira_forge_subscriptions"
+        ],
+        "operationId": "deleteApiV4IntegrationsJiraForgeSubscriptionsId"
       }
     },
     "/api/v4/issues": {
@@ -71017,7 +71290,7 @@
           "description": "Enforce the built-in project templates setting for all subgroups"
         }
       },
-      "description": "Update a group. Available only for users who can administrate groups."
+      "description": "Update group attributes"
     },
     "API_Entities_GroupDetail": {
       "type": "object",
@@ -71964,6 +72237,9 @@
         "duo_secret_detection_fp_enabled": {
           "type": "string"
         },
+        "duo_dependency_bump_breaking_changes_enabled": {
+          "type": "string"
+        },
         "duo_sast_vr_workflow_enabled": {
           "type": "string"
         },
@@ -72474,7 +72750,7 @@
           "description": "The ID of the target group to which the group needs to be transferred to.If not provided, the source group will be promoted to a top-level group."
         }
       },
-      "description": "Transfer a group to a new parent group or promote a subgroup to a top-level group"
+      "description": "Transfer a group"
     },
     "postApiV4GroupsIdTransferToOrganization": {
       "type": "object",
@@ -72527,7 +72803,7 @@
         "group_id",
         "group_access"
       ],
-      "description": "Share a group with a group"
+      "description": "Add a group to a group"
     },
     "API_Entities_AuditEvent": {
       "type": "object",
@@ -77765,11 +78041,11 @@
         },
         "source_project_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "target_project_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "labels": {
           "type": "array",
@@ -82259,7 +82535,7 @@
           "example": "v1.0.0"
         }
       },
-      "description": "Composer packages endpoint for registering packages"
+      "description": "Create a package"
     },
     "API_Entities_Packages_Conan_PackageSnapshot": {
       "type": "object",
@@ -82933,15 +83209,15 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "user_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "group_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "access_level": {
           "type": "integer",
@@ -83061,17 +83337,17 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 2
         },
         "author_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 4
         },
         "merge_request_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 52
         },
         "resolve_discussion": {
@@ -83079,18 +83355,16 @@
           "example": true
         },
         "discussion_id": {
-          "type": "integer",
-          "format": "int32",
-          "example": 613
+          "type": "string",
+          "example": "6a9c1750b37d513a43987b574953fceb50b03ce7"
         },
         "note": {
           "type": "string",
           "example": "This is a note"
         },
         "commit_id": {
-          "type": "integer",
-          "format": "int32",
-          "example": 4
+          "type": "string",
+          "example": "6104942438c14ec7bd21c6cd5bd995272b3faff6"
         },
         "line_code": {
           "type": "string",
@@ -90614,11 +90888,11 @@
         },
         "source_project_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "target_project_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "labels": {
           "type": "array",
@@ -91134,11 +91408,11 @@
         },
         "source_project_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "target_project_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "labels": {
           "type": "array",
@@ -91638,7 +91912,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -91892,7 +92166,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -91915,7 +92189,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "head_commit_sha": {
@@ -91937,7 +92211,7 @@
         },
         "merge_request_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "state": {
@@ -91971,7 +92245,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "head_commit_sha": {
@@ -91993,7 +92267,7 @@
         },
         "merge_request_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "state": {
@@ -93126,7 +93400,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "from_line": {
@@ -95134,6 +95408,10 @@
           "type": "boolean",
           "description": "Enable GitLab Duo Secret Detection false positive detection for this project"
         },
+        "duo_dependency_bump_breaking_changes_enabled": {
+          "type": "boolean",
+          "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project"
+        },
         "duo_sast_vr_workflow_enabled": {
           "type": "boolean",
           "description": "Enable GitLab Duo SAST vulnerability resolution workflow for this project"
@@ -95697,6 +95975,10 @@
         "duo_secret_detection_fp_enabled": {
           "type": "boolean",
           "description": "Enable GitLab Duo Secret Detection false positive detection for this project"
+        },
+        "duo_dependency_bump_breaking_changes_enabled": {
+          "type": "boolean",
+          "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project"
         },
         "duo_sast_vr_workflow_enabled": {
           "type": "boolean",
@@ -96359,6 +96641,9 @@
           "type": "string"
         },
         "duo_secret_detection_fp_enabled": {
+          "type": "string"
+        },
+        "duo_dependency_bump_breaking_changes_enabled": {
           "type": "string"
         },
         "duo_sast_vr_workflow_enabled": {
@@ -97077,6 +97362,10 @@
         "duo_secret_detection_fp_enabled": {
           "type": "boolean",
           "description": "Enable GitLab Duo Secret Detection false positive detection for this project"
+        },
+        "duo_dependency_bump_breaking_changes_enabled": {
+          "type": "boolean",
+          "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project"
         },
         "duo_sast_vr_workflow_enabled": {
           "type": "boolean",
@@ -101706,6 +101995,10 @@
           "type": "string",
           "description": "A projects path, for example `gitlab-org/gitlab-foss`, or comma-separated multiple project paths"
         },
+        "organization": {
+          "type": "string",
+          "description": "An organization ID or path, for example `1` or `default`, or comma-separated multiple organization IDs or paths"
+        },
         "repository": {
           "type": "string",
           "description": "A repository path, for example `gitlab-org/gitlab-test.git`, `gitlab-org/gitlab-test.wiki.git`, `snippets/21.git`, to name a few. Use comma to separate multiple repository paths"
@@ -105204,6 +105497,72 @@
         "success"
       ],
       "description": "API_Entities_BasicSuccess model"
+    },
+    "putApiV4IntegrationsJiraForgeInstallation": {
+      "type": "object",
+      "properties": {
+        "instance_url": {
+          "type": "string",
+          "description": "Base URL of the self-managed GitLab instance; null for GitLab.com"
+        }
+      },
+      "description": "Update the GitLab for Jira (Forge) installation instance URL"
+    },
+    "postApiV4IntegrationsJiraForgeSubscriptions": {
+      "type": "object",
+      "properties": {
+        "namespace_path": {
+          "type": "string",
+          "description": "Path of the namespace to subscribe"
+        }
+      },
+      "required": [
+        "namespace_path"
+      ],
+      "description": "Create a GitLab for Jira (Forge) namespace subscription"
+    },
+    "JiraConnect_SubscriptionEntity": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "unlink_path": {
+          "type": "string"
+        },
+        "group": {
+          "$ref": "#/definitions/JiraConnect_GroupEntity"
+        }
+      },
+      "required": [
+        "created_at",
+        "unlink_path",
+        "group"
+      ],
+      "description": "JiraConnect_SubscriptionEntity model"
+    },
+    "JiraConnect_GroupEntity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "avatar_url": {
+          "type": "string"
+        },
+        "full_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "avatar_url",
+        "full_name",
+        "description"
+      ]
     },
     "API_Entities_SSHKeyWithUser": {
       "type": "object",

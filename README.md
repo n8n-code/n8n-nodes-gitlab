@@ -13,7 +13,7 @@ Every time you connect n8n to gitlab, you waste hours mapping endpoints, definin
 
 **What if connecting n8n to gitlab took 5 minutes, not half a day?**
 
-This node gives you **145+ resources** out of the box: **Award Emoji**, **Badges**, **Custom Attributes**, **Groups**, **Ldap**, and 140 more: with full CRUD operations, typed parameters, and zero manual configuration.
+This node gives you **147+ resources** out of the box: **Award Emoji**, **Badges**, **Custom Attributes**, **Groups**, **Ldap**, and 142 more: with full CRUD operations, typed parameters, and zero manual configuration.
 
 ---
 
@@ -132,6 +132,20 @@ That's it. No configuration files. No code. It just works.
 
 - Post Process Slack interaction events
 - Post Get Slack interactive component options
+
+</details>
+
+<details>
+<summary><b>Jira Forge Installation</b> (1 operations)</summary>
+
+- Post Register the GitLab for Jira Forge system token for direct dev info sync
+
+</details>
+
+<details>
+<summary><b>Jira Forge Subscriptions</b> (1 operations)</summary>
+
+- Get List GitLab for Jira Forge namespace subscriptions
 
 </details>
 
