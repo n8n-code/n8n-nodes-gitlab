@@ -65718,7 +65718,7 @@
     "/api/v4/organizations": {
       "post": {
         "summary": "Create an organization",
-        "description": "This feature was introduced in GitLab 17.5. \\\n                    This feature is behind the `allow_organization_creation` feature flag. \\\n                    In GitLab 18.3, feature flag changed to `organization_switching`.",
+        "description": "Creates an organization. This feature was introduced in GitLab 17.5. This feature is behind the `allow_organization_creation` feature flag. In GitLab 18.3, the feature flag changed to `organization_switching`.",
         "produces": [
           "application/json"
         ],
@@ -71288,6 +71288,10 @@
         "lock_built_in_project_templates_enabled": {
           "type": "boolean",
           "description": "Enforce the built-in project templates setting for all subgroups"
+        },
+        "create_code_review_flow_consent": {
+          "type": "boolean",
+          "description": "When true, records explicit namespace consent for DAP-based Code Review routing"
         }
       },
       "description": "Update group attributes"
@@ -97891,6 +97895,12 @@
                 "description": "ID of a group",
                 "example": 1
               },
+              "member_role_id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "ID of a custom member role",
+                "example": 1
+              },
               "id": {
                 "type": "integer",
                 "format": "int32",
@@ -97943,6 +97953,12 @@
                 "description": "ID of a group",
                 "example": 1
               },
+              "member_role_id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "ID of a custom member role",
+                "example": 1
+              },
               "id": {
                 "type": "integer",
                 "format": "int32",
@@ -97982,6 +97998,12 @@
                 "type": "integer",
                 "format": "int32",
                 "description": "ID of a group",
+                "example": 1
+              },
+              "member_role_id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "ID of a custom member role",
                 "example": 1
               },
               "id": {
@@ -98049,6 +98071,12 @@
                 "description": "ID of a group",
                 "example": 1
               },
+              "member_role_id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "ID of a custom member role",
+                "example": 1
+              },
               "id": {
                 "type": "integer",
                 "format": "int32",
@@ -98101,6 +98129,12 @@
                 "description": "ID of a group",
                 "example": 1
               },
+              "member_role_id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "ID of a custom member role",
+                "example": 1
+              },
               "id": {
                 "type": "integer",
                 "format": "int32",
@@ -98140,6 +98174,12 @@
                 "type": "integer",
                 "format": "int32",
                 "description": "ID of a group",
+                "example": 1
+              },
+              "member_role_id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "ID of a custom member role",
                 "example": 1
               },
               "id": {
@@ -103803,6 +103843,39 @@
         "project_repositories_oldest_unsynced_time": {
           "type": "string"
         },
+        "project_topic_uploads_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_checksum_total_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_checksummed_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_checksum_failed_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_synced_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_failed_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_registry_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_verification_total_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_verified_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_verification_failed_count": {
+          "type": "string"
+        },
+        "project_topic_uploads_oldest_unsynced_time": {
+          "type": "string"
+        },
         "project_uploads_count": {
           "type": "string"
         },
@@ -104397,6 +104470,12 @@
         "project_repositories_verified_in_percentage": {
           "type": "string"
         },
+        "project_topic_uploads_synced_in_percentage": {
+          "type": "string"
+        },
+        "project_topic_uploads_verified_in_percentage": {
+          "type": "string"
+        },
         "project_uploads_synced_in_percentage": {
           "type": "string"
         },
@@ -104888,6 +104967,17 @@
         "project_repositories_verified_count",
         "project_repositories_verification_failed_count",
         "project_repositories_oldest_unsynced_time",
+        "project_topic_uploads_count",
+        "project_topic_uploads_checksum_total_count",
+        "project_topic_uploads_checksummed_count",
+        "project_topic_uploads_checksum_failed_count",
+        "project_topic_uploads_synced_count",
+        "project_topic_uploads_failed_count",
+        "project_topic_uploads_registry_count",
+        "project_topic_uploads_verification_total_count",
+        "project_topic_uploads_verified_count",
+        "project_topic_uploads_verification_failed_count",
+        "project_topic_uploads_oldest_unsynced_time",
         "project_uploads_count",
         "project_uploads_checksum_total_count",
         "project_uploads_checksummed_count",
@@ -105086,6 +105176,8 @@
         "project_import_export_relation_export_upload_uploads_verified_in_percentage",
         "project_repositories_synced_in_percentage",
         "project_repositories_verified_in_percentage",
+        "project_topic_uploads_synced_in_percentage",
+        "project_topic_uploads_verified_in_percentage",
         "project_uploads_synced_in_percentage",
         "project_uploads_verified_in_percentage",
         "project_wiki_repositories_synced_in_percentage",
@@ -106325,6 +106417,34 @@
             "endpoint"
           ]
         },
+        "gcs_hmac_configuration": {
+          "type": "object",
+          "description": "Google Cloud Storage configuration using S3-interoperability HMAC keys",
+          "properties": {
+            "google_storage_access_key_id": {
+              "type": "string",
+              "description": "GCS HMAC access key ID"
+            },
+            "google_storage_secret_access_key": {
+              "type": "string",
+              "description": "GCS HMAC secret"
+            },
+            "region": {
+              "type": "string",
+              "description": "GCS bucket region"
+            },
+            "path_style": {
+              "type": "boolean",
+              "description": "Use path-style URLs instead of virtual-hosted-style URLs",
+              "default": true
+            }
+          },
+          "required": [
+            "google_storage_access_key_id",
+            "google_storage_secret_access_key",
+            "region"
+          ]
+        },
         "entities": {
           "type": "array",
           "description": "List of entities to export",
@@ -106415,6 +106535,34 @@
             "aws_secret_access_key",
             "region",
             "endpoint"
+          ]
+        },
+        "gcs_hmac_configuration": {
+          "type": "object",
+          "description": "Google Cloud Storage configuration using S3-interoperability HMAC keys",
+          "properties": {
+            "google_storage_access_key_id": {
+              "type": "string",
+              "description": "GCS HMAC access key ID"
+            },
+            "google_storage_secret_access_key": {
+              "type": "string",
+              "description": "GCS HMAC secret"
+            },
+            "region": {
+              "type": "string",
+              "description": "GCS bucket region"
+            },
+            "path_style": {
+              "type": "boolean",
+              "description": "Use path-style URLs instead of virtual-hosted-style URLs",
+              "default": true
+            }
+          },
+          "required": [
+            "google_storage_access_key_id",
+            "google_storage_secret_access_key",
+            "region"
           ]
         },
         "export_prefix": {
