@@ -152,9 +152,9 @@ That's it. No configuration files. No code. It just works.
 <details>
 <summary><b>Usage Data</b> (3 operations)</summary>
 
-- Get the latest ServicePing payload
-- Get Non SQL usage ping metrics
-- Get raw SQL queries for usage data SQL metrics
+- Get Retrieve Service Ping payload
+- Get List all non SQL metrics
+- Get List all Service Ping SQL queries
 
 </details>
 
@@ -176,7 +176,7 @@ That's it. No configuration files. No code. It just works.
 <details>
 <summary><b>Web Commits</b> (1 operations)</summary>
 
-- Get the public key for web commits
+- Get Retrieve the public signing key
 
 </details>
 

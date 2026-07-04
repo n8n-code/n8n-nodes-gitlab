@@ -3366,7 +3366,8 @@
     },
     "/api/v4/groups/{id}/ldap_sync": {
       "post": {
-        "description": "Sync a group with LDAP.",
+        "summary": "Sync a group with LDAP",
+        "description": "Syncs a specified group with its linked LDAP group. You must be an administrator or have the Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -3384,7 +3385,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Sync a group with LDAP."
+            "description": "Sync a group with LDAP"
           }
         },
         "tags": [
@@ -3504,7 +3505,8 @@
     },
     "/api/v4/groups/{id}/saml_users": {
       "get": {
-        "description": "Get a list of SAML users of the group",
+        "summary": "List all SAML users",
+        "description": "Lists all SAML users for a specified top-level group. Use the `page` and `per_page` pagination parameters to filter the results.",
         "produces": [
           "application/json"
         ],
@@ -3585,7 +3587,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of SAML users of the group",
+            "description": "List all SAML users",
             "schema": {
               "type": "array",
               "items": {
@@ -3602,7 +3604,8 @@
     },
     "/api/v4/groups/{id}/provisioned_users": {
       "get": {
-        "description": "Get a list of users provisioned by the group",
+        "summary": "List all provisioned users",
+        "description": "Lists all provisioned users for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -3683,7 +3686,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of users provisioned by the group",
+            "description": "List all provisioned users",
             "schema": {
               "$ref": "#/definitions/API_Entities_UserPublic"
             }
@@ -4639,7 +4642,7 @@
     "/api/v4/groups/{id}/dependency_proxy/cache": {
       "delete": {
         "summary": "Purge the dependency proxy for a group",
-        "description": "Schedules for deletion the cached manifests and blobs for a group.This endpoint requires the Owner role for the group.",
+        "description": "Purges the dependency proxy for a specified group and schedules the cached manifests and blobs for deletion. This endpoint requires the Owner role for the group.",
         "produces": [
           "application/json"
         ],
@@ -5206,8 +5209,8 @@
     },
     "/api/v4/groups/{id}/-/debian_distributions": {
       "post": {
-        "summary": "Create a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Create a Debian group distribution",
+        "description": "Creates a Debian group distribution for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -5233,7 +5236,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Create a Debian Distribution",
+            "description": "Create a Debian group distribution",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -5257,8 +5260,8 @@
         "operationId": "postApiV4GroupsIdDebianDistributions"
       },
       "get": {
-        "summary": "Get a list of Debian Distributions",
-        "description": "This feature was introduced in 14.0",
+        "summary": "List all Debian group distributions",
+        "description": "Lists all Debian distributions for a specified group.",
         "produces": [
           "application/json"
         ],
@@ -5376,7 +5379,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of Debian Distributions",
+            "description": "List all Debian group distributions",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -5399,8 +5402,8 @@
     },
     "/api/v4/groups/{id}/-/debian_distributions/{codename}": {
       "get": {
-        "summary": "Get a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Retrieve a Debian group distribution",
+        "description": "Retrieves a specified Debian group distribution for a group.",
         "produces": [
           "application/json"
         ],
@@ -5423,7 +5426,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a Debian Distribution",
+            "description": "Retrieve a Debian group distribution",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -5444,8 +5447,8 @@
         "operationId": "getApiV4GroupsIdDebianDistributionsCodename"
       },
       "put": {
-        "summary": "Update a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Update a Debian group distribution",
+        "description": "Updates a specified Debian group distribution for a group.",
         "produces": [
           "application/json"
         ],
@@ -5479,7 +5482,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update a Debian Distribution",
+            "description": "Update a Debian group distribution",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -5503,8 +5506,8 @@
         "operationId": "putApiV4GroupsIdDebianDistributionsCodename"
       },
       "delete": {
-        "summary": "Delete a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Delete a Debian group distribution",
+        "description": "Deletes a specified Debian group distribution for a group.",
         "produces": [
           "application/json"
         ],
@@ -5602,7 +5605,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Delete a Debian Distribution"
+            "description": "Delete a Debian group distribution"
           },
           "400": {
             "description": "Bad Request"
@@ -5625,8 +5628,8 @@
     },
     "/api/v4/groups/{id}/-/debian_distributions/{codename}/key.asc": {
       "get": {
-        "summary": "Get a Debian Distribution Key",
-        "description": "This feature was introduced in 14.4",
+        "summary": "Retrieve a Debian group distribution key",
+        "description": "Retrieves a specified Debian group distribution key for a group.",
         "produces": [
           "application/json"
         ],
@@ -5649,7 +5652,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a Debian Distribution Key",
+            "description": "Retrieve a Debian group distribution key",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -6173,7 +6176,7 @@
     "/api/v4/groups/{id}/placeholder_reassignments": {
       "get": {
         "summary": "Retrieve pending reassignments",
-        "description": "Retrieves a CSV file with a list of pending reassignments. This feature was added in GitLab 17.10",
+        "description": "Retrieves a CSV file with a list of pending reassignments. This feature was introduced in GitLab 17.10.",
         "produces": [
           "application/json"
         ],
@@ -13290,7 +13293,7 @@
       },
       "delete": {
         "summary": "Delete a wiki page for a group",
-        "description": "Deletes a specified wiki page for a group.",
+        "description": "Deletes a specified wiki page from a group.",
         "produces": [
           "application/json"
         ],
@@ -20669,6 +20672,25 @@
             "default": 20,
             "required": false,
             "example": 20
+          },
+          {
+            "in": "query",
+            "name": "pagination",
+            "description": "Specify the pagination method",
+            "type": "string",
+            "default": "legacy",
+            "enum": [
+              "legacy",
+              "keyset"
+            ],
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page_token",
+            "description": "Record from which to start the keyset pagination",
+            "type": "string",
+            "required": false
           }
         ],
         "responses": {
@@ -21327,7 +21349,8 @@
     },
     "/api/v4/projects/{id}/repository/commits/{sha}/statuses": {
       "get": {
-        "description": "Get a commit's statuses",
+        "summary": "List all commit statuses",
+        "description": "Lists all commit statuses for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -21435,7 +21458,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a commit's statuses",
+            "description": "List all commit statuses",
             "schema": {
               "type": "array",
               "items": {
@@ -21461,7 +21484,8 @@
     },
     "/api/v4/projects/{id}/statuses/{sha}": {
       "post": {
-        "description": "Post status to a commit",
+        "summary": "Create or update a commit pipeline status",
+        "description": "Creates or updates the status of a commit represented by a job in an `external` stage. If the commit is associated with a merge request, target the commit in the merge request source branch.",
         "produces": [
           "application/json"
         ],
@@ -21495,7 +21519,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Post status to a commit",
+            "description": "Create or update a commit pipeline status",
             "schema": {
               "$ref": "#/definitions/API_Entities_CommitStatus"
             }
@@ -25276,8 +25300,8 @@
     },
     "/api/v4/projects/{id}/packages/debian/pool/{distribution}/{letter}/{package_name}/{package_version}/{file_name}": {
       "get": {
-        "summary": "Download Debian package",
-        "description": "This feature was introduced in GitLab 14.2",
+        "summary": "Download a Debian package file",
+        "description": "Downloads a specified Debian package file for a project.",
         "produces": [
           "application/json"
         ],
@@ -25332,7 +25356,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download Debian package"
+            "description": "Download a Debian package file"
           },
           "401": {
             "description": "Unauthorized"
@@ -25352,8 +25376,8 @@
     },
     "/api/v4/projects/{id}/packages/debian/{file_name}": {
       "put": {
-        "summary": "Upload Debian package",
-        "description": "This feature was introduced in GitLab 14.0",
+        "summary": "Upload a Debian package file",
+        "description": "Uploads a Debian package file for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -25387,7 +25411,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Upload Debian package"
+            "description": "Upload a Debian package file"
           },
           "400": {
             "description": "Bad Request"
@@ -43858,8 +43882,8 @@
     },
     "/api/v4/projects/{id}/debian_distributions": {
       "post": {
-        "summary": "Create a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Create a Debian project distribution",
+        "description": "Creates a Debian project distribution for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -43885,7 +43909,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Create a Debian Distribution",
+            "description": "Create a Debian project distribution",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -43909,8 +43933,8 @@
         "operationId": "postApiV4ProjectsIdDebianDistributions"
       },
       "get": {
-        "summary": "Get a list of Debian Distributions",
-        "description": "This feature was introduced in 14.0",
+        "summary": "List all Debian project distributions",
+        "description": "Lists all Debian distributions for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -44028,7 +44052,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of Debian Distributions",
+            "description": "List all Debian project distributions",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -44051,8 +44075,8 @@
     },
     "/api/v4/projects/{id}/debian_distributions/{codename}": {
       "get": {
-        "summary": "Get a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Retrieve a Debian project distribution",
+        "description": "Retrieves a specified Debian project distribution for a project.",
         "produces": [
           "application/json"
         ],
@@ -44075,7 +44099,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a Debian Distribution",
+            "description": "Retrieve a Debian project distribution",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -44096,8 +44120,8 @@
         "operationId": "getApiV4ProjectsIdDebianDistributionsCodename"
       },
       "put": {
-        "summary": "Update a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Update a Debian project distribution",
+        "description": "Updates a specified Debian project distribution for a project.",
         "produces": [
           "application/json"
         ],
@@ -44131,7 +44155,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Update a Debian Distribution",
+            "description": "Update a Debian project distribution",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -44155,8 +44179,8 @@
         "operationId": "putApiV4ProjectsIdDebianDistributionsCodename"
       },
       "delete": {
-        "summary": "Delete a Debian Distribution",
-        "description": "This feature was introduced in 14.0",
+        "summary": "Delete a Debian project distribution",
+        "description": "Deletes a specified Debian project distribution for a project.",
         "produces": [
           "application/json"
         ],
@@ -44254,7 +44278,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Delete a Debian Distribution"
+            "description": "Delete a Debian project distribution"
           },
           "400": {
             "description": "Bad Request"
@@ -44277,8 +44301,8 @@
     },
     "/api/v4/projects/{id}/debian_distributions/{codename}/key.asc": {
       "get": {
-        "summary": "Get a Debian Distribution Key",
-        "description": "This feature was introduced in 14.4",
+        "summary": "Retrieve a Debian project distribution key",
+        "description": "Retrieves a specified Debian project distribution key for a project.",
         "produces": [
           "application/json"
         ],
@@ -44301,7 +44325,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a Debian Distribution Key",
+            "description": "Retrieve a Debian project distribution key",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Debian_Distribution"
             }
@@ -44324,7 +44348,8 @@
     },
     "/api/v4/projects/{id}/events": {
       "get": {
-        "description": "List a project's visible events",
+        "summary": "List all visible events for a project",
+        "description": "Lists all visible events for a specified project. When a push exceeds the Push event activities limit, a single bulk push event is returned instead of individual commit events. Bulk push events have limited commit details: `commit_count` is `0`, `ref_count` shows the number of refs pushed, and individual commit attributes are `null`.",
         "produces": [
           "application/json"
         ],
@@ -44412,7 +44437,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List a project's visible events",
+            "description": "List all visible events for a project",
             "schema": {
               "$ref": "#/definitions/API_Entities_Event"
             }
@@ -56886,7 +56911,7 @@
       },
       "delete": {
         "summary": "Delete a wiki page for a project",
-        "description": "Deletes a specified wiki page for a project.",
+        "description": "Deletes a specified wiki page from a project.",
         "produces": [
           "application/json"
         ],
@@ -62256,8 +62281,8 @@
     },
     "/api/v4/registry/repositories/{id}": {
       "get": {
-        "summary": "Get a container repository",
-        "description": "This feature was introduced in GitLab 13.6.",
+        "summary": "Retrieve details of a container registry repository",
+        "description": "Retrieves details of a specified container registry repository.",
         "produces": [
           "application/json"
         ],
@@ -62296,7 +62321,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a container repository",
+            "description": "Retrieve details of a container registry repository",
             "schema": {
               "$ref": "#/definitions/API_Entities_ContainerRegistry_Repository"
             }
@@ -67595,8 +67620,8 @@
     },
     "/api/v4/usage_data/track_events": {
       "post": {
-        "summary": "Track multiple gitlab internal events",
-        "description": "This feature was introduced in GitLab 17.3.",
+        "summary": "Track multiple internal GitLab events",
+        "description": "Tracks one or more GitLab internal events in a single request. Each event increments Service Ping counters in Redis and is optionally sent to Snowplow. This feature was introduced in GitLab 17.3.",
         "produces": [
           "application/json"
         ],
@@ -67615,7 +67640,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Track multiple gitlab internal events"
+            "description": "Track multiple internal GitLab events"
           },
           "400": {
             "description": "Validation error"
@@ -67632,8 +67657,8 @@
     },
     "/api/v4/usage_data/metric_definitions": {
       "get": {
-        "summary": "Get a list of all metric definitions",
-        "description": "This feature was introduced in GitLab 13.11.",
+        "summary": "Download metric definitions",
+        "description": "Downloads all metric definitions as a single YAML file.",
         "produces": [
           "application/yaml"
         ],
@@ -67650,7 +67675,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a list of all metric definitions"
+            "description": "Download metric definitions"
           },
           "401": {
             "description": "Unauthorized"
@@ -67667,14 +67692,14 @@
     },
     "/api/v4/usage_data/service_ping": {
       "get": {
-        "summary": "Get the latest ServicePing payload",
-        "description": "Introduces in Gitlab 16.9. Requires personal access token with read_service_ping scope.",
+        "summary": "Retrieve Service Ping payload",
+        "description": "Retrieves the Service Ping payload from the application cache as JSON. If no cached payload is available, returns an empty response. Requires a personal access token with the `read_service_ping` scope. Introduced in GitLab 16.9.",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "Get the latest ServicePing payload"
+            "description": "Retrieve Service Ping payload"
           },
           "401": {
             "description": "401 Unauthorized"
@@ -67694,8 +67719,8 @@
     },
     "/api/v4/usage_data/track_event": {
       "post": {
-        "summary": "Track gitlab internal events",
-        "description": "This feature was introduced in GitLab 16.2.",
+        "summary": "Track an internal GitLab event",
+        "description": "Tracks a GitLab internal event. This action increments Service Ping counters in Redis and is optionally sent to Snowplow. Introduced in GitLab 16.2.",
         "produces": [
           "application/json"
         ],
@@ -67714,7 +67739,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Track gitlab internal events"
+            "description": "Track an internal GitLab event"
           },
           "401": {
             "description": "Unauthorized"
@@ -67731,14 +67756,14 @@
     },
     "/api/v4/usage_data/non_sql_metrics": {
       "get": {
-        "summary": "Get Non SQL usage ping metrics",
-        "description": "This feature was introduced in GitLab 13.11.",
+        "summary": "List all non-SQL metrics",
+        "description": "Lists all non-SQL metrics data used in the Service ping. This action is behind the `usage_data_non_sql_metrics` feature flag. Administrators only.",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "Get Non SQL usage ping metrics"
+            "description": "List all non-SQL metrics"
           },
           "401": {
             "description": "Unauthorized"
@@ -67758,14 +67783,14 @@
     },
     "/api/v4/usage_data/queries": {
       "get": {
-        "summary": "Get raw SQL queries for usage data SQL metrics",
-        "description": "This feature was introduced in GitLab 13.11.",
+        "summary": "List all Service Ping SQL queries",
+        "description": "Lists all raw SQL queries used to compute Service Ping. This action is behind the `usage_data_queries_api` feature flag. Administrators only.",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "Get raw SQL queries for usage data SQL metrics"
+            "description": "List all Service Ping SQL queries"
           },
           "401": {
             "description": "Unauthorized"
@@ -69202,14 +69227,14 @@
     },
     "/api/v4/web_commits/public_key": {
       "get": {
-        "summary": "Get the public key for web commits",
-        "description": "This feature was introduced in GitLab 17.4.",
+        "summary": "Retrieve the public signing key",
+        "description": "Retrieves the GitLab public key for signing web commits. This feature was introduced in GitLab 17.4.",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "Get the public key for web commits"
+            "description": "Retrieve the public signing key"
           },
           "404": {
             "description": "Public key not found."
@@ -73902,7 +73927,7 @@
       "required": [
         "codename"
       ],
-      "description": "Create a Debian Distribution"
+      "description": "Create a Debian group distribution"
     },
     "API_Entities_Packages_Debian_Distribution": {
       "type": "object",
@@ -74029,7 +74054,7 @@
           }
         }
       },
-      "description": "Update a Debian Distribution"
+      "description": "Update a Debian group distribution"
     },
     "postApiV4GroupsIdExportRelations": {
       "type": "object",
@@ -82523,7 +82548,7 @@
       "required": [
         "state"
       ],
-      "description": "Post status to a commit"
+      "description": "Create or update a commit pipeline status"
     },
     "postApiV4ProjectsIdPackagesComposer": {
       "type": "object",
@@ -82769,7 +82794,7 @@
         "file",
         "component"
       ],
-      "description": "Upload Debian package"
+      "description": "Upload a Debian package file"
     },
     "putApiV4ProjectsIdPackagesDebianFileNameAuthorize": {
       "type": "object",
@@ -93137,7 +93162,7 @@
       "required": [
         "codename"
       ],
-      "description": "Create a Debian Distribution"
+      "description": "Create a Debian project distribution"
     },
     "putApiV4ProjectsIdDebianDistributionsCodename": {
       "type": "object",
@@ -93194,7 +93219,7 @@
           }
         }
       },
-      "description": "Update a Debian Distribution"
+      "description": "Update a Debian project distribution"
     },
     "API_Entities_Event": {
       "type": "object",
@@ -101398,6 +101423,9 @@
     "API_Entities_Ci_JobRequest_RunnerInfo": {
       "type": "object",
       "properties": {
+        "uuid": {
+          "type": "string"
+        },
         "timeout": {
           "type": "string"
         },
@@ -101406,6 +101434,7 @@
         }
       },
       "required": [
+        "uuid",
         "timeout",
         "runner_session_url"
       ]
@@ -107832,7 +107861,7 @@
       "required": [
         "events"
       ],
-      "description": "Track multiple gitlab internal events"
+      "description": "Track multiple internal GitLab events"
     },
     "postApiV4UsageDataTrackEvent": {
       "type": "object",
@@ -107877,7 +107906,7 @@
       "required": [
         "event"
       ],
-      "description": "Track gitlab internal events"
+      "description": "Track an internal GitLab event"
     },
     "API_Entities_UserCounts": {
       "type": "object",

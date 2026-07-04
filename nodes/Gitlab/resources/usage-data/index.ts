@@ -17,8 +17,8 @@ export const usageDataDescription: INodeProperties[] = [
 				{
 					"name": "Get API v4 Usage Data Service Ping",
 					"value": "Get API v4 Usage Data Service Ping",
-					"action": "Get the latest ServicePing payload",
-					"description": "Introduces in Gitlab 16.9. Requires personal access token with read_service_ping scope.",
+					"action": "Retrieve Service Ping payload",
+					"description": "Retrieves the Service Ping payload from the application cache as JSON. If no cached payload is available, returns an empty response. Requires a personal access token with the `read_service_ping` scope. Introduced in GitLab 16.9.",
 					"routing": {
 						"request": {
 							"method": "GET",
@@ -29,8 +29,8 @@ export const usageDataDescription: INodeProperties[] = [
 				{
 					"name": "Get API v4 Usage Data Non SQL Metrics",
 					"value": "Get API v4 Usage Data Non SQL Metrics",
-					"action": "Get Non SQL usage ping metrics",
-					"description": "This feature was introduced in GitLab 13.11.",
+					"action": "List all non-SQL metrics",
+					"description": "Lists all non-SQL metrics data used in the Service ping. This action is behind the `usage_data_non_sql_metrics` feature flag. Administrators only.",
 					"routing": {
 						"request": {
 							"method": "GET",
@@ -41,8 +41,8 @@ export const usageDataDescription: INodeProperties[] = [
 				{
 					"name": "Get API v4 Usage Data Queries",
 					"value": "Get API v4 Usage Data Queries",
-					"action": "Get raw SQL queries for usage data SQL metrics",
-					"description": "This feature was introduced in GitLab 13.11.",
+					"action": "List all Service Ping SQL queries",
+					"description": "Lists all raw SQL queries used to compute Service Ping. This action is behind the `usage_data_queries_api` feature flag. Administrators only.",
 					"routing": {
 						"request": {
 							"method": "GET",
