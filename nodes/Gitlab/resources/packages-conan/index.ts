@@ -17,8 +17,8 @@ export const packagesConanDescription: INodeProperties[] = [
 				{
 					"name": "Get API v4 Packages Conan v1 Users Authenticate",
 					"value": "Get API v4 Packages Conan v1 Users Authenticate",
-					"action": "Authenticate user against conan CLI",
-					"description": "This feature was introduced in GitLab 12.2",
+					"action": "Retrieve an authentication token",
+					"description": "Retrieves an authentication token. Creates a JSON Web Token (JWT) for use as a Bearer header in other requests to the package registry.",
 					"routing": {
 						"request": {
 							"method": "GET",
@@ -29,8 +29,8 @@ export const packagesConanDescription: INodeProperties[] = [
 				{
 					"name": "Get API v4 Packages Conan v1 Users Check Credentials",
 					"value": "Get API v4 Packages Conan v1 Users Check Credentials",
-					"action": "Check for valid user credentials per conan CLI",
-					"description": "This feature was introduced in GitLab 12.4",
+					"action": "Verify authentication credentials",
+					"description": "Verifies authentication credentials for a Conan package registry.",
 					"routing": {
 						"request": {
 							"method": "GET",

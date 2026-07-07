@@ -100,8 +100,8 @@ That's it. No configuration files. No code. It just works.
 <details>
 <summary><b>Packages Conan</b> (3 operations)</summary>
 
-- Get Authenticate user against conan CLI
-- Get Check for valid user credentials per conan CLI
+- Get Retrieve an authentication token
+- Get Verify authentication credentials
 - Get Ping the Conan API
 
 </details>
