@@ -21837,8 +21837,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/ping": {
       "get": {
-        "summary": "Ping the Conan API",
-        "description": "This feature was introduced in GitLab 12.2",
+        "summary": "Verify availability of a Conan repository",
+        "description": "Verifies availability of a Conan repository.",
         "produces": [
           "application/json"
         ],
@@ -21853,7 +21853,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Ping the Conan API"
+            "description": "Verify availability of a Conan repository"
           },
           "404": {
             "description": "Not Found"
@@ -21867,8 +21867,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}": {
       "get": {
-        "summary": "Package Snapshot",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a package snapshot",
+        "description": "Retrieves a snapshot of the files for a specified Conan package and reference. The snapshot is a list of filenames with their associated MD5 hash.",
         "produces": [
           "application/json"
         ],
@@ -21923,7 +21923,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Snapshot",
+            "description": "Retrieve a package snapshot",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_PackageSnapshot"
             }
@@ -21946,8 +21946,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}": {
       "get": {
-        "summary": "Recipe Snapshot",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a recipe snapshot",
+        "description": "Retrieves a snapshot of the files for a specified Conan recipe. The snapshot is a list of filenames with their associated MD5 hash.",
         "produces": [
           "application/json"
         ],
@@ -21994,7 +21994,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Snapshot",
+            "description": "Retrieve a recipe snapshot",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_RecipeSnapshot"
             }
@@ -22015,8 +22015,8 @@
         "operationId": "getApiV4ProjectsIdPackagesConanV1ConansPackageNamePackageVersionPackageUsernamePackageChannel"
       },
       "delete": {
-        "summary": "Delete Package",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Delete a recipe and package",
+        "description": "Deletes a specified Conan recipe and associated package files from the package registry.",
         "produces": [
           "application/json"
         ],
@@ -22063,7 +22063,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete Package"
+            "description": "Delete a recipe and package"
           },
           "400": {
             "description": "Bad Request"
@@ -22083,8 +22083,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}/digest": {
       "get": {
-        "summary": "Package Digest",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a package manifest",
+        "description": "Retrieves a manifest that includes a list of files and associated download URLs for a specified package.",
         "produces": [
           "application/json"
         ],
@@ -22139,7 +22139,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Digest",
+            "description": "Retrieve a package manifest",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_PackageManifest"
             }
@@ -22162,8 +22162,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/digest": {
       "get": {
-        "summary": "Recipe Digest",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a recipe manifest",
+        "description": "Retrieves a manifest that includes a list of files and associated download URLs for a specified recipe.",
         "produces": [
           "application/json"
         ],
@@ -22210,7 +22210,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Digest",
+            "description": "Retrieve a recipe manifest",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_RecipeManifest"
             }
@@ -22233,8 +22233,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}/download_urls": {
       "get": {
-        "summary": "Package Download Urls",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "List all package download URLs",
+        "description": "Lists all files and associated download URLs for a specified package in the package registry. Returns the same payload as the package manifest endpoint.",
         "produces": [
           "application/json"
         ],
@@ -22289,7 +22289,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Download Urls",
+            "description": "List all package download URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_PackageManifest"
             }
@@ -22312,8 +22312,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/download_urls": {
       "get": {
-        "summary": "Recipe Download Urls",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "List all recipe download URLs",
+        "description": "Lists all files and associated download URLs for a specified recipe in the package registry. Returns the same payload as the recipe manifest endpoint.",
         "produces": [
           "application/json"
         ],
@@ -22360,7 +22360,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Download Urls",
+            "description": "List all recipe download URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_RecipeManifest"
             }
@@ -22383,8 +22383,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}/upload_urls": {
       "post": {
-        "summary": "Package Upload Urls",
-        "description": "This feature was introduced in GitLab 12.4",
+        "summary": "List all package upload URLs",
+        "description": "Lists all the upload URLs for a specified collection of package files. The request must include a JSON object with the name and size of the individual files.",
         "produces": [
           "application/json"
         ],
@@ -22442,7 +22442,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Upload Urls",
+            "description": "List all package upload URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_UploadUrls"
             }
@@ -22465,8 +22465,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/upload_urls": {
       "post": {
-        "summary": "Recipe Upload Urls",
-        "description": "This feature was introduced in GitLab 12.4",
+        "summary": "List all recipe upload URLs",
+        "description": "Lists all the upload URLs for a specified collection of recipe files. The request must include a JSON object with the name and size of the individual files.",
         "produces": [
           "application/json"
         ],
@@ -22516,7 +22516,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Upload Urls",
+            "description": "List all recipe upload URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_UploadUrls"
             }
@@ -22539,8 +22539,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/export/{file_name}": {
       "get": {
-        "summary": "Download recipe files",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Retrieve a recipe file",
+        "description": "Retrieves a specified recipe file from the package registry. You must use the download URL returned from the recipe download URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -22611,7 +22611,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download recipe files"
+            "description": "Retrieve a recipe file"
           },
           "400": {
             "description": "Bad Request"
@@ -22629,8 +22629,8 @@
         "operationId": "getApiV4ProjectsIdPackagesConanV1FilesPackageNamePackageVersionPackageUsernamePackageChannelRecipeRevisionExportFileName"
       },
       "put": {
-        "summary": "Upload recipe package files",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Upload a recipe file",
+        "description": "Uploads a specified recipe file to the package registry. You must use the upload URL returned from the recipe upload URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -22712,7 +22712,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Upload recipe package files"
+            "description": "Upload a recipe file"
           },
           "400": {
             "description": "Bad Request"
@@ -22735,8 +22735,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/export/{file_name}/authorize": {
       "put": {
-        "summary": "Workhorse authorize the conan recipe file",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Workhorse authorize the Conan recipe file",
+        "description": "Authorizes the Conan recipe file.",
         "produces": [
           "application/json"
         ],
@@ -22810,7 +22810,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Workhorse authorize the conan recipe file"
+            "description": "Workhorse authorize the Conan recipe file"
           },
           "400": {
             "description": "Bad Request"
@@ -22833,8 +22833,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/package/{conan_package_reference}/{package_revision}/{file_name}": {
       "get": {
-        "summary": "Download package files",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a package file",
+        "description": "Retrieves a specified package file from the package registry. You must use the download URL returned from the package download URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -22921,7 +22921,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download package files"
+            "description": "Retrieve a package file"
           },
           "403": {
             "description": "Forbidden"
@@ -22936,8 +22936,8 @@
         "operationId": "getApiV4ProjectsIdPackagesConanV1FilesPackageNamePackageVersionPackageUsernamePackageChannelRecipeRevisionPackageConanPackageReferencePackageRevisionFileName"
       },
       "put": {
-        "summary": "Upload package files",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Upload a package file",
+        "description": "Uploads a specified package file to the package registry. You must use the upload URL returned from the package upload URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -23035,7 +23035,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Upload package files"
+            "description": "Upload a package file"
           },
           "400": {
             "description": "Bad Request"
@@ -23058,8 +23058,8 @@
     },
     "/api/v4/projects/{id}/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/package/{conan_package_reference}/{package_revision}/{file_name}/authorize": {
       "put": {
-        "summary": "Workhorse authorize the conan package file",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Workhorse authorize the Conan package file",
+        "description": "Authorizes the Conan package file.",
         "produces": [
           "application/json"
         ],
@@ -23149,7 +23149,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Workhorse authorize the conan package file"
+            "description": "Workhorse authorize the Conan package file"
           },
           "400": {
             "description": "Bad Request"
@@ -60445,14 +60445,14 @@
     },
     "/api/v4/packages/conan/v1/ping": {
       "get": {
-        "summary": "Ping the Conan API",
-        "description": "This feature was introduced in GitLab 12.2",
+        "summary": "Verify availability of a Conan repository",
+        "description": "Verifies availability of a Conan repository.",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "Ping the Conan API"
+            "description": "Verify availability of a Conan repository"
           },
           "404": {
             "description": "Not Found"
@@ -60466,8 +60466,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}": {
       "get": {
-        "summary": "Package Snapshot",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a package snapshot",
+        "description": "Retrieves a snapshot of the files for a specified Conan package and reference. The snapshot is a list of filenames with their associated MD5 hash.",
         "produces": [
           "application/json"
         ],
@@ -60515,7 +60515,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Snapshot",
+            "description": "Retrieve a package snapshot",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_PackageSnapshot"
             }
@@ -60538,8 +60538,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}": {
       "get": {
-        "summary": "Recipe Snapshot",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a recipe snapshot",
+        "description": "Retrieves a snapshot of the files for a specified Conan recipe. The snapshot is a list of filenames with their associated MD5 hash.",
         "produces": [
           "application/json"
         ],
@@ -60579,7 +60579,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Snapshot",
+            "description": "Retrieve a recipe snapshot",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_RecipeSnapshot"
             }
@@ -60600,8 +60600,8 @@
         "operationId": "getApiV4PackagesConanV1ConansPackageNamePackageVersionPackageUsernamePackageChannel"
       },
       "delete": {
-        "summary": "Delete Package",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Delete a recipe and package",
+        "description": "Deletes a specified Conan recipe and associated package files from the package registry.",
         "produces": [
           "application/json"
         ],
@@ -60641,7 +60641,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete Package"
+            "description": "Delete a recipe and package"
           },
           "400": {
             "description": "Bad Request"
@@ -60661,8 +60661,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}/digest": {
       "get": {
-        "summary": "Package Digest",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a package manifest",
+        "description": "Retrieves a manifest that includes a list of files and associated download URLs for a specified package.",
         "produces": [
           "application/json"
         ],
@@ -60710,7 +60710,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Digest",
+            "description": "Retrieve a package manifest",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_PackageManifest"
             }
@@ -60733,8 +60733,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/digest": {
       "get": {
-        "summary": "Recipe Digest",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a recipe manifest",
+        "description": "Retrieves a manifest that includes a list of files and associated download URLs for a specified recipe.",
         "produces": [
           "application/json"
         ],
@@ -60774,7 +60774,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Digest",
+            "description": "Retrieve a recipe manifest",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_RecipeManifest"
             }
@@ -60797,8 +60797,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}/download_urls": {
       "get": {
-        "summary": "Package Download Urls",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "List all package download URLs",
+        "description": "Lists all files and associated download URLs for a specified package in the package registry. Returns the same payload as the package manifest endpoint.",
         "produces": [
           "application/json"
         ],
@@ -60846,7 +60846,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Download Urls",
+            "description": "List all package download URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_PackageManifest"
             }
@@ -60869,8 +60869,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/download_urls": {
       "get": {
-        "summary": "Recipe Download Urls",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "List all recipe download URLs",
+        "description": "Lists all files and associated download URLs for a specified recipe in the package registry. Returns the same payload as the recipe manifest endpoint.",
         "produces": [
           "application/json"
         ],
@@ -60910,7 +60910,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Download Urls",
+            "description": "List all recipe download URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_RecipeManifest"
             }
@@ -60933,8 +60933,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/packages/{conan_package_reference}/upload_urls": {
       "post": {
-        "summary": "Package Upload Urls",
-        "description": "This feature was introduced in GitLab 12.4",
+        "summary": "List all package upload URLs",
+        "description": "Lists all the upload URLs for a specified collection of package files. The request must include a JSON object with the name and size of the individual files.",
         "produces": [
           "application/json"
         ],
@@ -60985,7 +60985,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Package Upload Urls",
+            "description": "List all package upload URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_UploadUrls"
             }
@@ -61008,8 +61008,8 @@
     },
     "/api/v4/packages/conan/v1/conans/{package_name}/{package_version}/{package_username}/{package_channel}/upload_urls": {
       "post": {
-        "summary": "Recipe Upload Urls",
-        "description": "This feature was introduced in GitLab 12.4",
+        "summary": "List all recipe upload URLs",
+        "description": "Lists all the upload URLs for a specified collection of recipe files. The request must include a JSON object with the name and size of the individual files.",
         "produces": [
           "application/json"
         ],
@@ -61052,7 +61052,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Recipe Upload Urls",
+            "description": "List all recipe upload URLs",
             "schema": {
               "$ref": "#/definitions/API_Entities_Packages_Conan_UploadUrls"
             }
@@ -61075,8 +61075,8 @@
     },
     "/api/v4/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/export/{file_name}": {
       "get": {
-        "summary": "Download recipe files",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Retrieve a recipe file",
+        "description": "Retrieves a specified recipe file from the package registry. You must use the download URL returned from the recipe download URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -61140,7 +61140,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download recipe files"
+            "description": "Retrieve a recipe file"
           },
           "400": {
             "description": "Bad Request"
@@ -61158,8 +61158,8 @@
         "operationId": "getApiV4PackagesConanV1FilesPackageNamePackageVersionPackageUsernamePackageChannelRecipeRevisionExportFileName"
       },
       "put": {
-        "summary": "Upload recipe package files",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Upload a recipe file",
+        "description": "Uploads a specified recipe file to the package registry. You must use the upload URL returned from the recipe upload URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -61234,7 +61234,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Upload recipe package files"
+            "description": "Upload a recipe file"
           },
           "400": {
             "description": "Bad Request"
@@ -61257,8 +61257,8 @@
     },
     "/api/v4/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/export/{file_name}/authorize": {
       "put": {
-        "summary": "Workhorse authorize the conan recipe file",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Workhorse authorize the Conan recipe file",
+        "description": "Authorizes the Conan recipe file.",
         "produces": [
           "application/json"
         ],
@@ -61325,7 +61325,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Workhorse authorize the conan recipe file"
+            "description": "Workhorse authorize the Conan recipe file"
           },
           "400": {
             "description": "Bad Request"
@@ -61348,8 +61348,8 @@
     },
     "/api/v4/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/package/{conan_package_reference}/{package_revision}/{file_name}": {
       "get": {
-        "summary": "Download package files",
-        "description": "This feature was introduced in GitLab 12.5",
+        "summary": "Retrieve a package file",
+        "description": "Retrieves a specified package file from the package registry. You must use the download URL returned from the package download URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -61429,7 +61429,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Download package files"
+            "description": "Retrieve a package file"
           },
           "403": {
             "description": "Forbidden"
@@ -61444,8 +61444,8 @@
         "operationId": "getApiV4PackagesConanV1FilesPackageNamePackageVersionPackageUsernamePackageChannelRecipeRevisionPackageConanPackageReferencePackageRevisionFileName"
       },
       "put": {
-        "summary": "Upload package files",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Upload a package file",
+        "description": "Uploads a specified package file to the package registry. You must use the upload URL returned from the package upload URLs endpoint.",
         "produces": [
           "application/json"
         ],
@@ -61536,7 +61536,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Upload package files"
+            "description": "Upload a package file"
           },
           "400": {
             "description": "Bad Request"
@@ -61559,8 +61559,8 @@
     },
     "/api/v4/packages/conan/v1/files/{package_name}/{package_version}/{package_username}/{package_channel}/{recipe_revision}/package/{conan_package_reference}/{package_revision}/{file_name}/authorize": {
       "put": {
-        "summary": "Workhorse authorize the conan package file",
-        "description": "This feature was introduced in GitLab 12.6",
+        "summary": "Workhorse authorize the Conan package file",
+        "description": "Authorizes the Conan package file.",
         "produces": [
           "application/json"
         ],
@@ -61643,7 +61643,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Workhorse authorize the conan package file"
+            "description": "Workhorse authorize the Conan package file"
           },
           "400": {
             "description": "Bad Request"
@@ -78974,7 +78974,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -82145,7 +82145,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "last_pipeline": {
@@ -82671,7 +82671,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload recipe package files"
+      "description": "Upload a recipe file"
     },
     "putApiV4ProjectsIdPackagesConanV1FilesPackageNamePackageVersionPackageUsernamePackageChannelRecipeRevisionPackageConanPackageReferencePackageRevisionFileName": {
       "type": "object",
@@ -82684,7 +82684,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload package files"
+      "description": "Upload a package file"
     },
     "API_Entities_Packages_Conan_Revision": {
       "type": "object",
@@ -94577,7 +94577,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "title": {
@@ -94607,7 +94607,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "web_url": {
@@ -97772,7 +97772,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "name": {
@@ -97824,7 +97824,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "access_level": {
@@ -97838,17 +97838,17 @@
         },
         "deploy_key_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "user_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "group_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "member_role_id": {
@@ -98589,7 +98589,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 101486
         },
         "enabled": {
@@ -101880,7 +101880,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload recipe package files"
+      "description": "Upload a recipe file"
     },
     "putApiV4PackagesConanV1FilesPackageNamePackageVersionPackageUsernamePackageChannelRecipeRevisionPackageConanPackageReferencePackageRevisionFileName": {
       "type": "object",
@@ -101893,7 +101893,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload package files"
+      "description": "Upload a package file"
     },
     "putApiV4PackagesNpmPackage*packageNameDistTagsTag": {
       "type": "object",
@@ -107103,7 +107103,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "title": {
@@ -107133,7 +107133,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "web_url": {
@@ -107204,7 +107204,7 @@
       "properties": {
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "title": {
@@ -107234,7 +107234,7 @@
         },
         "project_id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "example": 1
         },
         "web_url": {

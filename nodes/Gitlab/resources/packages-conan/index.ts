@@ -41,8 +41,8 @@ export const packagesConanDescription: INodeProperties[] = [
 				{
 					"name": "Get API v4 Packages Conan v1 Ping",
 					"value": "Get API v4 Packages Conan v1 Ping",
-					"action": "Ping the Conan API",
-					"description": "This feature was introduced in GitLab 12.2",
+					"action": "Verify availability of a Conan repository",
+					"description": "Verifies availability of a Conan repository.",
 					"routing": {
 						"request": {
 							"method": "GET",

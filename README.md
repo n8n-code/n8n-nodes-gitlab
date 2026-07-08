@@ -102,7 +102,7 @@ That's it. No configuration files. No code. It just works.
 
 - Get Retrieve an authentication token
 - Get Verify authentication credentials
-- Get Ping the Conan API
+- Get Verify availability of a Conan repository
 
 </details>
 
