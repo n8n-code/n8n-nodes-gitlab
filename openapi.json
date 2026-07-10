@@ -46312,7 +46312,7 @@
           {
             "in": "formData",
             "name": "override_params[duo_dependency_bump_breaking_changes_enabled]",
-            "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project",
+            "description": "Turn on Agentic Breaking Change Resolution for this project",
             "type": "boolean",
             "required": false
           },
@@ -47350,7 +47350,7 @@
           {
             "in": "formData",
             "name": "override_params[duo_dependency_bump_breaking_changes_enabled]",
-            "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project",
+            "description": "Turn on Agentic Breaking Change Resolution for this project",
             "type": "boolean",
             "required": false
           },
@@ -48443,7 +48443,7 @@
           {
             "in": "formData",
             "name": "override_params[duo_dependency_bump_breaking_changes_enabled]",
-            "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project",
+            "description": "Turn on Agentic Breaking Change Resolution for this project",
             "type": "boolean",
             "required": false
           },
@@ -79149,6 +79149,12 @@
           ],
           "description": "The five most recent unique IP addresses that have authenticated with this token. When the limit is reached, the oldest IP address is removed. The list updates once per minute per token."
         },
+        "granular_scopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
+          }
+        },
         "access_level": {
           "type": "integer",
           "format": "int32",
@@ -79196,6 +79202,37 @@
         "token"
       ],
       "description": "API_Entities_ResourceAccessTokenWithToken model"
+    },
+    "API_Entities_PersonalAccessTokenGranularScope": {
+      "type": "object",
+      "properties": {
+        "access": {
+          "type": "string",
+          "example": "personal_projects"
+        },
+        "permissions": {
+          "type": "array",
+          "example": [
+            "read_job"
+          ]
+        },
+        "project_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": 3
+        },
+        "group_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": 5
+        }
+      },
+      "required": [
+        "access",
+        "permissions",
+        "project_id",
+        "group_id"
+      ]
     },
     "API_Entities_WikiPageBasic": {
       "type": "object",
@@ -95507,7 +95544,7 @@
         },
         "duo_dependency_bump_breaking_changes_enabled": {
           "type": "boolean",
-          "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project"
+          "description": "Turn on Agentic Breaking Change Resolution for this project"
         },
         "duo_sast_vr_workflow_enabled": {
           "type": "boolean",
@@ -96075,7 +96112,7 @@
         },
         "duo_dependency_bump_breaking_changes_enabled": {
           "type": "boolean",
-          "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project"
+          "description": "Turn on Agentic Breaking Change Resolution for this project"
         },
         "duo_sast_vr_workflow_enabled": {
           "type": "boolean",
@@ -97462,7 +97499,7 @@
         },
         "duo_dependency_bump_breaking_changes_enabled": {
           "type": "boolean",
-          "description": "Enable GitLab Duo AI-powered resolution of breaking changes from dependency bumps for this project"
+          "description": "Enable Agentic Breaking Change Resolution for this project"
         },
         "duo_sast_vr_workflow_enabled": {
           "type": "boolean",
@@ -106970,6 +107007,12 @@
             "127.0.0.3"
           ],
           "description": "The five most recent unique IP addresses that have authenticated with this token. When the limit is reached, the oldest IP address is removed. The list updates once per minute per token."
+        },
+        "granular_scopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
+          }
         }
       },
       "required": [
@@ -107117,6 +107160,12 @@
         },
         "token": {
           "type": "string"
+        },
+        "granular_scopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
+          }
         }
       },
       "required": [
