@@ -1494,8 +1494,8 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
             "required": true
           }
         ],
@@ -4266,8 +4266,8 @@
           {
             "in": "path",
             "name": "file_sha256",
-            "type": "integer",
-            "format": "int32",
+            "description": "The SHA256 checksum of the index file",
+            "type": "string",
             "required": true
           }
         ],
@@ -4389,8 +4389,8 @@
           {
             "in": "path",
             "name": "file_sha256",
-            "type": "integer",
-            "format": "int32",
+            "description": "The SHA256 checksum of the index file",
+            "type": "string",
             "required": true
           }
         ],
@@ -4528,8 +4528,8 @@
           {
             "in": "path",
             "name": "file_sha256",
-            "type": "integer",
-            "format": "int32",
+            "description": "The SHA256 checksum of the index file",
+            "type": "string",
             "required": true
           }
         ],
@@ -10388,8 +10388,8 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
             "required": true
           }
         ],
@@ -10421,8 +10421,8 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
             "required": true
           },
           {
@@ -10461,6 +10461,13 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
+            "required": true
+          },
+          {
             "in": "query",
             "name": "page",
             "description": "Current page number",
@@ -10479,13 +10486,6 @@
             "default": 20,
             "required": false,
             "example": 20
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
-            "required": true
           }
         ],
         "responses": {
@@ -10521,15 +10521,15 @@
         "parameters": [
           {
             "in": "path",
-            "name": "upload_id",
-            "description": "The ID of a group upload",
-            "type": "integer",
-            "format": "int32",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
-            "name": "id",
+            "name": "upload_id",
+            "description": "The ID of a group upload",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -10563,15 +10563,15 @@
         "parameters": [
           {
             "in": "path",
-            "name": "upload_id",
-            "description": "The ID of a group upload",
-            "type": "integer",
-            "format": "int32",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
-            "name": "id",
+            "name": "upload_id",
+            "description": "The ID of a group upload",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -10607,6 +10607,13 @@
         "parameters": [
           {
             "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
             "name": "secret",
             "description": "The 32-character secret of a group upload",
             "type": "string",
@@ -10617,13 +10624,6 @@
             "name": "filename",
             "description": "The filename of a group upload",
             "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
             "required": true
           }
         ],
@@ -10655,6 +10655,13 @@
         "parameters": [
           {
             "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the group",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
             "name": "secret",
             "description": "The 32-character secret of a group upload",
             "type": "string",
@@ -10665,13 +10672,6 @@
             "name": "filename",
             "description": "The filename of a group upload",
             "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
             "required": true
           }
         ],
@@ -15628,8 +15628,8 @@
           {
             "in": "path",
             "name": "branch",
-            "type": "integer",
-            "format": "int32",
+            "description": "The name of the branch",
+            "type": "string",
             "required": true
           }
         ],
@@ -25028,8 +25028,8 @@
           {
             "in": "path",
             "name": "file_sha256",
-            "type": "integer",
-            "format": "int32",
+            "description": "The SHA256 checksum of the index file",
+            "type": "string",
             "required": true
           }
         ],
@@ -25151,8 +25151,8 @@
           {
             "in": "path",
             "name": "file_sha256",
-            "type": "integer",
-            "format": "int32",
+            "description": "The SHA256 checksum of the index file",
+            "type": "string",
             "required": true
           }
         ],
@@ -25290,8 +25290,8 @@
           {
             "in": "path",
             "name": "file_sha256",
-            "type": "integer",
-            "format": "int32",
+            "description": "The SHA256 checksum of the index file",
+            "type": "string",
             "required": true
           }
         ],
@@ -29174,6 +29174,13 @@
             "required": true
           },
           {
+            "in": "path",
+            "name": "file_name",
+            "description": "Package file name",
+            "type": "string",
+            "required": true
+          },
+          {
             "in": "query",
             "name": "package_version",
             "description": "Package version",
@@ -29186,13 +29193,6 @@
             "description": "File directory path",
             "type": "string",
             "required": false
-          },
-          {
-            "in": "path",
-            "name": "file_name",
-            "description": "Package file name",
-            "type": "string",
-            "required": true
           }
         ],
         "responses": {
@@ -37612,6 +37612,13 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
             "in": "query",
             "name": "sha",
             "description": "Deprecated: Use content_ref instead",
@@ -37653,13 +37660,6 @@
             "description": "Branch or tag used as context when executing a dry run. Defaults to the default branch of the project. Only used when dry_run is true",
             "type": "string",
             "required": false
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
-            "required": true
           }
         ],
         "responses": {
@@ -37691,8 +37691,8 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
@@ -37732,8 +37732,8 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           }
         ],
@@ -37765,8 +37765,8 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
@@ -37802,6 +37802,13 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
             "in": "query",
             "name": "page",
             "description": "Current page number",
@@ -37820,13 +37827,6 @@
             "default": 20,
             "required": false,
             "example": 20
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
-            "required": true
           }
         ],
         "responses": {
@@ -37862,15 +37862,15 @@
         "parameters": [
           {
             "in": "path",
-            "name": "upload_id",
-            "description": "The ID of a project upload",
-            "type": "integer",
-            "format": "int32",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
-            "name": "id",
+            "name": "upload_id",
+            "description": "The ID of a project upload",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -37904,15 +37904,15 @@
         "parameters": [
           {
             "in": "path",
-            "name": "upload_id",
-            "description": "The ID of a project upload",
-            "type": "integer",
-            "format": "int32",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
-            "name": "id",
+            "name": "upload_id",
+            "description": "The ID of a project upload",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -37948,6 +37948,13 @@
         "parameters": [
           {
             "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
             "name": "secret",
             "description": "The 32-character secret of a project upload",
             "type": "string",
@@ -37958,13 +37965,6 @@
             "name": "filename",
             "description": "The filename of a project upload",
             "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
             "required": true
           }
         ],
@@ -37996,6 +37996,13 @@
         "parameters": [
           {
             "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
             "name": "secret",
             "description": "The 32-character secret of a project upload",
             "type": "string",
@@ -38006,13 +38013,6 @@
             "name": "filename",
             "description": "The filename of a project upload",
             "type": "string",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
             "required": true
           }
         ],
@@ -40484,13 +40484,14 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
             "name": "merge_request_iid",
+            "description": "The IID of a merge request",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -40575,13 +40576,14 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
             "name": "merge_request_iid",
+            "description": "The IID of a merge request",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -40632,13 +40634,14 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
             "name": "merge_request_iid",
+            "description": "The IID of a merge request",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -40681,13 +40684,14 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
             "name": "merge_request_iid",
+            "description": "The IID of a merge request",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -45460,14 +45464,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
-            "type": "integer",
-            "format": "int32",
-            "required": true
-          },
-          {
-            "in": "path",
             "name": "hook_id",
+            "description": "The ID of the hook",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -45475,6 +45473,14 @@
           {
             "in": "path",
             "name": "hook_log_id",
+            "description": "The ID of the hook log entry",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "id",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -49775,15 +49781,15 @@
           },
           {
             "in": "path",
-            "name": "file_path",
-            "description": "The URL-encoded path to the file, like lib%2Fclass%2Erb",
+            "name": "ref",
+            "description": "The name of branch, tag or commit",
             "type": "string",
             "required": true
           },
           {
             "in": "path",
-            "name": "ref",
-            "description": "The name of branch, tag or commit",
+            "name": "file_path",
+            "description": "The URL-encoded path to the file, like lib%2Fclass%2Erb",
             "type": "string",
             "required": true
           },
@@ -50057,8 +50063,8 @@
           {
             "in": "path",
             "name": "id",
-            "type": "integer",
-            "format": "int32",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
             "required": true
           }
         ],
@@ -54706,8 +54712,8 @@
     },
     "/api/v4/projects/{id}/issues/{eventable_id}/resource_milestone_events": {
       "get": {
-        "summary": "List project Issue milestone events",
-        "description": "Gets a list of all milestone events for a single Issue",
+        "summary": "List all project issue milestone events",
+        "description": "Lists all milestone events for a specified issue.",
         "produces": [
           "application/json"
         ],
@@ -54750,7 +54756,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List project Issue milestone events",
+            "description": "List all project issue milestone events",
             "schema": {
               "type": "array",
               "items": {
@@ -54767,8 +54773,8 @@
     },
     "/api/v4/projects/{id}/issues/{eventable_id}/resource_milestone_events/{event_id}": {
       "get": {
-        "summary": "Get single Issue milestone event",
-        "description": "Returns a single milestone event for a specific project Issue",
+        "summary": "Retrieve an issue milestone event",
+        "description": "Retrieves a specified milestone event for a project issue.",
         "produces": [
           "application/json"
         ],
@@ -54798,7 +54804,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get single Issue milestone event",
+            "description": "Retrieve an issue milestone event",
             "schema": {
               "$ref": "#/definitions/API_Entities_ResourceMilestoneEvent"
             }
@@ -54815,8 +54821,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{eventable_id}/resource_milestone_events": {
       "get": {
-        "summary": "List project Merge request milestone events",
-        "description": "Gets a list of all milestone events for a single Merge request",
+        "summary": "List all project merge request milestone events",
+        "description": "Lists all milestone events for a specified merge request.",
         "produces": [
           "application/json"
         ],
@@ -54859,7 +54865,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List project Merge request milestone events",
+            "description": "List all project merge request milestone events",
             "schema": {
               "type": "array",
               "items": {
@@ -54876,8 +54882,8 @@
     },
     "/api/v4/projects/{id}/merge_requests/{eventable_id}/resource_milestone_events/{event_id}": {
       "get": {
-        "summary": "Get single Merge request milestone event",
-        "description": "Returns a single milestone event for a specific project Merge request",
+        "summary": "Retrieve a merge request milestone event",
+        "description": "Retrieves a specified milestone event for a project merge request.",
         "produces": [
           "application/json"
         ],
@@ -54907,7 +54913,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get single Merge request milestone event",
+            "description": "Retrieve a merge request milestone event",
             "schema": {
               "$ref": "#/definitions/API_Entities_ResourceMilestoneEvent"
             }
@@ -56756,13 +56762,14 @@
           {
             "in": "path",
             "name": "name",
-            "type": "integer",
-            "format": "int32",
+            "description": "The name of a Terraform state",
+            "type": "string",
             "required": true
           },
           {
             "in": "path",
             "name": "serial",
+            "description": "The version number of the state",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -57077,6 +57084,14 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "id",
+            "description": "The batched background migration id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
             "in": "query",
             "name": "database",
             "description": "The name of the database",
@@ -57090,14 +57105,6 @@
               "geo"
             ],
             "required": false
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "description": "The batched background migration id",
-            "type": "integer",
-            "format": "int32",
-            "required": true
           }
         ],
         "responses": {
@@ -66261,6 +66268,7 @@
           {
             "in": "path",
             "name": "id",
+            "description": "The ID of a personal access token",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -66295,6 +66303,7 @@
           {
             "in": "path",
             "name": "id",
+            "description": "The ID of a personal access token",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -66328,6 +66337,7 @@
           {
             "in": "path",
             "name": "id",
+            "description": "The ID of a personal access token",
             "type": "integer",
             "format": "int32",
             "required": true
@@ -66898,15 +66908,15 @@
         "parameters": [
           {
             "in": "path",
-            "name": "file_path",
-            "description": "The URL-encoded path to the file, like lib%2Fclass%2Erb",
+            "name": "ref",
+            "description": "The name of branch, tag or commit",
             "type": "string",
             "required": true
           },
           {
             "in": "path",
-            "name": "ref",
-            "description": "The name of branch, tag or commit",
+            "name": "file_path",
+            "description": "The URL-encoded path to the file, like lib%2Fclass%2Erb",
             "type": "string",
             "required": true
           },
