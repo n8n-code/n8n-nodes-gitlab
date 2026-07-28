@@ -29,8 +29,8 @@ export const projectImportDescription: INodeProperties[] = [
 				{
 					"name": "Post API v4 Projects Import Relation Authorize",
 					"value": "Post API v4 Projects Import Relation Authorize",
-					"action": "Workhorse authorize the project relation import upload",
-					"description": "This feature was introduced in GitLab 16.11",
+					"action": "Authorize project relation import",
+					"description": "Authorizes uploading a project relation import file. This feature was introduced in GitLab 16.11.",
 					"routing": {
 						"request": {
 							"method": "POST",

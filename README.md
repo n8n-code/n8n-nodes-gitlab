@@ -229,7 +229,7 @@ That's it. No configuration files. No code. It just works.
 <summary><b>Project Import</b> (2 operations)</summary>
 
 - Post Workhorse authorize the project import upload
-- Post Workhorse authorize the project relation import upload
+- Post Authorize project relation import
 
 </details>
 

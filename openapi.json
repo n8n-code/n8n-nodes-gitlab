@@ -32513,7 +32513,7 @@
     "/api/v4/projects/{id}/services/mattermost_slash_commands/trigger": {
       "post": {
         "summary": "Trigger a slash command for mattermost-slash-commands",
-        "description": "Added in GitLab 8.13",
+        "description": "Triggers a slash command for mattermost-slash-commands.",
         "produces": [
           "application/json"
         ],
@@ -35492,7 +35492,7 @@
     "/api/v4/projects/{id}/integrations/mattermost_slash_commands/trigger": {
       "post": {
         "summary": "Trigger a slash command for mattermost-slash-commands",
-        "description": "Added in GitLab 8.13",
+        "description": "Triggers a slash command for mattermost-slash-commands.",
         "produces": [
           "application/json"
         ],
@@ -37388,7 +37388,8 @@
     },
     "/api/v4/projects/{id}/issues/{issue_iid}/metric_images/authorize": {
       "post": {
-        "description": "Upload a metric image for an incident",
+        "summary": "Authorize metric image upload",
+        "description": "Authorizes uploading a metric image for a specified incident.",
         "produces": [
           "application/json"
         ],
@@ -37413,7 +37414,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Upload a metric image for an incident"
+            "description": "Authorize metric image upload"
           }
         },
         "tags": [
@@ -38607,8 +38608,8 @@
     },
     "/api/v4/projects/{id}/create_ci_config": {
       "post": {
-        "summary": "Create merge request for missing ci config in project",
-        "description": "Creates a merge request to add missing CI configuration",
+        "summary": "Create a CI configuration merge request",
+        "description": "Creates a merge request to add CI configuration to a specified project.",
         "produces": [
           "application/json"
         ],
@@ -38626,7 +38627,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Create merge request for missing ci config in project",
+            "description": "Create a CI configuration merge request",
             "schema": {
               "$ref": "#/definitions/API_Entities_MergeRequest"
             }
@@ -46511,7 +46512,7 @@
     "/api/v4/projects/{id}/import/git": {
       "post": {
         "summary": "Import a project from a Git URL",
-        "description": "This feature was introduced in GitLab 18.10.",
+        "description": "Imports a project from a specified Git URL. This feature was introduced in GitLab 18.10.",
         "produces": [
           "application/json"
         ],
@@ -47442,8 +47443,8 @@
     },
     "/api/v4/projects/import-relation/authorize": {
       "post": {
-        "summary": "Workhorse authorize the project relation import upload",
-        "description": "This feature was introduced in GitLab 16.11",
+        "summary": "Authorize project relation import",
+        "description": "Authorizes uploading a project relation import file. This feature was introduced in GitLab 16.11.",
         "produces": [
           "application/json"
         ],
@@ -47452,7 +47453,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Workhorse authorize the project relation import upload"
+            "description": "Authorize project relation import"
           }
         },
         "tags": [
@@ -54623,6 +54624,78 @@
         "operationId": "postApiV4ProjectsIdRepositoryBlobsBatch"
       }
     },
+    "/api/v4/projects/{id}/repository/diverging_commits": {
+      "get": {
+        "description": "Retrieve diverging commit counts between two refs",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true,
+            "example": 1
+          },
+          {
+            "in": "query",
+            "name": "from",
+            "description": "The ref to compare from",
+            "type": "string",
+            "required": true,
+            "example": "main"
+          },
+          {
+            "in": "query",
+            "name": "to",
+            "description": "The ref to compare to",
+            "type": "string",
+            "required": true,
+            "example": "feature"
+          },
+          {
+            "in": "query",
+            "name": "max_count",
+            "description": "Maximum number of commits to count. 0 for unlimited",
+            "type": "integer",
+            "format": "int32",
+            "default": 0,
+            "minimum": 0,
+            "required": false,
+            "example": 1000
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve diverging commit counts between two refs",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_DivergingCommitCount"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        },
+        "tags": [
+          "repositories"
+        ],
+        "operationId": "getApiV4ProjectsIdRepositoryDivergingCommits"
+      }
+    },
     "/api/v4/projects/{id}/repository/changelog": {
       "get": {
         "summary": "Generate changelog data",
@@ -55469,8 +55542,8 @@
     },
     "/api/v4/projects/{id}/(-/)search": {
       "get": {
-        "summary": "Search on GitLab within a project",
-        "description": "This feature was introduced in GitLab 10.5.",
+        "summary": "Search a project",
+        "description": "Searches for content in a specified project.",
         "produces": [
           "application/json"
         ],
@@ -55597,7 +55670,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Search on GitLab within a project"
+            "description": "Search a project"
           }
         },
         "tags": [
@@ -56284,8 +56357,8 @@
     },
     "/api/v4/projects/{id}/terraform/state/{name}": {
       "get": {
-        "summary": "Get a Terraform state by its name",
-        "description": "Get a Terraform state by its name",
+        "summary": "Retrieve a Terraform state",
+        "description": "Retrieves a Terraform state by name for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -56314,7 +56387,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a Terraform state by its name"
+            "description": "Retrieve a Terraform state"
           },
           "204": {
             "description": "Empty state"
@@ -56335,8 +56408,8 @@
         "operationId": "getApiV4ProjectsIdTerraformStateName"
       },
       "post": {
-        "summary": "Add a new Terraform state or update an existing one",
-        "description": "Add a new Terraform state or update an existing one",
+        "summary": "Create or update a Terraform state",
+        "description": "Creates or updates a Terraform state for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -56369,7 +56442,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Add a new Terraform state or update an existing one"
+            "description": "Create or update a Terraform state"
           },
           "204": {
             "description": "No data provided"
@@ -56390,8 +56463,8 @@
         "operationId": "postApiV4ProjectsIdTerraformStateName"
       },
       "delete": {
-        "summary": "Delete a Terraform state of a certain name",
-        "description": "Delete a Terraform state of a certain name",
+        "summary": "Delete a Terraform state",
+        "description": "Deletes a Terraform state for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -56413,7 +56486,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete a Terraform state of a certain name"
+            "description": "Delete a Terraform state"
           },
           "403": {
             "description": "Forbidden"
@@ -56434,7 +56507,7 @@
     "/api/v4/projects/{id}/terraform/state/{name}/authorize": {
       "post": {
         "summary": "Authorize Terraform state upload",
-        "description": "This feature was introduced in GitLab 18.5",
+        "description": "Authorizes uploading a Terraform state for a specified project. This feature was introduced in GitLab 18.5.",
         "produces": [
           "application/json"
         ],
@@ -56482,8 +56555,8 @@
     },
     "/api/v4/projects/{id}/terraform/state/{name}/lock": {
       "post": {
-        "summary": "Lock a Terraform state of a certain name",
-        "description": "Lock a Terraform state of a certain name",
+        "summary": "Lock a Terraform state",
+        "description": "Locks a Terraform state for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -56516,7 +56589,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Lock a Terraform state of a certain name"
+            "description": "Lock a Terraform state"
           },
           "403": {
             "description": "Forbidden"
@@ -56537,8 +56610,8 @@
         "operationId": "postApiV4ProjectsIdTerraformStateNameLock"
       },
       "delete": {
-        "summary": "Unlock a Terraform state of a certain name",
-        "description": "Unlock a Terraform state of a certain name",
+        "summary": "Unlock a Terraform state",
+        "description": "Unlocks a Terraform state for a specified project.",
         "produces": [
           "application/json"
         ],
@@ -56567,7 +56640,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Unlock a Terraform state of a certain name"
+            "description": "Unlock a Terraform state"
           },
           "403": {
             "description": "Forbidden"
@@ -56795,8 +56868,8 @@
     },
     "/api/v4/projects/{id}/terraform/state/{name}/versions/{serial}": {
       "get": {
-        "summary": "Get a Terraform state version",
-        "description": "Get a Terraform state version",
+        "summary": "Retrieve a Terraform state version",
+        "description": "Retrieves a specified Terraform state version.",
         "produces": [
           "application/json"
         ],
@@ -56826,7 +56899,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Get a Terraform state version",
+            "description": "Retrieve a Terraform state version",
             "schema": {
               "type": "file"
             }
@@ -56845,7 +56918,7 @@
       },
       "delete": {
         "summary": "Delete a Terraform state version",
-        "description": "Delete a Terraform state version",
+        "description": "Deletes a specified Terraform state version.",
         "produces": [
           "application/json"
         ],
@@ -59991,7 +60064,8 @@
     },
     "/api/v4/jobs/request": {
       "post": {
-        "description": "Request a job",
+        "summary": "Request a job",
+        "description": "Requests a job for a runner to execute.",
         "produces": [
           "application/json"
         ],
@@ -60142,7 +60216,8 @@
     },
     "/api/v4/jobs/{id}/artifacts/authorize": {
       "post": {
-        "description": "Authorize uploading job artifact",
+        "summary": "Authorize artifacts upload",
+        "description": "Authorizes uploading artifacts for a specified job.",
         "produces": [
           "application/json"
         ],
@@ -60192,7 +60267,8 @@
     },
     "/api/v4/jobs/{id}/artifacts": {
       "post": {
-        "description": "Upload a job artifact",
+        "summary": "Upload job artifacts",
+        "description": "Uploads artifacts for a specified job.",
         "produces": [
           "application/json"
         ],
@@ -60219,7 +60295,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Upload a job artifact"
+            "description": "Upload job artifacts"
           },
           "400": {
             "description": "Bad request"
@@ -60243,7 +60319,8 @@
         "operationId": "postApiV4JobsIdArtifacts"
       },
       "get": {
-        "description": "Download the artifacts file for job",
+        "summary": "Download job artifacts",
+        "description": "Downloads artifacts for a specified job.",
         "produces": [
           "application/json"
         ],
@@ -68799,7 +68876,7 @@
     "/api/v4/slack/trigger": {
       "post": {
         "summary": "Trigger a global slack command",
-        "description": "Added in GitLab 9.4",
+        "description": "Triggers a global slack command.",
         "produces": [
           "application/json"
         ],
@@ -100099,6 +100176,26 @@
       ],
       "description": "API_Entities_BatchBlob model"
     },
+    "API_Entities_DivergingCommitCount": {
+      "type": "object",
+      "properties": {
+        "behind": {
+          "type": "integer",
+          "format": "int32",
+          "example": 3
+        },
+        "ahead": {
+          "type": "integer",
+          "format": "int32",
+          "example": 5
+        }
+      },
+      "required": [
+        "behind",
+        "ahead"
+      ],
+      "description": "API_Entities_DivergingCommitCount model"
+    },
     "API_Entities_Changelog": {
       "type": "object",
       "properties": {
@@ -100469,7 +100566,7 @@
       "required": [
         "file"
       ],
-      "description": "Add a new Terraform state or update an existing one"
+      "description": "Create or update a Terraform state"
     },
     "postApiV4ProjectsIdTerraformStateNameLock": {
       "type": "object",
@@ -100512,7 +100609,7 @@
         "Created",
         "Path"
       ],
-      "description": "Lock a Terraform state of a certain name"
+      "description": "Lock a Terraform state"
     },
     "API_Entities_Terraform_StateProtectionRule": {
       "type": "object",
@@ -102811,7 +102908,7 @@
           "default": "archive"
         }
       },
-      "description": "Authorize uploading job artifact"
+      "description": "Authorize artifacts upload"
     },
     "postApiV4JobsIdArtifacts": {
       "type": "object",
@@ -102890,7 +102987,7 @@
       "required": [
         "file"
       ],
-      "description": "Upload a job artifact"
+      "description": "Upload job artifacts"
     },
     "putApiV4PackagesConanV1FilesPackageNamePackageVersionPackageUsernamePackageChannelRecipeRevisionExportFileName": {
       "type": "object",
