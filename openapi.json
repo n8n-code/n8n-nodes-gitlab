@@ -11797,6 +11797,24 @@
           },
           {
             "in": "query",
+            "name": "merged_after",
+            "description": "Returns merge requests merged on or after the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
+            "name": "merged_before",
+            "description": "Returns merge requests merged on or before the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
             "name": "view",
             "description": "If simple, returns the `iid`, URL, title, description, and basic state of merge request",
             "type": "string",
@@ -26556,6 +26574,24 @@
           },
           {
             "in": "query",
+            "name": "merged_after",
+            "description": "Returns merge requests merged on or after the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
+            "name": "merged_before",
+            "description": "Returns merge requests merged on or before the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
             "name": "view",
             "description": "If simple, returns the `iid`, URL, title, description, and basic state of merge request",
             "type": "string",
@@ -39085,6 +39121,24 @@
             "in": "query",
             "name": "updated_before",
             "description": "Returns merge requests updated on or before the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
+            "name": "merged_after",
+            "description": "Returns merge requests merged on or after the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
+            "name": "merged_before",
+            "description": "Returns merge requests merged on or before the given time. Expected in ISO 8601 format.",
             "type": "string",
             "format": "date-time",
             "required": false,
@@ -65191,6 +65245,24 @@
             "in": "query",
             "name": "updated_before",
             "description": "Returns merge requests updated on or before the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
+            "name": "merged_after",
+            "description": "Returns merge requests merged on or after the given time. Expected in ISO 8601 format.",
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "example": "2019-03-15T08:00:00Z"
+          },
+          {
+            "in": "query",
+            "name": "merged_before",
+            "description": "Returns merge requests merged on or before the given time. Expected in ISO 8601 format.",
             "type": "string",
             "format": "date-time",
             "required": false,
