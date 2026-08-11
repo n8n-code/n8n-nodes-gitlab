@@ -52914,6 +52914,57 @@
         "operationId": "getApiV4ProjectsIdPackagesPypiFilesSha256*fileIdentifier"
       }
     },
+    "/api/v4/projects/{id}/packages/pypi/forward/{package_name}/*upstream_path": {
+      "get": {
+        "summary": "Download a forwarded (proxied) PyPI package file",
+        "description": "Enforces the Dependency Firewall then redirects to the upstream artifact.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID or URL-encoded path of the project",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "package_name",
+            "description": "The normalized PyPI package name",
+            "type": "string",
+            "required": true,
+            "example": "my.pypi.package"
+          },
+          {
+            "in": "query",
+            "name": "upstream_path",
+            "description": "The upstream artifact host and path, as emitted by the Simple index rewrite",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Download a forwarded (proxied) PyPI package file"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "tags": [
+          "packages_pypi"
+        ],
+        "operationId": "getApiV4ProjectsIdPackagesPypiForwardPackageName*upstreamPath"
+      }
+    },
     "/api/v4/projects/{id}/packages/pypi/simple": {
       "get": {
         "summary": "List all packages for a project",
@@ -107868,7 +107919,7 @@
         },
         "gcs_adc_configuration": {
           "type": "object",
-          "description": "Google Cloud Storage configuration using Application Default Credentials. Available on GitLab Self-Managed or GitLab Dedicated, and must be enabled by an administrator.",
+          "description": "Google Cloud Storage configuration using Application Default Credentials. Available on GitLab Self-Managed or GitLab Dedicated, and must be enabled by an administrator. Only administrators can use these credentials, and the bucket name must start with \"gitlab-offline-transfer-\". For more information, see https://docs.gitlab.com/administration/settings/import_and_export_settings/#allow-application-default-credentials-for-offline-transfer",
           "properties": {
             "google_project": {
               "type": "string",
@@ -108019,7 +108070,7 @@
         },
         "gcs_adc_configuration": {
           "type": "object",
-          "description": "Google Cloud Storage configuration using Application Default Credentials. Available on GitLab Self-Managed or GitLab Dedicated, and must be enabled by an administrator.",
+          "description": "Google Cloud Storage configuration using Application Default Credentials. Available on GitLab Self-Managed or GitLab Dedicated, and must be enabled by an administrator. Only administrators can use these credentials, and the bucket name must start with \"gitlab-offline-transfer-\". For more information, see https://docs.gitlab.com/administration/settings/import_and_export_settings/#allow-application-default-credentials-for-offline-transfer",
           "properties": {
             "google_project": {
               "type": "string",
