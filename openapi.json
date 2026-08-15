@@ -109530,6 +109530,11 @@
     "API_Entities_PlanLimit": {
       "type": "object",
       "properties": {
+        "cargo_max_file_size": {
+          "type": "integer",
+          "format": "int32",
+          "example": 5368709120
+        },
         "ci_instance_level_variables": {
           "type": "integer",
           "format": "int32",
@@ -109683,6 +109688,7 @@
         }
       },
       "required": [
+        "cargo_max_file_size",
         "ci_instance_level_variables",
         "ci_pipeline_size",
         "ci_active_jobs",
@@ -109732,6 +109738,11 @@
             "premium_trial",
             "opensource"
           ]
+        },
+        "cargo_max_file_size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Maximum Cargo package file size in bytes"
         },
         "ci_instance_level_variables": {
           "type": "integer",
