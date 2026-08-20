@@ -71034,10 +71034,10 @@
           "type": "string",
           "description": "Duo availability. One of `default_on`, `default_off`, `never_on` or `always_on`",
           "enum": [
+            "always_on",
             "default_on",
             "default_off",
-            "never_on",
-            "always_on"
+            "never_on"
           ]
         },
         "duo_remote_flows_availability": {
@@ -71434,10 +71434,10 @@
           "type": "string",
           "description": "Duo availability. One of `default_on`, `default_off`, `never_on` or `always_on`",
           "enum": [
+            "always_on",
             "default_on",
             "default_off",
-            "never_on",
-            "always_on"
+            "never_on"
           ]
         },
         "duo_remote_flows_availability": {
