@@ -69846,6 +69846,9 @@
         "expires_at": {
           "type": "string"
         },
+        "two_factor_enabled": {
+          "type": "boolean"
+        },
         "group_saml_identity": {
           "$ref": "#/definitions/API_Entities_Identity"
         },
