@@ -16500,6 +16500,54 @@
         "operationId": "getApiV4ProjectsIdJobsJobId"
       }
     },
+    "/api/v4/projects/{id}/jobs/{job_id}/runtime_environment_key": {
+      "get": {
+        "summary": "Get the runtime environment key for a job",
+        "description": "Retrieves the runtime environment key linked to a job, if the job is resuming a suspended environment.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "description": "The ID of a job",
+            "type": "integer",
+            "format": "int32",
+            "required": true,
+            "example": 88
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the runtime environment key for a job",
+            "schema": {
+              "$ref": "#/definitions/API_Entities_Ci_RuntimeEnvironmentKey"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "ci_jobs"
+        ],
+        "operationId": "getApiV4ProjectsIdJobsJobIdRuntimeEnvironmentKey"
+      }
+    },
     "/api/v4/projects/{id}/jobs/{job_id}/trace": {
       "get": {
         "summary": "Get a trace of a specific job of a project",
@@ -66487,7 +66535,7 @@
           "200": {
             "description": "Retrieve a personal access token",
             "schema": {
-              "$ref": "#/definitions/API_Entities_PersonalAccessTokenWithLastUsedIps"
+              "$ref": "#/definitions/API_Entities_PersonalAccessToken"
             }
           },
           "401": {
@@ -66767,7 +66815,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/API_Entities_PersonalAccessTokenWithLastUsedIps"
+                "$ref": "#/definitions/API_Entities_PersonalAccessToken"
               }
             }
           },
@@ -66802,7 +66850,7 @@
           "200": {
             "description": "Retrieve a personal access token",
             "schema": {
-              "$ref": "#/definitions/API_Entities_PersonalAccessTokenWithLastUsedIps"
+              "$ref": "#/definitions/API_Entities_PersonalAccessToken"
             }
           },
           "401": {
@@ -71295,7 +71343,7 @@
             },
             "ai_catalog_restricted_to_group_hierarchy": {
               "type": "boolean",
-              "description": "Restrict the AI Catalog to items within this top-level group hierarchy"
+              "description": "Confine the AI Catalog to items within this top-level group hierarchy"
             },
             "foundational_agents_default_enabled": {
               "type": "boolean",
@@ -71695,7 +71743,7 @@
             },
             "ai_catalog_restricted_to_group_hierarchy": {
               "type": "boolean",
-              "description": "Restrict the AI Catalog to items within this top-level group hierarchy"
+              "description": "Confine the AI Catalog to items within this top-level group hierarchy"
             },
             "foundational_agents_default_enabled": {
               "type": "boolean",
@@ -79686,17 +79734,6 @@
           "format": "date-time",
           "example": "2020-08-31T15:53:00.073Z"
         },
-        "active": {
-          "type": "boolean"
-        },
-        "granular": {
-          "type": "boolean"
-        },
-        "expires_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2020-08-31T15:53:00.073Z"
-        },
         "last_used_ips": {
           "type": "array",
           "items": {
@@ -79709,11 +79746,22 @@
           ],
           "description": "The five most recent unique IP addresses that have authenticated with this token. When the limit is reached, the oldest IP address is removed. The list updates once per minute per token."
         },
+        "active": {
+          "type": "boolean"
+        },
+        "granular": {
+          "type": "boolean"
+        },
         "granular_scopes": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
           }
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-08-31T15:53:00.073Z"
         },
         "access_level": {
           "type": "integer",
@@ -79753,6 +79801,7 @@
         "scopes",
         "user_id",
         "last_used_at",
+        "last_used_ips",
         "active",
         "granular",
         "expires_at",
@@ -80819,6 +80868,19 @@
         "job_execution_status"
       ],
       "description": "API_Entities_Ci_RunnerManager model"
+    },
+    "API_Entities_Ci_RuntimeEnvironmentKey": {
+      "type": "object",
+      "properties": {
+        "runtime_environment_key": {
+          "type": "string",
+          "example": "42/s_machineid/data"
+        }
+      },
+      "required": [
+        "runtime_environment_key"
+      ],
+      "description": "API_Entities_Ci_RuntimeEnvironmentKey model"
     },
     "postApiV4ProjectsIdJobsJobIdCancel": {
       "type": "object",
@@ -103252,6 +103314,10 @@
           "type": "integer",
           "format": "int32",
           "description": "Job's exit code"
+        },
+        "runtime_environment_key": {
+          "type": "string",
+          "description": "Runtime environment key emitted by the runner on job suspension"
         }
       },
       "required": [
@@ -108514,90 +108580,6 @@
         "expiration"
       ]
     },
-    "API_Entities_PersonalAccessTokenWithLastUsedIps": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64",
-          "example": 2
-        },
-        "name": {
-          "type": "string",
-          "example": "John Doe"
-        },
-        "revoked": {
-          "type": "boolean"
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "description": {
-          "type": "string",
-          "example": "Token to manage api"
-        },
-        "scopes": {
-          "type": "array",
-          "example": [
-            "api"
-          ]
-        },
-        "user_id": {
-          "type": "integer",
-          "format": "int64",
-          "example": 3
-        },
-        "last_used_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2020-08-31T15:53:00.073Z"
-        },
-        "active": {
-          "type": "boolean"
-        },
-        "granular": {
-          "type": "boolean"
-        },
-        "expires_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2020-08-31T15:53:00.073Z"
-        },
-        "last_used_ips": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "example": [
-            "127.0.0.1",
-            "127.0.0.2",
-            "127.0.0.3"
-          ],
-          "description": "The five most recent unique IP addresses that have authenticated with this token. When the limit is reached, the oldest IP address is removed. The list updates once per minute per token."
-        },
-        "granular_scopes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
-          }
-        }
-      },
-      "required": [
-        "id",
-        "name",
-        "revoked",
-        "created_at",
-        "description",
-        "scopes",
-        "user_id",
-        "last_used_at",
-        "active",
-        "granular",
-        "expires_at"
-      ],
-      "description": "API_Entities_PersonalAccessTokenWithLastUsedIps model"
-    },
     "API_Entities_PersonalAccessToken": {
       "type": "object",
       "properties": {
@@ -108637,11 +108619,29 @@
           "format": "date-time",
           "example": "2020-08-31T15:53:00.073Z"
         },
+        "last_used_ips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "127.0.0.1",
+            "127.0.0.2",
+            "127.0.0.3"
+          ],
+          "description": "The five most recent unique IP addresses that have authenticated with this token. When the limit is reached, the oldest IP address is removed. The list updates once per minute per token."
+        },
         "active": {
           "type": "boolean"
         },
         "granular": {
           "type": "boolean"
+        },
+        "granular_scopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
+          }
         },
         "expires_at": {
           "type": "string",
@@ -108658,6 +108658,7 @@
         "scopes",
         "user_id",
         "last_used_at",
+        "last_used_ips",
         "active",
         "granular",
         "expires_at"
@@ -108715,11 +108716,29 @@
           "format": "date-time",
           "example": "2020-08-31T15:53:00.073Z"
         },
+        "last_used_ips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "127.0.0.1",
+            "127.0.0.2",
+            "127.0.0.3"
+          ],
+          "description": "The five most recent unique IP addresses that have authenticated with this token. When the limit is reached, the oldest IP address is removed. The list updates once per minute per token."
+        },
         "active": {
           "type": "boolean"
         },
         "granular": {
           "type": "boolean"
+        },
+        "granular_scopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
+          }
         },
         "expires_at": {
           "type": "string",
@@ -108728,12 +108747,6 @@
         },
         "token": {
           "type": "string"
-        },
-        "granular_scopes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/API_Entities_PersonalAccessTokenGranularScope"
-          }
         }
       },
       "required": [
@@ -108745,6 +108758,7 @@
         "scopes",
         "user_id",
         "last_used_at",
+        "last_used_ips",
         "active",
         "granular",
         "expires_at",
