@@ -71345,6 +71345,10 @@
               "type": "boolean",
               "description": "Confine the AI Catalog to items within this top-level group hierarchy"
             },
+            "web_search_enabled": {
+              "type": "boolean",
+              "description": "Allow web search in GitLab Duo Chat for this top-level group"
+            },
             "foundational_agents_default_enabled": {
               "type": "boolean",
               "description": "Whether new foundational agents are enabled by default"
@@ -71744,6 +71748,10 @@
             "ai_catalog_restricted_to_group_hierarchy": {
               "type": "boolean",
               "description": "Confine the AI Catalog to items within this top-level group hierarchy"
+            },
+            "web_search_enabled": {
+              "type": "boolean",
+              "description": "Allow web search in GitLab Duo Chat for this top-level group"
             },
             "foundational_agents_default_enabled": {
               "type": "boolean",
@@ -73405,6 +73413,10 @@
           "type": "string",
           "example": "no_checks"
         },
+        "web_search_enabled": {
+          "type": "boolean",
+          "example": false
+        },
         "include_recommended_allowed": {
           "type": "boolean",
           "example": false
@@ -73441,6 +73453,7 @@
         "ai_catalog_restricted_to_group_hierarchy",
         "ai_usage_data_collection_enabled",
         "prompt_injection_protection_level",
+        "web_search_enabled",
         "include_recommended_allowed",
         "allow_all_unix_sockets",
         "allow_project_extension"
@@ -107885,6 +107898,9 @@
           "format": "int32",
           "example": 133
         },
+        "ci_minutes_usage": {
+          "$ref": "#/definitions/API_Entities_Ci_Minutes_Usage"
+        },
         "extra_shared_runners_minutes_limit": {
           "type": "integer",
           "format": "int32",
@@ -107950,6 +107966,31 @@
         "billable_members_count"
       ],
       "description": "API_Entities_Namespace model"
+    },
+    "API_Entities_Ci_Minutes_Usage": {
+      "type": "object",
+      "properties": {
+        "total_minutes_used": {
+          "type": "integer",
+          "format": "int32",
+          "example": 105
+        },
+        "monthly_minutes_used": {
+          "type": "integer",
+          "format": "int32",
+          "example": 100
+        },
+        "purchased_minutes_used": {
+          "type": "integer",
+          "format": "int32",
+          "example": 5
+        }
+      },
+      "required": [
+        "total_minutes_used",
+        "monthly_minutes_used",
+        "purchased_minutes_used"
+      ]
     },
     "API_Entities_GitlabSubscription": {
       "type": "object",
