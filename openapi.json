@@ -73796,6 +73796,11 @@
         "key": {
           "type": "string"
         },
+        "fingerprint": {
+          "type": "string",
+          "example": "SHA256:1CrrRznEotAVn+wfXVzYlDCaVcGoTvHIup4eNWBPK2k",
+          "description": "SHA256 fingerprint of the SSH certificate authority public key"
+        },
         "created_at": {
           "type": "string",
           "format": "date-time",
@@ -73806,6 +73811,7 @@
         "id",
         "title",
         "key",
+        "fingerprint",
         "created_at"
       ],
       "description": "API_Entities_SshCertificate model"
