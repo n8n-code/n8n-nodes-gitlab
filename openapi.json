@@ -92031,6 +92031,7 @@
         },
         "merge_after": {
           "type": "string",
+          "format": "date-time",
           "description": "Date after which the merge request can be merged."
         },
         "approvals_before_merge": {
@@ -92739,6 +92740,7 @@
         },
         "merge_after": {
           "type": "string",
+          "format": "date-time",
           "description": "Date after which the merge request can be merged."
         },
         "approvals_before_merge": {
