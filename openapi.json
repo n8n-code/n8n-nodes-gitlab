@@ -95411,6 +95411,7 @@
             "npm",
             "nuget",
             "pypi",
+            "rubygems",
             "terraform_module"
           ]
         },
@@ -95457,6 +95458,7 @@
             "npm",
             "nuget",
             "pypi",
+            "rubygems",
             "terraform_module"
           ]
         },
