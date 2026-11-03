@@ -98360,7 +98360,7 @@
         "ci_default_git_depth": {
           "type": "integer",
           "format": "int32",
-          "description": "Default number of revisions for shallow cloning"
+          "description": "Default Git depth for shallow cloning"
         },
         "keep_latest_artifact": {
           "type": "boolean",
