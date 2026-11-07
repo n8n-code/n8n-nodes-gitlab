@@ -68196,6 +68196,9 @@
           },
           "404": {
             "description": "Not found"
+          },
+          "429": {
+            "description": "Too many requests"
           }
         },
         "tags": [
@@ -68232,6 +68235,9 @@
           },
           "404": {
             "description": "Not found"
+          },
+          "429": {
+            "description": "Too many requests"
           }
         },
         "tags": [
